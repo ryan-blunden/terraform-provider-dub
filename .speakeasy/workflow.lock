@@ -1,0 +1,36 @@
+speakeasyVersion: 1.584.0
+sources:
+    Dub API:
+        sourceNamespace: dub-api
+        sourceRevisionDigest: sha256:768197d9daa9b8fce22afcc0fc4db7840d02383ccab4389c85ead223393b9a61
+        sourceBlobDigest: sha256:8ca83c7c490bc093fe03bd19487ee77dd0580fd8d271005ea296889f9ade9478
+        tags:
+            - latest
+            - speakeasy-sdk-regen-1753079357
+            - 0.0.1
+targets:
+    dub:
+        source: Dub API
+        sourceNamespace: dub-api
+        sourceRevisionDigest: sha256:768197d9daa9b8fce22afcc0fc4db7840d02383ccab4389c85ead223393b9a61
+        sourceBlobDigest: sha256:8ca83c7c490bc093fe03bd19487ee77dd0580fd8d271005ea296889f9ade9478
+workflow:
+    workflowVersion: 1.0.0
+    speakeasyVersion: latest
+    sources:
+        Dub API:
+            inputs:
+                - location: openapi.yaml
+            overlays:
+                - location: .speakeasy/terraform-overlay.yaml
+            output: .speakeasy/out.openapi.yaml
+            registry:
+                location: registry.speakeasyapi.dev/ryan-blunden-npw/terraform/dub-api
+    targets:
+        dub:
+            target: terraform
+            source: Dub API
+            publish:
+                terraform:
+                    gpgPrivateKey: $terraform_gpg_private_key
+                    gpgPassPhrase: $terraform_gpg_passphrase

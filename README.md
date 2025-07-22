@@ -38,7 +38,7 @@ terraform {
   required_providers {
     dub = {
       source  = "ryan-blunden/dub"
-      version = "0.2.6"
+      version = "0.0.1"
     }
   }
 }
