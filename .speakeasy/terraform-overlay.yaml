@@ -54,3 +54,9 @@ actions:
   # Remove operations without x-speakeasy-entity-operation
   - target: $.paths.*[?(!@['x-speakeasy-entity-operation'] && @.operationId)]
     remove: true
+  - target: $["info"]
+    update:
+      description: |
+        Welcome to the Dub Terraform provider.
+
+        A Dub API key is required for authentication, which can be set using a `token` value in the provider block or a `DUB_API_KEY` environment variable.  
