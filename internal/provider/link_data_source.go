@@ -5,8 +5,10 @@ package provider
 import (
 	"context"
 	"fmt"
+	"github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
 	"github.com/hashicorp/terraform-plugin-framework/datasource"
 	"github.com/hashicorp/terraform-plugin-framework/datasource/schema"
+	"github.com/hashicorp/terraform-plugin-framework/schema/validator"
 	"github.com/hashicorp/terraform-plugin-framework/types"
 	"github.com/hashicorp/terraform-plugin-framework/types/basetypes"
 	tfTypes "github.com/ryan-blunden/terraform-provider-dub/internal/provider/types"
@@ -122,6 +124,9 @@ func (r *LinkDataSource) Schema(ctx context.Context, req datasource.SchemaReques
 			"domain": schema.StringAttribute{
 				Computed: true,
 				Optional: true,
+				Validators: []validator.String{
+					stringvalidator.UTF8LengthAtLeast(1),
+				},
 			},
 			"expired_url": schema.StringAttribute{
 				Computed:    true,
@@ -912,6 +917,9 @@ func (r *LinkDataSource) Schema(ctx context.Context, req datasource.SchemaReques
 				Computed:    true,
 				Optional:    true,
 				Description: `The key of the link to retrieve. E.g. for ` + "`" + `d.to/github` + "`" + `, the key is ` + "`" + `github` + "`" + `.`,
+				Validators: []validator.String{
+					stringvalidator.UTF8LengthAtLeast(1),
+				},
 			},
 			"last_clicked": schema.StringAttribute{
 				Computed:    true,
