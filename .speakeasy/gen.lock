@@ -3,17 +3,17 @@ id: b57c4402-221b-4fa9-8542-3f8a17b0ca87
 management:
   docChecksum: a8604c8f86c3281e9db8a3a7818ee7fe
   docVersion: 0.0.1
-  speakeasyVersion: 1.584.0
-  generationVersion: 2.660.0
-  releaseVersion: 0.0.1
-  configChecksum: 1e4cf857b86a9c03d23f0b551a8b4ab1
+  speakeasyVersion: 1.590.0
+  generationVersion: 2.666.0
+  releaseVersion: 0.1.0
+  configChecksum: a1626b03567613010f85d002ffc4841e
   repoURL: https://github.com/ryan-blunden/terraform-provider-dub.git
   published: true
 features:
   terraform:
     additionalDependencies: 0.1.0
     constsAndDefaults: 0.2.1
-    core: 3.41.16
+    core: 3.43.0
     deprecations: 2.82.0
     globalSecurity: 2.81.12
     globalServerURLs: 2.82.2

@@ -36,8 +36,8 @@ data "dub_tag" "my_tag" {
 - `page` (Number) The page number for pagination.
 - `page_size` (Number) The number of items per page.
 - `search` (String) The search term to filter the tags by.
-- `sort_by` (String) The field to sort the tags by.
-- `sort_order` (String) The order to sort the tags by.
+- `sort_by` (String) The field to sort the tags by. must be one of ["name", "createdAt"]
+- `sort_order` (String) The order to sort the tags by. must be one of ["asc", "desc"]
 
 ### Read-Only
 
