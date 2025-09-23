@@ -260,1754 +260,1754 @@ type Geo struct {
 	Xk *string `json:"XK,omitempty"`
 }
 
-func (o *Geo) GetAf() *string {
-	if o == nil {
+func (g *Geo) GetAf() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Af
+	return g.Af
 }
 
-func (o *Geo) GetAl() *string {
-	if o == nil {
+func (g *Geo) GetAl() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Al
+	return g.Al
 }
 
-func (o *Geo) GetDz() *string {
-	if o == nil {
+func (g *Geo) GetDz() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Dz
+	return g.Dz
 }
 
-func (o *Geo) GetAs() *string {
-	if o == nil {
+func (g *Geo) GetAs() *string {
+	if g == nil {
 		return nil
 	}
-	return o.As
+	return g.As
 }
 
-func (o *Geo) GetAd() *string {
-	if o == nil {
+func (g *Geo) GetAd() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ad
+	return g.Ad
 }
 
-func (o *Geo) GetAo() *string {
-	if o == nil {
+func (g *Geo) GetAo() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ao
+	return g.Ao
 }
 
-func (o *Geo) GetAi() *string {
-	if o == nil {
+func (g *Geo) GetAi() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ai
+	return g.Ai
 }
 
-func (o *Geo) GetAq() *string {
-	if o == nil {
+func (g *Geo) GetAq() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Aq
+	return g.Aq
 }
 
-func (o *Geo) GetAg() *string {
-	if o == nil {
+func (g *Geo) GetAg() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ag
+	return g.Ag
 }
 
-func (o *Geo) GetAr() *string {
-	if o == nil {
+func (g *Geo) GetAr() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ar
+	return g.Ar
 }
 
-func (o *Geo) GetAm() *string {
-	if o == nil {
+func (g *Geo) GetAm() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Am
+	return g.Am
 }
 
-func (o *Geo) GetAw() *string {
-	if o == nil {
+func (g *Geo) GetAw() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Aw
+	return g.Aw
 }
 
-func (o *Geo) GetAu() *string {
-	if o == nil {
+func (g *Geo) GetAu() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Au
+	return g.Au
 }
 
-func (o *Geo) GetAt() *string {
-	if o == nil {
+func (g *Geo) GetAt() *string {
+	if g == nil {
 		return nil
 	}
-	return o.At
+	return g.At
 }
 
-func (o *Geo) GetAz() *string {
-	if o == nil {
+func (g *Geo) GetAz() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Az
+	return g.Az
 }
 
-func (o *Geo) GetBs() *string {
-	if o == nil {
+func (g *Geo) GetBs() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Bs
+	return g.Bs
 }
 
-func (o *Geo) GetBh() *string {
-	if o == nil {
+func (g *Geo) GetBh() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Bh
+	return g.Bh
 }
 
-func (o *Geo) GetBd() *string {
-	if o == nil {
+func (g *Geo) GetBd() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Bd
+	return g.Bd
 }
 
-func (o *Geo) GetBb() *string {
-	if o == nil {
+func (g *Geo) GetBb() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Bb
+	return g.Bb
 }
 
-func (o *Geo) GetBy() *string {
-	if o == nil {
+func (g *Geo) GetBy() *string {
+	if g == nil {
 		return nil
 	}
-	return o.By
+	return g.By
 }
 
-func (o *Geo) GetBe() *string {
-	if o == nil {
+func (g *Geo) GetBe() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Be
+	return g.Be
 }
 
-func (o *Geo) GetBz() *string {
-	if o == nil {
+func (g *Geo) GetBz() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Bz
+	return g.Bz
 }
 
-func (o *Geo) GetBj() *string {
-	if o == nil {
+func (g *Geo) GetBj() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Bj
+	return g.Bj
 }
 
-func (o *Geo) GetBm() *string {
-	if o == nil {
+func (g *Geo) GetBm() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Bm
+	return g.Bm
 }
 
-func (o *Geo) GetBt() *string {
-	if o == nil {
+func (g *Geo) GetBt() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Bt
+	return g.Bt
 }
 
-func (o *Geo) GetBo() *string {
-	if o == nil {
+func (g *Geo) GetBo() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Bo
+	return g.Bo
 }
 
-func (o *Geo) GetBa() *string {
-	if o == nil {
+func (g *Geo) GetBa() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ba
+	return g.Ba
 }
 
-func (o *Geo) GetBw() *string {
-	if o == nil {
+func (g *Geo) GetBw() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Bw
+	return g.Bw
 }
 
-func (o *Geo) GetBv() *string {
-	if o == nil {
+func (g *Geo) GetBv() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Bv
+	return g.Bv
 }
 
-func (o *Geo) GetBr() *string {
-	if o == nil {
+func (g *Geo) GetBr() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Br
+	return g.Br
 }
 
-func (o *Geo) GetIo() *string {
-	if o == nil {
+func (g *Geo) GetIo() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Io
+	return g.Io
 }
 
-func (o *Geo) GetBn() *string {
-	if o == nil {
+func (g *Geo) GetBn() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Bn
+	return g.Bn
 }
 
-func (o *Geo) GetBg() *string {
-	if o == nil {
+func (g *Geo) GetBg() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Bg
+	return g.Bg
 }
 
-func (o *Geo) GetBf() *string {
-	if o == nil {
+func (g *Geo) GetBf() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Bf
+	return g.Bf
 }
 
-func (o *Geo) GetBi() *string {
-	if o == nil {
+func (g *Geo) GetBi() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Bi
+	return g.Bi
 }
 
-func (o *Geo) GetKh() *string {
-	if o == nil {
+func (g *Geo) GetKh() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Kh
+	return g.Kh
 }
 
-func (o *Geo) GetCm() *string {
-	if o == nil {
+func (g *Geo) GetCm() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Cm
+	return g.Cm
 }
 
-func (o *Geo) GetCa() *string {
-	if o == nil {
+func (g *Geo) GetCa() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ca
+	return g.Ca
 }
 
-func (o *Geo) GetCv() *string {
-	if o == nil {
+func (g *Geo) GetCv() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Cv
+	return g.Cv
 }
 
-func (o *Geo) GetKy() *string {
-	if o == nil {
+func (g *Geo) GetKy() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ky
+	return g.Ky
 }
 
-func (o *Geo) GetCf() *string {
-	if o == nil {
+func (g *Geo) GetCf() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Cf
+	return g.Cf
 }
 
-func (o *Geo) GetTd() *string {
-	if o == nil {
+func (g *Geo) GetTd() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Td
+	return g.Td
 }
 
-func (o *Geo) GetCl() *string {
-	if o == nil {
+func (g *Geo) GetCl() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Cl
+	return g.Cl
 }
 
-func (o *Geo) GetCn() *string {
-	if o == nil {
+func (g *Geo) GetCn() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Cn
+	return g.Cn
 }
 
-func (o *Geo) GetCx() *string {
-	if o == nil {
+func (g *Geo) GetCx() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Cx
+	return g.Cx
 }
 
-func (o *Geo) GetCc() *string {
-	if o == nil {
+func (g *Geo) GetCc() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Cc
+	return g.Cc
 }
 
-func (o *Geo) GetCo() *string {
-	if o == nil {
+func (g *Geo) GetCo() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Co
+	return g.Co
 }
 
-func (o *Geo) GetKm() *string {
-	if o == nil {
+func (g *Geo) GetKm() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Km
+	return g.Km
 }
 
-func (o *Geo) GetCg() *string {
-	if o == nil {
+func (g *Geo) GetCg() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Cg
+	return g.Cg
 }
 
-func (o *Geo) GetCd() *string {
-	if o == nil {
+func (g *Geo) GetCd() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Cd
+	return g.Cd
 }
 
-func (o *Geo) GetCk() *string {
-	if o == nil {
+func (g *Geo) GetCk() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ck
+	return g.Ck
 }
 
-func (o *Geo) GetCr() *string {
-	if o == nil {
+func (g *Geo) GetCr() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Cr
+	return g.Cr
 }
 
-func (o *Geo) GetCi() *string {
-	if o == nil {
+func (g *Geo) GetCi() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ci
+	return g.Ci
 }
 
-func (o *Geo) GetHr() *string {
-	if o == nil {
+func (g *Geo) GetHr() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Hr
+	return g.Hr
 }
 
-func (o *Geo) GetCu() *string {
-	if o == nil {
+func (g *Geo) GetCu() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Cu
+	return g.Cu
 }
 
-func (o *Geo) GetCy() *string {
-	if o == nil {
+func (g *Geo) GetCy() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Cy
+	return g.Cy
 }
 
-func (o *Geo) GetCz() *string {
-	if o == nil {
+func (g *Geo) GetCz() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Cz
+	return g.Cz
 }
 
-func (o *Geo) GetDk() *string {
-	if o == nil {
+func (g *Geo) GetDk() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Dk
+	return g.Dk
 }
 
-func (o *Geo) GetDj() *string {
-	if o == nil {
+func (g *Geo) GetDj() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Dj
+	return g.Dj
 }
 
-func (o *Geo) GetDm() *string {
-	if o == nil {
+func (g *Geo) GetDm() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Dm
+	return g.Dm
 }
 
-func (o *Geo) GetDo() *string {
-	if o == nil {
+func (g *Geo) GetDo() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Do
+	return g.Do
 }
 
-func (o *Geo) GetEc() *string {
-	if o == nil {
+func (g *Geo) GetEc() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ec
+	return g.Ec
 }
 
-func (o *Geo) GetEg() *string {
-	if o == nil {
+func (g *Geo) GetEg() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Eg
+	return g.Eg
 }
 
-func (o *Geo) GetSv() *string {
-	if o == nil {
+func (g *Geo) GetSv() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Sv
+	return g.Sv
 }
 
-func (o *Geo) GetGq() *string {
-	if o == nil {
+func (g *Geo) GetGq() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Gq
+	return g.Gq
 }
 
-func (o *Geo) GetEr() *string {
-	if o == nil {
+func (g *Geo) GetEr() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Er
+	return g.Er
 }
 
-func (o *Geo) GetEe() *string {
-	if o == nil {
+func (g *Geo) GetEe() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ee
+	return g.Ee
 }
 
-func (o *Geo) GetEt() *string {
-	if o == nil {
+func (g *Geo) GetEt() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Et
+	return g.Et
 }
 
-func (o *Geo) GetFk() *string {
-	if o == nil {
+func (g *Geo) GetFk() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Fk
+	return g.Fk
 }
 
-func (o *Geo) GetFo() *string {
-	if o == nil {
+func (g *Geo) GetFo() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Fo
+	return g.Fo
 }
 
-func (o *Geo) GetFj() *string {
-	if o == nil {
+func (g *Geo) GetFj() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Fj
+	return g.Fj
 }
 
-func (o *Geo) GetFi() *string {
-	if o == nil {
+func (g *Geo) GetFi() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Fi
+	return g.Fi
 }
 
-func (o *Geo) GetFr() *string {
-	if o == nil {
+func (g *Geo) GetFr() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Fr
+	return g.Fr
 }
 
-func (o *Geo) GetGf() *string {
-	if o == nil {
+func (g *Geo) GetGf() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Gf
+	return g.Gf
 }
 
-func (o *Geo) GetPf() *string {
-	if o == nil {
+func (g *Geo) GetPf() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Pf
+	return g.Pf
 }
 
-func (o *Geo) GetTf() *string {
-	if o == nil {
+func (g *Geo) GetTf() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Tf
+	return g.Tf
 }
 
-func (o *Geo) GetGa() *string {
-	if o == nil {
+func (g *Geo) GetGa() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ga
+	return g.Ga
 }
 
-func (o *Geo) GetGm() *string {
-	if o == nil {
+func (g *Geo) GetGm() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Gm
+	return g.Gm
 }
 
-func (o *Geo) GetGe() *string {
-	if o == nil {
+func (g *Geo) GetGe() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ge
+	return g.Ge
 }
 
-func (o *Geo) GetDe() *string {
-	if o == nil {
+func (g *Geo) GetDe() *string {
+	if g == nil {
 		return nil
 	}
-	return o.De
+	return g.De
 }
 
-func (o *Geo) GetGh() *string {
-	if o == nil {
+func (g *Geo) GetGh() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Gh
+	return g.Gh
 }
 
-func (o *Geo) GetGi() *string {
-	if o == nil {
+func (g *Geo) GetGi() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Gi
+	return g.Gi
 }
 
-func (o *Geo) GetGr() *string {
-	if o == nil {
+func (g *Geo) GetGr() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Gr
+	return g.Gr
 }
 
-func (o *Geo) GetGl() *string {
-	if o == nil {
+func (g *Geo) GetGl() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Gl
+	return g.Gl
 }
 
-func (o *Geo) GetGd() *string {
-	if o == nil {
+func (g *Geo) GetGd() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Gd
+	return g.Gd
 }
 
-func (o *Geo) GetGp() *string {
-	if o == nil {
+func (g *Geo) GetGp() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Gp
+	return g.Gp
 }
 
-func (o *Geo) GetGu() *string {
-	if o == nil {
+func (g *Geo) GetGu() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Gu
+	return g.Gu
 }
 
-func (o *Geo) GetGt() *string {
-	if o == nil {
+func (g *Geo) GetGt() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Gt
+	return g.Gt
 }
 
-func (o *Geo) GetGn() *string {
-	if o == nil {
+func (g *Geo) GetGn() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Gn
+	return g.Gn
 }
 
-func (o *Geo) GetGw() *string {
-	if o == nil {
+func (g *Geo) GetGw() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Gw
+	return g.Gw
 }
 
-func (o *Geo) GetGy() *string {
-	if o == nil {
+func (g *Geo) GetGy() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Gy
+	return g.Gy
 }
 
-func (o *Geo) GetHt() *string {
-	if o == nil {
+func (g *Geo) GetHt() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ht
+	return g.Ht
 }
 
-func (o *Geo) GetHm() *string {
-	if o == nil {
+func (g *Geo) GetHm() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Hm
+	return g.Hm
 }
 
-func (o *Geo) GetVa() *string {
-	if o == nil {
+func (g *Geo) GetVa() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Va
+	return g.Va
 }
 
-func (o *Geo) GetHn() *string {
-	if o == nil {
+func (g *Geo) GetHn() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Hn
+	return g.Hn
 }
 
-func (o *Geo) GetHk() *string {
-	if o == nil {
+func (g *Geo) GetHk() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Hk
+	return g.Hk
 }
 
-func (o *Geo) GetHu() *string {
-	if o == nil {
+func (g *Geo) GetHu() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Hu
+	return g.Hu
 }
 
-func (o *Geo) GetIs() *string {
-	if o == nil {
+func (g *Geo) GetIs() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Is
+	return g.Is
 }
 
-func (o *Geo) GetIn() *string {
-	if o == nil {
+func (g *Geo) GetIn() *string {
+	if g == nil {
 		return nil
 	}
-	return o.In
+	return g.In
 }
 
-func (o *Geo) GetID() *string {
-	if o == nil {
+func (g *Geo) GetID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.ID
+	return g.ID
 }
 
-func (o *Geo) GetIr() *string {
-	if o == nil {
+func (g *Geo) GetIr() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ir
+	return g.Ir
 }
 
-func (o *Geo) GetIq() *string {
-	if o == nil {
+func (g *Geo) GetIq() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Iq
+	return g.Iq
 }
 
-func (o *Geo) GetIe() *string {
-	if o == nil {
+func (g *Geo) GetIe() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ie
+	return g.Ie
 }
 
-func (o *Geo) GetIl() *string {
-	if o == nil {
+func (g *Geo) GetIl() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Il
+	return g.Il
 }
 
-func (o *Geo) GetIt() *string {
-	if o == nil {
+func (g *Geo) GetIt() *string {
+	if g == nil {
 		return nil
 	}
-	return o.It
+	return g.It
 }
 
-func (o *Geo) GetJm() *string {
-	if o == nil {
+func (g *Geo) GetJm() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Jm
+	return g.Jm
 }
 
-func (o *Geo) GetJp() *string {
-	if o == nil {
+func (g *Geo) GetJp() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Jp
+	return g.Jp
 }
 
-func (o *Geo) GetJo() *string {
-	if o == nil {
+func (g *Geo) GetJo() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Jo
+	return g.Jo
 }
 
-func (o *Geo) GetKz() *string {
-	if o == nil {
+func (g *Geo) GetKz() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Kz
+	return g.Kz
 }
 
-func (o *Geo) GetKe() *string {
-	if o == nil {
+func (g *Geo) GetKe() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ke
+	return g.Ke
 }
 
-func (o *Geo) GetKi() *string {
-	if o == nil {
+func (g *Geo) GetKi() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ki
+	return g.Ki
 }
 
-func (o *Geo) GetKp() *string {
-	if o == nil {
+func (g *Geo) GetKp() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Kp
+	return g.Kp
 }
 
-func (o *Geo) GetKr() *string {
-	if o == nil {
+func (g *Geo) GetKr() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Kr
+	return g.Kr
 }
 
-func (o *Geo) GetKw() *string {
-	if o == nil {
+func (g *Geo) GetKw() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Kw
+	return g.Kw
 }
 
-func (o *Geo) GetKg() *string {
-	if o == nil {
+func (g *Geo) GetKg() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Kg
+	return g.Kg
 }
 
-func (o *Geo) GetLa() *string {
-	if o == nil {
+func (g *Geo) GetLa() *string {
+	if g == nil {
 		return nil
 	}
-	return o.La
+	return g.La
 }
 
-func (o *Geo) GetLv() *string {
-	if o == nil {
+func (g *Geo) GetLv() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Lv
+	return g.Lv
 }
 
-func (o *Geo) GetLb() *string {
-	if o == nil {
+func (g *Geo) GetLb() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Lb
+	return g.Lb
 }
 
-func (o *Geo) GetLs() *string {
-	if o == nil {
+func (g *Geo) GetLs() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ls
+	return g.Ls
 }
 
-func (o *Geo) GetLr() *string {
-	if o == nil {
+func (g *Geo) GetLr() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Lr
+	return g.Lr
 }
 
-func (o *Geo) GetLy() *string {
-	if o == nil {
+func (g *Geo) GetLy() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ly
+	return g.Ly
 }
 
-func (o *Geo) GetLi() *string {
-	if o == nil {
+func (g *Geo) GetLi() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Li
+	return g.Li
 }
 
-func (o *Geo) GetLt() *string {
-	if o == nil {
+func (g *Geo) GetLt() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Lt
+	return g.Lt
 }
 
-func (o *Geo) GetLu() *string {
-	if o == nil {
+func (g *Geo) GetLu() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Lu
+	return g.Lu
 }
 
-func (o *Geo) GetMo() *string {
-	if o == nil {
+func (g *Geo) GetMo() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Mo
+	return g.Mo
 }
 
-func (o *Geo) GetMg() *string {
-	if o == nil {
+func (g *Geo) GetMg() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Mg
+	return g.Mg
 }
 
-func (o *Geo) GetMw() *string {
-	if o == nil {
+func (g *Geo) GetMw() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Mw
+	return g.Mw
 }
 
-func (o *Geo) GetMy() *string {
-	if o == nil {
+func (g *Geo) GetMy() *string {
+	if g == nil {
 		return nil
 	}
-	return o.My
+	return g.My
 }
 
-func (o *Geo) GetMv() *string {
-	if o == nil {
+func (g *Geo) GetMv() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Mv
+	return g.Mv
 }
 
-func (o *Geo) GetMl() *string {
-	if o == nil {
+func (g *Geo) GetMl() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ml
+	return g.Ml
 }
 
-func (o *Geo) GetMt() *string {
-	if o == nil {
+func (g *Geo) GetMt() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Mt
+	return g.Mt
 }
 
-func (o *Geo) GetMh() *string {
-	if o == nil {
+func (g *Geo) GetMh() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Mh
+	return g.Mh
 }
 
-func (o *Geo) GetMq() *string {
-	if o == nil {
+func (g *Geo) GetMq() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Mq
+	return g.Mq
 }
 
-func (o *Geo) GetMr() *string {
-	if o == nil {
+func (g *Geo) GetMr() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Mr
+	return g.Mr
 }
 
-func (o *Geo) GetMu() *string {
-	if o == nil {
+func (g *Geo) GetMu() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Mu
+	return g.Mu
 }
 
-func (o *Geo) GetYt() *string {
-	if o == nil {
+func (g *Geo) GetYt() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Yt
+	return g.Yt
 }
 
-func (o *Geo) GetMx() *string {
-	if o == nil {
+func (g *Geo) GetMx() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Mx
+	return g.Mx
 }
 
-func (o *Geo) GetFm() *string {
-	if o == nil {
+func (g *Geo) GetFm() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Fm
+	return g.Fm
 }
 
-func (o *Geo) GetMd() *string {
-	if o == nil {
+func (g *Geo) GetMd() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Md
+	return g.Md
 }
 
-func (o *Geo) GetMc() *string {
-	if o == nil {
+func (g *Geo) GetMc() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Mc
+	return g.Mc
 }
 
-func (o *Geo) GetMn() *string {
-	if o == nil {
+func (g *Geo) GetMn() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Mn
+	return g.Mn
 }
 
-func (o *Geo) GetMs() *string {
-	if o == nil {
+func (g *Geo) GetMs() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ms
+	return g.Ms
 }
 
-func (o *Geo) GetMa() *string {
-	if o == nil {
+func (g *Geo) GetMa() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ma
+	return g.Ma
 }
 
-func (o *Geo) GetMz() *string {
-	if o == nil {
+func (g *Geo) GetMz() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Mz
+	return g.Mz
 }
 
-func (o *Geo) GetMm() *string {
-	if o == nil {
+func (g *Geo) GetMm() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Mm
+	return g.Mm
 }
 
-func (o *Geo) GetNa() *string {
-	if o == nil {
+func (g *Geo) GetNa() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Na
+	return g.Na
 }
 
-func (o *Geo) GetNr() *string {
-	if o == nil {
+func (g *Geo) GetNr() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Nr
+	return g.Nr
 }
 
-func (o *Geo) GetNp() *string {
-	if o == nil {
+func (g *Geo) GetNp() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Np
+	return g.Np
 }
 
-func (o *Geo) GetNl() *string {
-	if o == nil {
+func (g *Geo) GetNl() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Nl
+	return g.Nl
 }
 
-func (o *Geo) GetNc() *string {
-	if o == nil {
+func (g *Geo) GetNc() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Nc
+	return g.Nc
 }
 
-func (o *Geo) GetNz() *string {
-	if o == nil {
+func (g *Geo) GetNz() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Nz
+	return g.Nz
 }
 
-func (o *Geo) GetNi() *string {
-	if o == nil {
+func (g *Geo) GetNi() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ni
+	return g.Ni
 }
 
-func (o *Geo) GetNe() *string {
-	if o == nil {
+func (g *Geo) GetNe() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ne
+	return g.Ne
 }
 
-func (o *Geo) GetNg() *string {
-	if o == nil {
+func (g *Geo) GetNg() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ng
+	return g.Ng
 }
 
-func (o *Geo) GetNu() *string {
-	if o == nil {
+func (g *Geo) GetNu() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Nu
+	return g.Nu
 }
 
-func (o *Geo) GetNf() *string {
-	if o == nil {
+func (g *Geo) GetNf() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Nf
+	return g.Nf
 }
 
-func (o *Geo) GetMk() *string {
-	if o == nil {
+func (g *Geo) GetMk() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Mk
+	return g.Mk
 }
 
-func (o *Geo) GetMp() *string {
-	if o == nil {
+func (g *Geo) GetMp() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Mp
+	return g.Mp
 }
 
-func (o *Geo) GetNo() *string {
-	if o == nil {
+func (g *Geo) GetNo() *string {
+	if g == nil {
 		return nil
 	}
-	return o.No
+	return g.No
 }
 
-func (o *Geo) GetOm() *string {
-	if o == nil {
+func (g *Geo) GetOm() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Om
+	return g.Om
 }
 
-func (o *Geo) GetPk() *string {
-	if o == nil {
+func (g *Geo) GetPk() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Pk
+	return g.Pk
 }
 
-func (o *Geo) GetPw() *string {
-	if o == nil {
+func (g *Geo) GetPw() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Pw
+	return g.Pw
 }
 
-func (o *Geo) GetPs() *string {
-	if o == nil {
+func (g *Geo) GetPs() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ps
+	return g.Ps
 }
 
-func (o *Geo) GetPa() *string {
-	if o == nil {
+func (g *Geo) GetPa() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Pa
+	return g.Pa
 }
 
-func (o *Geo) GetPg() *string {
-	if o == nil {
+func (g *Geo) GetPg() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Pg
+	return g.Pg
 }
 
-func (o *Geo) GetPy() *string {
-	if o == nil {
+func (g *Geo) GetPy() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Py
+	return g.Py
 }
 
-func (o *Geo) GetPe() *string {
-	if o == nil {
+func (g *Geo) GetPe() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Pe
+	return g.Pe
 }
 
-func (o *Geo) GetPh() *string {
-	if o == nil {
+func (g *Geo) GetPh() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ph
+	return g.Ph
 }
 
-func (o *Geo) GetPn() *string {
-	if o == nil {
+func (g *Geo) GetPn() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Pn
+	return g.Pn
 }
 
-func (o *Geo) GetPl() *string {
-	if o == nil {
+func (g *Geo) GetPl() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Pl
+	return g.Pl
 }
 
-func (o *Geo) GetPt() *string {
-	if o == nil {
+func (g *Geo) GetPt() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Pt
+	return g.Pt
 }
 
-func (o *Geo) GetPr() *string {
-	if o == nil {
+func (g *Geo) GetPr() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Pr
+	return g.Pr
 }
 
-func (o *Geo) GetQa() *string {
-	if o == nil {
+func (g *Geo) GetQa() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Qa
+	return g.Qa
 }
 
-func (o *Geo) GetRe() *string {
-	if o == nil {
+func (g *Geo) GetRe() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Re
+	return g.Re
 }
 
-func (o *Geo) GetRo() *string {
-	if o == nil {
+func (g *Geo) GetRo() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ro
+	return g.Ro
 }
 
-func (o *Geo) GetRu() *string {
-	if o == nil {
+func (g *Geo) GetRu() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ru
+	return g.Ru
 }
 
-func (o *Geo) GetRw() *string {
-	if o == nil {
+func (g *Geo) GetRw() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Rw
+	return g.Rw
 }
 
-func (o *Geo) GetSh() *string {
-	if o == nil {
+func (g *Geo) GetSh() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Sh
+	return g.Sh
 }
 
-func (o *Geo) GetKn() *string {
-	if o == nil {
+func (g *Geo) GetKn() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Kn
+	return g.Kn
 }
 
-func (o *Geo) GetLc() *string {
-	if o == nil {
+func (g *Geo) GetLc() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Lc
+	return g.Lc
 }
 
-func (o *Geo) GetPm() *string {
-	if o == nil {
+func (g *Geo) GetPm() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Pm
+	return g.Pm
 }
 
-func (o *Geo) GetVc() *string {
-	if o == nil {
+func (g *Geo) GetVc() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Vc
+	return g.Vc
 }
 
-func (o *Geo) GetWs() *string {
-	if o == nil {
+func (g *Geo) GetWs() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ws
+	return g.Ws
 }
 
-func (o *Geo) GetSm() *string {
-	if o == nil {
+func (g *Geo) GetSm() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Sm
+	return g.Sm
 }
 
-func (o *Geo) GetSt() *string {
-	if o == nil {
+func (g *Geo) GetSt() *string {
+	if g == nil {
 		return nil
 	}
-	return o.St
+	return g.St
 }
 
-func (o *Geo) GetSa() *string {
-	if o == nil {
+func (g *Geo) GetSa() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Sa
+	return g.Sa
 }
 
-func (o *Geo) GetSn() *string {
-	if o == nil {
+func (g *Geo) GetSn() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Sn
+	return g.Sn
 }
 
-func (o *Geo) GetSc() *string {
-	if o == nil {
+func (g *Geo) GetSc() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Sc
+	return g.Sc
 }
 
-func (o *Geo) GetSl() *string {
-	if o == nil {
+func (g *Geo) GetSl() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Sl
+	return g.Sl
 }
 
-func (o *Geo) GetSg() *string {
-	if o == nil {
+func (g *Geo) GetSg() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Sg
+	return g.Sg
 }
 
-func (o *Geo) GetSk() *string {
-	if o == nil {
+func (g *Geo) GetSk() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Sk
+	return g.Sk
 }
 
-func (o *Geo) GetSi() *string {
-	if o == nil {
+func (g *Geo) GetSi() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Si
+	return g.Si
 }
 
-func (o *Geo) GetSb() *string {
-	if o == nil {
+func (g *Geo) GetSb() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Sb
+	return g.Sb
 }
 
-func (o *Geo) GetSo() *string {
-	if o == nil {
+func (g *Geo) GetSo() *string {
+	if g == nil {
 		return nil
 	}
-	return o.So
+	return g.So
 }
 
-func (o *Geo) GetZa() *string {
-	if o == nil {
+func (g *Geo) GetZa() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Za
+	return g.Za
 }
 
-func (o *Geo) GetGs() *string {
-	if o == nil {
+func (g *Geo) GetGs() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Gs
+	return g.Gs
 }
 
-func (o *Geo) GetEs() *string {
-	if o == nil {
+func (g *Geo) GetEs() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Es
+	return g.Es
 }
 
-func (o *Geo) GetLk() *string {
-	if o == nil {
+func (g *Geo) GetLk() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Lk
+	return g.Lk
 }
 
-func (o *Geo) GetSd() *string {
-	if o == nil {
+func (g *Geo) GetSd() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Sd
+	return g.Sd
 }
 
-func (o *Geo) GetSr() *string {
-	if o == nil {
+func (g *Geo) GetSr() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Sr
+	return g.Sr
 }
 
-func (o *Geo) GetSj() *string {
-	if o == nil {
+func (g *Geo) GetSj() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Sj
+	return g.Sj
 }
 
-func (o *Geo) GetSz() *string {
-	if o == nil {
+func (g *Geo) GetSz() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Sz
+	return g.Sz
 }
 
-func (o *Geo) GetSe() *string {
-	if o == nil {
+func (g *Geo) GetSe() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Se
+	return g.Se
 }
 
-func (o *Geo) GetCh() *string {
-	if o == nil {
+func (g *Geo) GetCh() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ch
+	return g.Ch
 }
 
-func (o *Geo) GetSy() *string {
-	if o == nil {
+func (g *Geo) GetSy() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Sy
+	return g.Sy
 }
 
-func (o *Geo) GetTw() *string {
-	if o == nil {
+func (g *Geo) GetTw() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Tw
+	return g.Tw
 }
 
-func (o *Geo) GetTj() *string {
-	if o == nil {
+func (g *Geo) GetTj() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Tj
+	return g.Tj
 }
 
-func (o *Geo) GetTz() *string {
-	if o == nil {
+func (g *Geo) GetTz() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Tz
+	return g.Tz
 }
 
-func (o *Geo) GetTh() *string {
-	if o == nil {
+func (g *Geo) GetTh() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Th
+	return g.Th
 }
 
-func (o *Geo) GetTl() *string {
-	if o == nil {
+func (g *Geo) GetTl() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Tl
+	return g.Tl
 }
 
-func (o *Geo) GetTg() *string {
-	if o == nil {
+func (g *Geo) GetTg() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Tg
+	return g.Tg
 }
 
-func (o *Geo) GetTk() *string {
-	if o == nil {
+func (g *Geo) GetTk() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Tk
+	return g.Tk
 }
 
-func (o *Geo) GetTo() *string {
-	if o == nil {
+func (g *Geo) GetTo() *string {
+	if g == nil {
 		return nil
 	}
-	return o.To
+	return g.To
 }
 
-func (o *Geo) GetTt() *string {
-	if o == nil {
+func (g *Geo) GetTt() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Tt
+	return g.Tt
 }
 
-func (o *Geo) GetTn() *string {
-	if o == nil {
+func (g *Geo) GetTn() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Tn
+	return g.Tn
 }
 
-func (o *Geo) GetTr() *string {
-	if o == nil {
+func (g *Geo) GetTr() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Tr
+	return g.Tr
 }
 
-func (o *Geo) GetTm() *string {
-	if o == nil {
+func (g *Geo) GetTm() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Tm
+	return g.Tm
 }
 
-func (o *Geo) GetTc() *string {
-	if o == nil {
+func (g *Geo) GetTc() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Tc
+	return g.Tc
 }
 
-func (o *Geo) GetTv() *string {
-	if o == nil {
+func (g *Geo) GetTv() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Tv
+	return g.Tv
 }
 
-func (o *Geo) GetUg() *string {
-	if o == nil {
+func (g *Geo) GetUg() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ug
+	return g.Ug
 }
 
-func (o *Geo) GetUa() *string {
-	if o == nil {
+func (g *Geo) GetUa() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ua
+	return g.Ua
 }
 
-func (o *Geo) GetAe() *string {
-	if o == nil {
+func (g *Geo) GetAe() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ae
+	return g.Ae
 }
 
-func (o *Geo) GetGb() *string {
-	if o == nil {
+func (g *Geo) GetGb() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Gb
+	return g.Gb
 }
 
-func (o *Geo) GetUs() *string {
-	if o == nil {
+func (g *Geo) GetUs() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Us
+	return g.Us
 }
 
-func (o *Geo) GetUm() *string {
-	if o == nil {
+func (g *Geo) GetUm() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Um
+	return g.Um
 }
 
-func (o *Geo) GetUy() *string {
-	if o == nil {
+func (g *Geo) GetUy() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Uy
+	return g.Uy
 }
 
-func (o *Geo) GetUz() *string {
-	if o == nil {
+func (g *Geo) GetUz() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Uz
+	return g.Uz
 }
 
-func (o *Geo) GetVu() *string {
-	if o == nil {
+func (g *Geo) GetVu() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Vu
+	return g.Vu
 }
 
-func (o *Geo) GetVe() *string {
-	if o == nil {
+func (g *Geo) GetVe() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ve
+	return g.Ve
 }
 
-func (o *Geo) GetVn() *string {
-	if o == nil {
+func (g *Geo) GetVn() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Vn
+	return g.Vn
 }
 
-func (o *Geo) GetVg() *string {
-	if o == nil {
+func (g *Geo) GetVg() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Vg
+	return g.Vg
 }
 
-func (o *Geo) GetVi() *string {
-	if o == nil {
+func (g *Geo) GetVi() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Vi
+	return g.Vi
 }
 
-func (o *Geo) GetWf() *string {
-	if o == nil {
+func (g *Geo) GetWf() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Wf
+	return g.Wf
 }
 
-func (o *Geo) GetEh() *string {
-	if o == nil {
+func (g *Geo) GetEh() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Eh
+	return g.Eh
 }
 
-func (o *Geo) GetYe() *string {
-	if o == nil {
+func (g *Geo) GetYe() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ye
+	return g.Ye
 }
 
-func (o *Geo) GetZm() *string {
-	if o == nil {
+func (g *Geo) GetZm() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Zm
+	return g.Zm
 }
 
-func (o *Geo) GetZw() *string {
-	if o == nil {
+func (g *Geo) GetZw() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Zw
+	return g.Zw
 }
 
-func (o *Geo) GetAx() *string {
-	if o == nil {
+func (g *Geo) GetAx() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ax
+	return g.Ax
 }
 
-func (o *Geo) GetBq() *string {
-	if o == nil {
+func (g *Geo) GetBq() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Bq
+	return g.Bq
 }
 
-func (o *Geo) GetCw() *string {
-	if o == nil {
+func (g *Geo) GetCw() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Cw
+	return g.Cw
 }
 
-func (o *Geo) GetGg() *string {
-	if o == nil {
+func (g *Geo) GetGg() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Gg
+	return g.Gg
 }
 
-func (o *Geo) GetIm() *string {
-	if o == nil {
+func (g *Geo) GetIm() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Im
+	return g.Im
 }
 
-func (o *Geo) GetJe() *string {
-	if o == nil {
+func (g *Geo) GetJe() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Je
+	return g.Je
 }
 
-func (o *Geo) GetMe() *string {
-	if o == nil {
+func (g *Geo) GetMe() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Me
+	return g.Me
 }
 
-func (o *Geo) GetBl() *string {
-	if o == nil {
+func (g *Geo) GetBl() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Bl
+	return g.Bl
 }
 
-func (o *Geo) GetMf() *string {
-	if o == nil {
+func (g *Geo) GetMf() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Mf
+	return g.Mf
 }
 
-func (o *Geo) GetRs() *string {
-	if o == nil {
+func (g *Geo) GetRs() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Rs
+	return g.Rs
 }
 
-func (o *Geo) GetSx() *string {
-	if o == nil {
+func (g *Geo) GetSx() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Sx
+	return g.Sx
 }
 
-func (o *Geo) GetSs() *string {
-	if o == nil {
+func (g *Geo) GetSs() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Ss
+	return g.Ss
 }
 
-func (o *Geo) GetXk() *string {
-	if o == nil {
+func (g *Geo) GetXk() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Xk
+	return g.Xk
 }
 
 type TestVariant struct {
@@ -2015,18 +2015,18 @@ type TestVariant struct {
 	Percentage float64 `json:"percentage"`
 }
 
-func (o *TestVariant) GetURL() string {
-	if o == nil {
+func (t *TestVariant) GetURL() string {
+	if t == nil {
 		return ""
 	}
-	return o.URL
+	return t.URL
 }
 
-func (o *TestVariant) GetPercentage() float64 {
-	if o == nil {
+func (t *TestVariant) GetPercentage() float64 {
+	if t == nil {
 		return 0.0
 	}
-	return o.Percentage
+	return t.Percentage
 }
 
 type LinkSchema struct {
@@ -2140,358 +2140,358 @@ func (l LinkSchema) MarshalJSON() ([]byte, error) {
 }
 
 func (l *LinkSchema) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &l, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &l, "", false, []string{"id", "domain", "key", "url", "externalId", "tenantId", "programId", "partnerId", "expiresAt", "expiredUrl", "password", "title", "description", "image", "video", "ios", "android", "geo", "tagId", "tags", "folderId", "webhookIds", "comments", "shortLink", "qrCode", "utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "userId", "workspaceId", "lastClicked", "createdAt", "updatedAt", "projectId"}); err != nil {
 		return err
 	}
 	return nil
 }
 
-func (o *LinkSchema) GetID() string {
-	if o == nil {
+func (l *LinkSchema) GetID() string {
+	if l == nil {
 		return ""
 	}
-	return o.ID
+	return l.ID
 }
 
-func (o *LinkSchema) GetDomain() string {
-	if o == nil {
+func (l *LinkSchema) GetDomain() string {
+	if l == nil {
 		return ""
 	}
-	return o.Domain
+	return l.Domain
 }
 
-func (o *LinkSchema) GetKey() string {
-	if o == nil {
+func (l *LinkSchema) GetKey() string {
+	if l == nil {
 		return ""
 	}
-	return o.Key
+	return l.Key
 }
 
-func (o *LinkSchema) GetURL() string {
-	if o == nil {
+func (l *LinkSchema) GetURL() string {
+	if l == nil {
 		return ""
 	}
-	return o.URL
+	return l.URL
 }
 
-func (o *LinkSchema) GetTrackConversion() *bool {
-	if o == nil {
+func (l *LinkSchema) GetTrackConversion() *bool {
+	if l == nil {
 		return nil
 	}
-	return o.TrackConversion
+	return l.TrackConversion
 }
 
-func (o *LinkSchema) GetExternalID() *string {
-	if o == nil {
+func (l *LinkSchema) GetExternalID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ExternalID
+	return l.ExternalID
 }
 
-func (o *LinkSchema) GetTenantID() *string {
-	if o == nil {
+func (l *LinkSchema) GetTenantID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.TenantID
+	return l.TenantID
 }
 
-func (o *LinkSchema) GetProgramID() *string {
-	if o == nil {
+func (l *LinkSchema) GetProgramID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ProgramID
+	return l.ProgramID
 }
 
-func (o *LinkSchema) GetPartnerID() *string {
-	if o == nil {
+func (l *LinkSchema) GetPartnerID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.PartnerID
+	return l.PartnerID
 }
 
-func (o *LinkSchema) GetArchived() *bool {
-	if o == nil {
+func (l *LinkSchema) GetArchived() *bool {
+	if l == nil {
 		return nil
 	}
-	return o.Archived
+	return l.Archived
 }
 
-func (o *LinkSchema) GetExpiresAt() *string {
-	if o == nil {
+func (l *LinkSchema) GetExpiresAt() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ExpiresAt
+	return l.ExpiresAt
 }
 
-func (o *LinkSchema) GetExpiredURL() *string {
-	if o == nil {
+func (l *LinkSchema) GetExpiredURL() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ExpiredURL
+	return l.ExpiredURL
 }
 
-func (o *LinkSchema) GetPassword() *string {
-	if o == nil {
+func (l *LinkSchema) GetPassword() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Password
+	return l.Password
 }
 
-func (o *LinkSchema) GetProxy() *bool {
-	if o == nil {
+func (l *LinkSchema) GetProxy() *bool {
+	if l == nil {
 		return nil
 	}
-	return o.Proxy
+	return l.Proxy
 }
 
-func (o *LinkSchema) GetTitle() *string {
-	if o == nil {
+func (l *LinkSchema) GetTitle() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Title
+	return l.Title
 }
 
-func (o *LinkSchema) GetDescription() *string {
-	if o == nil {
+func (l *LinkSchema) GetDescription() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Description
+	return l.Description
 }
 
-func (o *LinkSchema) GetImage() *string {
-	if o == nil {
+func (l *LinkSchema) GetImage() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Image
+	return l.Image
 }
 
-func (o *LinkSchema) GetVideo() *string {
-	if o == nil {
+func (l *LinkSchema) GetVideo() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Video
+	return l.Video
 }
 
-func (o *LinkSchema) GetRewrite() *bool {
-	if o == nil {
+func (l *LinkSchema) GetRewrite() *bool {
+	if l == nil {
 		return nil
 	}
-	return o.Rewrite
+	return l.Rewrite
 }
 
-func (o *LinkSchema) GetDoIndex() *bool {
-	if o == nil {
+func (l *LinkSchema) GetDoIndex() *bool {
+	if l == nil {
 		return nil
 	}
-	return o.DoIndex
+	return l.DoIndex
 }
 
-func (o *LinkSchema) GetIos() *string {
-	if o == nil {
+func (l *LinkSchema) GetIos() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ios
+	return l.Ios
 }
 
-func (o *LinkSchema) GetAndroid() *string {
-	if o == nil {
+func (l *LinkSchema) GetAndroid() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Android
+	return l.Android
 }
 
-func (o *LinkSchema) GetGeo() *Geo {
-	if o == nil {
+func (l *LinkSchema) GetGeo() *Geo {
+	if l == nil {
 		return nil
 	}
-	return o.Geo
+	return l.Geo
 }
 
-func (o *LinkSchema) GetPublicStats() *bool {
-	if o == nil {
+func (l *LinkSchema) GetPublicStats() *bool {
+	if l == nil {
 		return nil
 	}
-	return o.PublicStats
+	return l.PublicStats
 }
 
-func (o *LinkSchema) GetTagID() *string {
-	if o == nil {
+func (l *LinkSchema) GetTagID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.TagID
+	return l.TagID
 }
 
-func (o *LinkSchema) GetTags() []TagSchema {
-	if o == nil {
+func (l *LinkSchema) GetTags() []TagSchema {
+	if l == nil {
 		return nil
 	}
-	return o.Tags
+	return l.Tags
 }
 
-func (o *LinkSchema) GetFolderID() *string {
-	if o == nil {
+func (l *LinkSchema) GetFolderID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.FolderID
+	return l.FolderID
 }
 
-func (o *LinkSchema) GetWebhookIds() []string {
-	if o == nil {
+func (l *LinkSchema) GetWebhookIds() []string {
+	if l == nil {
 		return []string{}
 	}
-	return o.WebhookIds
+	return l.WebhookIds
 }
 
-func (o *LinkSchema) GetComments() *string {
-	if o == nil {
+func (l *LinkSchema) GetComments() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Comments
+	return l.Comments
 }
 
-func (o *LinkSchema) GetShortLink() string {
-	if o == nil {
+func (l *LinkSchema) GetShortLink() string {
+	if l == nil {
 		return ""
 	}
-	return o.ShortLink
+	return l.ShortLink
 }
 
-func (o *LinkSchema) GetQrCode() string {
-	if o == nil {
+func (l *LinkSchema) GetQrCode() string {
+	if l == nil {
 		return ""
 	}
-	return o.QrCode
+	return l.QrCode
 }
 
-func (o *LinkSchema) GetUtmSource() *string {
-	if o == nil {
+func (l *LinkSchema) GetUtmSource() *string {
+	if l == nil {
 		return nil
 	}
-	return o.UtmSource
+	return l.UtmSource
 }
 
-func (o *LinkSchema) GetUtmMedium() *string {
-	if o == nil {
+func (l *LinkSchema) GetUtmMedium() *string {
+	if l == nil {
 		return nil
 	}
-	return o.UtmMedium
+	return l.UtmMedium
 }
 
-func (o *LinkSchema) GetUtmCampaign() *string {
-	if o == nil {
+func (l *LinkSchema) GetUtmCampaign() *string {
+	if l == nil {
 		return nil
 	}
-	return o.UtmCampaign
+	return l.UtmCampaign
 }
 
-func (o *LinkSchema) GetUtmTerm() *string {
-	if o == nil {
+func (l *LinkSchema) GetUtmTerm() *string {
+	if l == nil {
 		return nil
 	}
-	return o.UtmTerm
+	return l.UtmTerm
 }
 
-func (o *LinkSchema) GetUtmContent() *string {
-	if o == nil {
+func (l *LinkSchema) GetUtmContent() *string {
+	if l == nil {
 		return nil
 	}
-	return o.UtmContent
+	return l.UtmContent
 }
 
-func (o *LinkSchema) GetTestVariants() []TestVariant {
-	if o == nil {
+func (l *LinkSchema) GetTestVariants() []TestVariant {
+	if l == nil {
 		return nil
 	}
-	return o.TestVariants
+	return l.TestVariants
 }
 
-func (o *LinkSchema) GetTestStartedAt() *string {
-	if o == nil {
+func (l *LinkSchema) GetTestStartedAt() *string {
+	if l == nil {
 		return nil
 	}
-	return o.TestStartedAt
+	return l.TestStartedAt
 }
 
-func (o *LinkSchema) GetTestCompletedAt() *string {
-	if o == nil {
+func (l *LinkSchema) GetTestCompletedAt() *string {
+	if l == nil {
 		return nil
 	}
-	return o.TestCompletedAt
+	return l.TestCompletedAt
 }
 
-func (o *LinkSchema) GetUserID() *string {
-	if o == nil {
+func (l *LinkSchema) GetUserID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.UserID
+	return l.UserID
 }
 
-func (o *LinkSchema) GetWorkspaceID() string {
-	if o == nil {
+func (l *LinkSchema) GetWorkspaceID() string {
+	if l == nil {
 		return ""
 	}
-	return o.WorkspaceID
+	return l.WorkspaceID
 }
 
-func (o *LinkSchema) GetClicks() *float64 {
-	if o == nil {
+func (l *LinkSchema) GetClicks() *float64 {
+	if l == nil {
 		return nil
 	}
-	return o.Clicks
+	return l.Clicks
 }
 
-func (o *LinkSchema) GetLastClicked() *string {
-	if o == nil {
+func (l *LinkSchema) GetLastClicked() *string {
+	if l == nil {
 		return nil
 	}
-	return o.LastClicked
+	return l.LastClicked
 }
 
-func (o *LinkSchema) GetLeads() *float64 {
-	if o == nil {
+func (l *LinkSchema) GetLeads() *float64 {
+	if l == nil {
 		return nil
 	}
-	return o.Leads
+	return l.Leads
 }
 
-func (o *LinkSchema) GetSales() *float64 {
-	if o == nil {
+func (l *LinkSchema) GetSales() *float64 {
+	if l == nil {
 		return nil
 	}
-	return o.Sales
+	return l.Sales
 }
 
-func (o *LinkSchema) GetSaleAmount() *float64 {
-	if o == nil {
+func (l *LinkSchema) GetSaleAmount() *float64 {
+	if l == nil {
 		return nil
 	}
-	return o.SaleAmount
+	return l.SaleAmount
 }
 
-func (o *LinkSchema) GetCreatedAt() string {
-	if o == nil {
+func (l *LinkSchema) GetCreatedAt() string {
+	if l == nil {
 		return ""
 	}
-	return o.CreatedAt
+	return l.CreatedAt
 }
 
-func (o *LinkSchema) GetUpdatedAt() string {
-	if o == nil {
+func (l *LinkSchema) GetUpdatedAt() string {
+	if l == nil {
 		return ""
 	}
-	return o.UpdatedAt
+	return l.UpdatedAt
 }
 
-func (o *LinkSchema) GetProjectID() string {
-	if o == nil {
+func (l *LinkSchema) GetProjectID() string {
+	if l == nil {
 		return ""
 	}
-	return o.ProjectID
+	return l.ProjectID
 }
 
-func (o *LinkSchema) GetIdentifier() *string {
-	if o == nil {
+func (l *LinkSchema) GetIdentifier() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Identifier
+	return l.Identifier
 }

@@ -5,8 +5,13 @@ package provider
 import (
 	"context"
 	"fmt"
+	"github.com/hashicorp/terraform-plugin-framework-validators/float64validator"
+	"github.com/hashicorp/terraform-plugin-framework-validators/listvalidator"
+	"github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
 	"github.com/hashicorp/terraform-plugin-framework/datasource"
 	"github.com/hashicorp/terraform-plugin-framework/datasource/schema"
+	"github.com/hashicorp/terraform-plugin-framework/path"
+	"github.com/hashicorp/terraform-plugin-framework/schema/validator"
 	"github.com/hashicorp/terraform-plugin-framework/types"
 	"github.com/hashicorp/terraform-plugin-framework/types/basetypes"
 	tfTypes "github.com/ryan-blunden/terraform-provider-dub/internal/provider/types"
@@ -65,9 +70,19 @@ func (r *TagDataSource) Schema(ctx context.Context, req datasource.SchemaRequest
 					"array_of_str": schema.ListAttribute{
 						Optional:    true,
 						ElementType: types.StringType,
+						Validators: []validator.List{
+							listvalidator.ConflictsWith(path.Expressions{
+								path.MatchRelative().AtParent().AtName("str"),
+							}...),
+						},
 					},
 					"str": schema.StringAttribute{
 						Optional: true,
+						Validators: []validator.String{
+							stringvalidator.ConflictsWith(path.Expressions{
+								path.MatchRelative().AtParent().AtName("array_of_str"),
+							}...),
+						},
 					},
 				},
 				Description: `IDs of tags to filter by.`,
@@ -83,6 +98,9 @@ func (r *TagDataSource) Schema(ctx context.Context, req datasource.SchemaRequest
 			"page_size": schema.Float64Attribute{
 				Optional:    true,
 				Description: `The number of items per page.`,
+				Validators: []validator.Float64{
+					float64validator.AtMost(100),
+				},
 			},
 			"search": schema.StringAttribute{
 				Optional:    true,
@@ -90,11 +108,23 @@ func (r *TagDataSource) Schema(ctx context.Context, req datasource.SchemaRequest
 			},
 			"sort_by": schema.StringAttribute{
 				Optional:    true,
-				Description: `The field to sort the tags by.`,
+				Description: `The field to sort the tags by. must be one of ["name", "createdAt"]`,
+				Validators: []validator.String{
+					stringvalidator.OneOf(
+						"name",
+						"createdAt",
+					),
+				},
 			},
 			"sort_order": schema.StringAttribute{
 				Optional:    true,
-				Description: `The order to sort the tags by.`,
+				Description: `The order to sort the tags by. must be one of ["asc", "desc"]`,
+				Validators: []validator.String{
+					stringvalidator.OneOf(
+						"asc",
+						"desc",
+					),
+				},
 			},
 		},
 	}

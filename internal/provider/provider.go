@@ -45,8 +45,9 @@ func (p *DubProvider) Schema(ctx context.Context, req provider.SchemaRequest, re
 				Optional:    true,
 			},
 			"token": schema.StringAttribute{
-				Optional:  true,
-				Sensitive: true,
+				MarkdownDescription: `Default authentication mechanism. Configurable via environment variable ` + "`" + `DUB_API_KEY` + "`" + `.`,
+				Optional:            true,
+				Sensitive:           true,
 			},
 		},
 		MarkdownDescription: `Dub API: Welcome to the Dub Terraform provider.` + "\n" +
@@ -64,10 +65,10 @@ func (p *DubProvider) Configure(ctx context.Context, req provider.ConfigureReque
 		return
 	}
 
-	ServerURL := data.ServerURL.ValueString()
+	serverUrl := data.ServerURL.ValueString()
 
-	if ServerURL == "" {
-		ServerURL = "https://api.dub.co"
+	if serverUrl == "" {
+		serverUrl = "https://api.dub.co"
 	}
 
 	security := shared.Security{}
@@ -96,7 +97,7 @@ func (p *DubProvider) Configure(ctx context.Context, req provider.ConfigureReque
 	httpClient.Transport = NewProviderHTTPTransport(providerHTTPTransportOpts)
 
 	opts := []sdk.SDKOption{
-		sdk.WithServerURL(ServerURL),
+		sdk.WithServerURL(serverUrl),
 		sdk.WithSecurity(security),
 		sdk.WithClient(httpClient),
 	}

@@ -74,8 +74,8 @@ const (
 
 // Ids - IDs of tags to filter by.
 type Ids struct {
-	Str        *string  `queryParam:"inline"`
-	ArrayOfStr []string `queryParam:"inline"`
+	Str        *string  `queryParam:"inline" name:"ids"`
+	ArrayOfStr []string `queryParam:"inline" name:"ids"`
 
 	Type IdsType
 }
@@ -101,14 +101,14 @@ func CreateIdsArrayOfStr(arrayOfStr []string) Ids {
 func (u *Ids) UnmarshalJSON(data []byte) error {
 
 	var str string = ""
-	if err := utils.UnmarshalJSON(data, &str, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &str, "", true, nil); err == nil {
 		u.Str = &str
 		u.Type = IdsTypeStr
 		return nil
 	}
 
 	var arrayOfStr []string = []string{}
-	if err := utils.UnmarshalJSON(data, &arrayOfStr, "", true, true); err == nil {
+	if err := utils.UnmarshalJSON(data, &arrayOfStr, "", true, nil); err == nil {
 		u.ArrayOfStr = arrayOfStr
 		u.Type = IdsTypeArrayOfStr
 		return nil
@@ -149,52 +149,52 @@ func (g GetTagsRequest) MarshalJSON() ([]byte, error) {
 }
 
 func (g *GetTagsRequest) UnmarshalJSON(data []byte) error {
-	if err := utils.UnmarshalJSON(data, &g, "", false, false); err != nil {
+	if err := utils.UnmarshalJSON(data, &g, "", false, nil); err != nil {
 		return err
 	}
 	return nil
 }
 
-func (o *GetTagsRequest) GetSortBy() *SortBy {
-	if o == nil {
+func (g *GetTagsRequest) GetSortBy() *SortBy {
+	if g == nil {
 		return nil
 	}
-	return o.SortBy
+	return g.SortBy
 }
 
-func (o *GetTagsRequest) GetSortOrder() *SortOrder {
-	if o == nil {
+func (g *GetTagsRequest) GetSortOrder() *SortOrder {
+	if g == nil {
 		return nil
 	}
-	return o.SortOrder
+	return g.SortOrder
 }
 
-func (o *GetTagsRequest) GetSearch() *string {
-	if o == nil {
+func (g *GetTagsRequest) GetSearch() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Search
+	return g.Search
 }
 
-func (o *GetTagsRequest) GetIds() *Ids {
-	if o == nil {
+func (g *GetTagsRequest) GetIds() *Ids {
+	if g == nil {
 		return nil
 	}
-	return o.Ids
+	return g.Ids
 }
 
-func (o *GetTagsRequest) GetPage() *float64 {
-	if o == nil {
+func (g *GetTagsRequest) GetPage() *float64 {
+	if g == nil {
 		return nil
 	}
-	return o.Page
+	return g.Page
 }
 
-func (o *GetTagsRequest) GetPageSize() *float64 {
-	if o == nil {
+func (g *GetTagsRequest) GetPageSize() *float64 {
+	if g == nil {
 		return nil
 	}
-	return o.PageSize
+	return g.PageSize
 }
 
 type GetTagsResponse struct {
@@ -226,93 +226,93 @@ type GetTagsResponse struct {
 	FiveHundred *shared.FiveHundred
 }
 
-func (o *GetTagsResponse) GetContentType() string {
-	if o == nil {
+func (g *GetTagsResponse) GetContentType() string {
+	if g == nil {
 		return ""
 	}
-	return o.ContentType
+	return g.ContentType
 }
 
-func (o *GetTagsResponse) GetStatusCode() int {
-	if o == nil {
+func (g *GetTagsResponse) GetStatusCode() int {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetTagsResponse) GetRawResponse() *http.Response {
-	if o == nil {
+func (g *GetTagsResponse) GetRawResponse() *http.Response {
+	if g == nil {
 		return nil
 	}
-	return o.RawResponse
+	return g.RawResponse
 }
 
-func (o *GetTagsResponse) GetTagSchemas() []shared.TagSchema {
-	if o == nil {
+func (g *GetTagsResponse) GetTagSchemas() []shared.TagSchema {
+	if g == nil {
 		return nil
 	}
-	return o.TagSchemas
+	return g.TagSchemas
 }
 
-func (o *GetTagsResponse) GetFourHundred() *shared.FourHundred {
-	if o == nil {
+func (g *GetTagsResponse) GetFourHundred() *shared.FourHundred {
+	if g == nil {
 		return nil
 	}
-	return o.FourHundred
+	return g.FourHundred
 }
 
-func (o *GetTagsResponse) GetFourHundredAndOne() *shared.FourHundredAndOne {
-	if o == nil {
+func (g *GetTagsResponse) GetFourHundredAndOne() *shared.FourHundredAndOne {
+	if g == nil {
 		return nil
 	}
-	return o.FourHundredAndOne
+	return g.FourHundredAndOne
 }
 
-func (o *GetTagsResponse) GetFourHundredAndThree() *shared.FourHundredAndThree {
-	if o == nil {
+func (g *GetTagsResponse) GetFourHundredAndThree() *shared.FourHundredAndThree {
+	if g == nil {
 		return nil
 	}
-	return o.FourHundredAndThree
+	return g.FourHundredAndThree
 }
 
-func (o *GetTagsResponse) GetFourHundredAndFour() *shared.FourHundredAndFour {
-	if o == nil {
+func (g *GetTagsResponse) GetFourHundredAndFour() *shared.FourHundredAndFour {
+	if g == nil {
 		return nil
 	}
-	return o.FourHundredAndFour
+	return g.FourHundredAndFour
 }
 
-func (o *GetTagsResponse) GetFourHundredAndNine() *shared.FourHundredAndNine {
-	if o == nil {
+func (g *GetTagsResponse) GetFourHundredAndNine() *shared.FourHundredAndNine {
+	if g == nil {
 		return nil
 	}
-	return o.FourHundredAndNine
+	return g.FourHundredAndNine
 }
 
-func (o *GetTagsResponse) GetFourHundredAndTen() *shared.FourHundredAndTen {
-	if o == nil {
+func (g *GetTagsResponse) GetFourHundredAndTen() *shared.FourHundredAndTen {
+	if g == nil {
 		return nil
 	}
-	return o.FourHundredAndTen
+	return g.FourHundredAndTen
 }
 
-func (o *GetTagsResponse) GetFourHundredAndTwentyTwo() *shared.FourHundredAndTwentyTwo {
-	if o == nil {
+func (g *GetTagsResponse) GetFourHundredAndTwentyTwo() *shared.FourHundredAndTwentyTwo {
+	if g == nil {
 		return nil
 	}
-	return o.FourHundredAndTwentyTwo
+	return g.FourHundredAndTwentyTwo
 }
 
-func (o *GetTagsResponse) GetFourHundredAndTwentyNine() *shared.FourHundredAndTwentyNine {
-	if o == nil {
+func (g *GetTagsResponse) GetFourHundredAndTwentyNine() *shared.FourHundredAndTwentyNine {
+	if g == nil {
 		return nil
 	}
-	return o.FourHundredAndTwentyNine
+	return g.FourHundredAndTwentyNine
 }
 
-func (o *GetTagsResponse) GetFiveHundred() *shared.FiveHundred {
-	if o == nil {
+func (g *GetTagsResponse) GetFiveHundred() *shared.FiveHundred {
+	if g == nil {
 		return nil
 	}
-	return o.FiveHundred
+	return g.FiveHundred
 }
