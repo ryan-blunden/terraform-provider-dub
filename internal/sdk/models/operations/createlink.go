@@ -19,8 +19,8 @@ const (
 
 // CreateLinkTagIds - The unique IDs of the tags assigned to the short link.
 type CreateLinkTagIds struct {
-	Str        *string  `queryParam:"inline"`
-	ArrayOfStr []string `queryParam:"inline"`
+	Str        *string  `queryParam:"inline" union:"member"`
+	ArrayOfStr []string `queryParam:"inline" union:"member"`
 
 	Type CreateLinkTagIdsType
 }
@@ -45,17 +45,43 @@ func CreateCreateLinkTagIdsArrayOfStr(arrayOfStr []string) CreateLinkTagIds {
 
 func (u *CreateLinkTagIds) UnmarshalJSON(data []byte) error {
 
+	var candidates []utils.UnionCandidate
+
+	// Collect all valid candidates
 	var str string = ""
-	if err := utils.UnmarshalJSON(data, &str, "", true, true); err == nil {
-		u.Str = &str
-		u.Type = CreateLinkTagIdsTypeStr
-		return nil
+	if err := utils.UnmarshalJSON(data, &str, "", true, nil); err == nil {
+		candidates = append(candidates, utils.UnionCandidate{
+			Type:  CreateLinkTagIdsTypeStr,
+			Value: &str,
+		})
 	}
 
 	var arrayOfStr []string = []string{}
-	if err := utils.UnmarshalJSON(data, &arrayOfStr, "", true, true); err == nil {
-		u.ArrayOfStr = arrayOfStr
-		u.Type = CreateLinkTagIdsTypeArrayOfStr
+	if err := utils.UnmarshalJSON(data, &arrayOfStr, "", true, nil); err == nil {
+		candidates = append(candidates, utils.UnionCandidate{
+			Type:  CreateLinkTagIdsTypeArrayOfStr,
+			Value: arrayOfStr,
+		})
+	}
+
+	if len(candidates) == 0 {
+		return fmt.Errorf("could not unmarshal `%s` into any supported union types for CreateLinkTagIds", string(data))
+	}
+
+	// Pick the best candidate using multi-stage filtering
+	best := utils.PickBestUnionCandidate(candidates, data)
+	if best == nil {
+		return fmt.Errorf("could not unmarshal `%s` into any supported union types for CreateLinkTagIds", string(data))
+	}
+
+	// Set the union type and value based on the best candidate
+	u.Type = best.Type.(CreateLinkTagIdsType)
+	switch best.Type {
+	case CreateLinkTagIdsTypeStr:
+		u.Str = best.Value.(*string)
+		return nil
+	case CreateLinkTagIdsTypeArrayOfStr:
+		u.ArrayOfStr = best.Value.([]string)
 		return nil
 	}
 
@@ -83,8 +109,8 @@ const (
 
 // CreateLinkTagNames - The unique name of the tags assigned to the short link (case insensitive).
 type CreateLinkTagNames struct {
-	Str        *string  `queryParam:"inline"`
-	ArrayOfStr []string `queryParam:"inline"`
+	Str        *string  `queryParam:"inline" union:"member"`
+	ArrayOfStr []string `queryParam:"inline" union:"member"`
 
 	Type CreateLinkTagNamesType
 }
@@ -109,17 +135,43 @@ func CreateCreateLinkTagNamesArrayOfStr(arrayOfStr []string) CreateLinkTagNames 
 
 func (u *CreateLinkTagNames) UnmarshalJSON(data []byte) error {
 
+	var candidates []utils.UnionCandidate
+
+	// Collect all valid candidates
 	var str string = ""
-	if err := utils.UnmarshalJSON(data, &str, "", true, true); err == nil {
-		u.Str = &str
-		u.Type = CreateLinkTagNamesTypeStr
-		return nil
+	if err := utils.UnmarshalJSON(data, &str, "", true, nil); err == nil {
+		candidates = append(candidates, utils.UnionCandidate{
+			Type:  CreateLinkTagNamesTypeStr,
+			Value: &str,
+		})
 	}
 
 	var arrayOfStr []string = []string{}
-	if err := utils.UnmarshalJSON(data, &arrayOfStr, "", true, true); err == nil {
-		u.ArrayOfStr = arrayOfStr
-		u.Type = CreateLinkTagNamesTypeArrayOfStr
+	if err := utils.UnmarshalJSON(data, &arrayOfStr, "", true, nil); err == nil {
+		candidates = append(candidates, utils.UnionCandidate{
+			Type:  CreateLinkTagNamesTypeArrayOfStr,
+			Value: arrayOfStr,
+		})
+	}
+
+	if len(candidates) == 0 {
+		return fmt.Errorf("could not unmarshal `%s` into any supported union types for CreateLinkTagNames", string(data))
+	}
+
+	// Pick the best candidate using multi-stage filtering
+	best := utils.PickBestUnionCandidate(candidates, data)
+	if best == nil {
+		return fmt.Errorf("could not unmarshal `%s` into any supported union types for CreateLinkTagNames", string(data))
+	}
+
+	// Set the union type and value based on the best candidate
+	u.Type = best.Type.(CreateLinkTagNamesType)
+	switch best.Type {
+	case CreateLinkTagNamesTypeStr:
+		u.Str = best.Value.(*string)
+		return nil
+	case CreateLinkTagNamesTypeArrayOfStr:
+		u.ArrayOfStr = best.Value.([]string)
 		return nil
 	}
 
@@ -143,18 +195,18 @@ type CreateLinkTestVariant struct {
 	Percentage float64 `json:"percentage"`
 }
 
-func (o *CreateLinkTestVariant) GetURL() string {
-	if o == nil {
+func (c *CreateLinkTestVariant) GetURL() string {
+	if c == nil {
 		return ""
 	}
-	return o.URL
+	return c.URL
 }
 
-func (o *CreateLinkTestVariant) GetPercentage() float64 {
-	if o == nil {
+func (c *CreateLinkTestVariant) GetPercentage() float64 {
+	if c == nil {
 		return 0.0
 	}
-	return o.Percentage
+	return c.Percentage
 }
 
 type CreateLinkRequest struct {
@@ -244,284 +296,284 @@ type CreateLinkRequest struct {
 	TestCompletedAt *string `json:"testCompletedAt,omitempty"`
 }
 
-func (o *CreateLinkRequest) GetURL() string {
-	if o == nil {
+func (c *CreateLinkRequest) GetURL() string {
+	if c == nil {
 		return ""
 	}
-	return o.URL
+	return c.URL
 }
 
-func (o *CreateLinkRequest) GetDomain() *string {
-	if o == nil {
+func (c *CreateLinkRequest) GetDomain() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Domain
+	return c.Domain
 }
 
-func (o *CreateLinkRequest) GetKey() *string {
-	if o == nil {
+func (c *CreateLinkRequest) GetKey() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Key
+	return c.Key
 }
 
-func (o *CreateLinkRequest) GetKeyLength() *float64 {
-	if o == nil {
+func (c *CreateLinkRequest) GetKeyLength() *float64 {
+	if c == nil {
 		return nil
 	}
-	return o.KeyLength
+	return c.KeyLength
 }
 
-func (o *CreateLinkRequest) GetExternalID() *string {
-	if o == nil {
+func (c *CreateLinkRequest) GetExternalID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ExternalID
+	return c.ExternalID
 }
 
-func (o *CreateLinkRequest) GetTenantID() *string {
-	if o == nil {
+func (c *CreateLinkRequest) GetTenantID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.TenantID
+	return c.TenantID
 }
 
-func (o *CreateLinkRequest) GetProgramID() *string {
-	if o == nil {
+func (c *CreateLinkRequest) GetProgramID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ProgramID
+	return c.ProgramID
 }
 
-func (o *CreateLinkRequest) GetPartnerID() *string {
-	if o == nil {
+func (c *CreateLinkRequest) GetPartnerID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.PartnerID
+	return c.PartnerID
 }
 
-func (o *CreateLinkRequest) GetPrefix() *string {
-	if o == nil {
+func (c *CreateLinkRequest) GetPrefix() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Prefix
+	return c.Prefix
 }
 
-func (o *CreateLinkRequest) GetTrackConversion() *bool {
-	if o == nil {
+func (c *CreateLinkRequest) GetTrackConversion() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.TrackConversion
+	return c.TrackConversion
 }
 
-func (o *CreateLinkRequest) GetArchived() *bool {
-	if o == nil {
+func (c *CreateLinkRequest) GetArchived() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Archived
+	return c.Archived
 }
 
-func (o *CreateLinkRequest) GetPublicStats() *bool {
-	if o == nil {
+func (c *CreateLinkRequest) GetPublicStats() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.PublicStats
+	return c.PublicStats
 }
 
-func (o *CreateLinkRequest) GetTagID() *string {
-	if o == nil {
+func (c *CreateLinkRequest) GetTagID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.TagID
+	return c.TagID
 }
 
-func (o *CreateLinkRequest) GetTagIds() *CreateLinkTagIds {
-	if o == nil {
+func (c *CreateLinkRequest) GetTagIds() *CreateLinkTagIds {
+	if c == nil {
 		return nil
 	}
-	return o.TagIds
+	return c.TagIds
 }
 
-func (o *CreateLinkRequest) GetTagNames() *CreateLinkTagNames {
-	if o == nil {
+func (c *CreateLinkRequest) GetTagNames() *CreateLinkTagNames {
+	if c == nil {
 		return nil
 	}
-	return o.TagNames
+	return c.TagNames
 }
 
-func (o *CreateLinkRequest) GetFolderID() *string {
-	if o == nil {
+func (c *CreateLinkRequest) GetFolderID() *string {
+	if c == nil {
 		return nil
 	}
-	return o.FolderID
+	return c.FolderID
 }
 
-func (o *CreateLinkRequest) GetComments() *string {
-	if o == nil {
+func (c *CreateLinkRequest) GetComments() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Comments
+	return c.Comments
 }
 
-func (o *CreateLinkRequest) GetExpiresAt() *string {
-	if o == nil {
+func (c *CreateLinkRequest) GetExpiresAt() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ExpiresAt
+	return c.ExpiresAt
 }
 
-func (o *CreateLinkRequest) GetExpiredURL() *string {
-	if o == nil {
+func (c *CreateLinkRequest) GetExpiredURL() *string {
+	if c == nil {
 		return nil
 	}
-	return o.ExpiredURL
+	return c.ExpiredURL
 }
 
-func (o *CreateLinkRequest) GetPassword() *string {
-	if o == nil {
+func (c *CreateLinkRequest) GetPassword() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Password
+	return c.Password
 }
 
-func (o *CreateLinkRequest) GetProxy() *bool {
-	if o == nil {
+func (c *CreateLinkRequest) GetProxy() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Proxy
+	return c.Proxy
 }
 
-func (o *CreateLinkRequest) GetTitle() *string {
-	if o == nil {
+func (c *CreateLinkRequest) GetTitle() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Title
+	return c.Title
 }
 
-func (o *CreateLinkRequest) GetDescription() *string {
-	if o == nil {
+func (c *CreateLinkRequest) GetDescription() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Description
+	return c.Description
 }
 
-func (o *CreateLinkRequest) GetImage() *string {
-	if o == nil {
+func (c *CreateLinkRequest) GetImage() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Image
+	return c.Image
 }
 
-func (o *CreateLinkRequest) GetVideo() *string {
-	if o == nil {
+func (c *CreateLinkRequest) GetVideo() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Video
+	return c.Video
 }
 
-func (o *CreateLinkRequest) GetRewrite() *bool {
-	if o == nil {
+func (c *CreateLinkRequest) GetRewrite() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.Rewrite
+	return c.Rewrite
 }
 
-func (o *CreateLinkRequest) GetIos() *string {
-	if o == nil {
+func (c *CreateLinkRequest) GetIos() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Ios
+	return c.Ios
 }
 
-func (o *CreateLinkRequest) GetAndroid() *string {
-	if o == nil {
+func (c *CreateLinkRequest) GetAndroid() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Android
+	return c.Android
 }
 
-func (o *CreateLinkRequest) GetGeo() *shared.LinkGeoTargeting {
-	if o == nil {
+func (c *CreateLinkRequest) GetGeo() *shared.LinkGeoTargeting {
+	if c == nil {
 		return nil
 	}
-	return o.Geo
+	return c.Geo
 }
 
-func (o *CreateLinkRequest) GetDoIndex() *bool {
-	if o == nil {
+func (c *CreateLinkRequest) GetDoIndex() *bool {
+	if c == nil {
 		return nil
 	}
-	return o.DoIndex
+	return c.DoIndex
 }
 
-func (o *CreateLinkRequest) GetUtmSource() *string {
-	if o == nil {
+func (c *CreateLinkRequest) GetUtmSource() *string {
+	if c == nil {
 		return nil
 	}
-	return o.UtmSource
+	return c.UtmSource
 }
 
-func (o *CreateLinkRequest) GetUtmMedium() *string {
-	if o == nil {
+func (c *CreateLinkRequest) GetUtmMedium() *string {
+	if c == nil {
 		return nil
 	}
-	return o.UtmMedium
+	return c.UtmMedium
 }
 
-func (o *CreateLinkRequest) GetUtmCampaign() *string {
-	if o == nil {
+func (c *CreateLinkRequest) GetUtmCampaign() *string {
+	if c == nil {
 		return nil
 	}
-	return o.UtmCampaign
+	return c.UtmCampaign
 }
 
-func (o *CreateLinkRequest) GetUtmTerm() *string {
-	if o == nil {
+func (c *CreateLinkRequest) GetUtmTerm() *string {
+	if c == nil {
 		return nil
 	}
-	return o.UtmTerm
+	return c.UtmTerm
 }
 
-func (o *CreateLinkRequest) GetUtmContent() *string {
-	if o == nil {
+func (c *CreateLinkRequest) GetUtmContent() *string {
+	if c == nil {
 		return nil
 	}
-	return o.UtmContent
+	return c.UtmContent
 }
 
-func (o *CreateLinkRequest) GetRef() *string {
-	if o == nil {
+func (c *CreateLinkRequest) GetRef() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Ref
+	return c.Ref
 }
 
-func (o *CreateLinkRequest) GetWebhookIds() []string {
-	if o == nil {
+func (c *CreateLinkRequest) GetWebhookIds() []string {
+	if c == nil {
 		return nil
 	}
-	return o.WebhookIds
+	return c.WebhookIds
 }
 
-func (o *CreateLinkRequest) GetTestVariants() []CreateLinkTestVariant {
-	if o == nil {
+func (c *CreateLinkRequest) GetTestVariants() []CreateLinkTestVariant {
+	if c == nil {
 		return nil
 	}
-	return o.TestVariants
+	return c.TestVariants
 }
 
-func (o *CreateLinkRequest) GetTestStartedAt() *string {
-	if o == nil {
+func (c *CreateLinkRequest) GetTestStartedAt() *string {
+	if c == nil {
 		return nil
 	}
-	return o.TestStartedAt
+	return c.TestStartedAt
 }
 
-func (o *CreateLinkRequest) GetTestCompletedAt() *string {
-	if o == nil {
+func (c *CreateLinkRequest) GetTestCompletedAt() *string {
+	if c == nil {
 		return nil
 	}
-	return o.TestCompletedAt
+	return c.TestCompletedAt
 }
 
 type CreateLinkResponse struct {
@@ -553,93 +605,93 @@ type CreateLinkResponse struct {
 	FiveHundred *shared.FiveHundred
 }
 
-func (o *CreateLinkResponse) GetContentType() string {
-	if o == nil {
+func (c *CreateLinkResponse) GetContentType() string {
+	if c == nil {
 		return ""
 	}
-	return o.ContentType
+	return c.ContentType
 }
 
-func (o *CreateLinkResponse) GetStatusCode() int {
-	if o == nil {
+func (c *CreateLinkResponse) GetStatusCode() int {
+	if c == nil {
 		return 0
 	}
-	return o.StatusCode
+	return c.StatusCode
 }
 
-func (o *CreateLinkResponse) GetRawResponse() *http.Response {
-	if o == nil {
+func (c *CreateLinkResponse) GetRawResponse() *http.Response {
+	if c == nil {
 		return nil
 	}
-	return o.RawResponse
+	return c.RawResponse
 }
 
-func (o *CreateLinkResponse) GetLinkSchema() *shared.LinkSchema {
-	if o == nil {
+func (c *CreateLinkResponse) GetLinkSchema() *shared.LinkSchema {
+	if c == nil {
 		return nil
 	}
-	return o.LinkSchema
+	return c.LinkSchema
 }
 
-func (o *CreateLinkResponse) GetFourHundred() *shared.FourHundred {
-	if o == nil {
+func (c *CreateLinkResponse) GetFourHundred() *shared.FourHundred {
+	if c == nil {
 		return nil
 	}
-	return o.FourHundred
+	return c.FourHundred
 }
 
-func (o *CreateLinkResponse) GetFourHundredAndOne() *shared.FourHundredAndOne {
-	if o == nil {
+func (c *CreateLinkResponse) GetFourHundredAndOne() *shared.FourHundredAndOne {
+	if c == nil {
 		return nil
 	}
-	return o.FourHundredAndOne
+	return c.FourHundredAndOne
 }
 
-func (o *CreateLinkResponse) GetFourHundredAndThree() *shared.FourHundredAndThree {
-	if o == nil {
+func (c *CreateLinkResponse) GetFourHundredAndThree() *shared.FourHundredAndThree {
+	if c == nil {
 		return nil
 	}
-	return o.FourHundredAndThree
+	return c.FourHundredAndThree
 }
 
-func (o *CreateLinkResponse) GetFourHundredAndFour() *shared.FourHundredAndFour {
-	if o == nil {
+func (c *CreateLinkResponse) GetFourHundredAndFour() *shared.FourHundredAndFour {
+	if c == nil {
 		return nil
 	}
-	return o.FourHundredAndFour
+	return c.FourHundredAndFour
 }
 
-func (o *CreateLinkResponse) GetFourHundredAndNine() *shared.FourHundredAndNine {
-	if o == nil {
+func (c *CreateLinkResponse) GetFourHundredAndNine() *shared.FourHundredAndNine {
+	if c == nil {
 		return nil
 	}
-	return o.FourHundredAndNine
+	return c.FourHundredAndNine
 }
 
-func (o *CreateLinkResponse) GetFourHundredAndTen() *shared.FourHundredAndTen {
-	if o == nil {
+func (c *CreateLinkResponse) GetFourHundredAndTen() *shared.FourHundredAndTen {
+	if c == nil {
 		return nil
 	}
-	return o.FourHundredAndTen
+	return c.FourHundredAndTen
 }
 
-func (o *CreateLinkResponse) GetFourHundredAndTwentyTwo() *shared.FourHundredAndTwentyTwo {
-	if o == nil {
+func (c *CreateLinkResponse) GetFourHundredAndTwentyTwo() *shared.FourHundredAndTwentyTwo {
+	if c == nil {
 		return nil
 	}
-	return o.FourHundredAndTwentyTwo
+	return c.FourHundredAndTwentyTwo
 }
 
-func (o *CreateLinkResponse) GetFourHundredAndTwentyNine() *shared.FourHundredAndTwentyNine {
-	if o == nil {
+func (c *CreateLinkResponse) GetFourHundredAndTwentyNine() *shared.FourHundredAndTwentyNine {
+	if c == nil {
 		return nil
 	}
-	return o.FourHundredAndTwentyNine
+	return c.FourHundredAndTwentyNine
 }
 
-func (o *CreateLinkResponse) GetFiveHundred() *shared.FiveHundred {
-	if o == nil {
+func (c *CreateLinkResponse) GetFiveHundred() *shared.FiveHundred {
+	if c == nil {
 		return nil
 	}
-	return o.FiveHundred
+	return c.FiveHundred
 }

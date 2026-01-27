@@ -62,25 +62,25 @@ type UpdateTagRequestBody struct {
 	Tag *string `json:"tag,omitempty"`
 }
 
-func (o *UpdateTagRequestBody) GetName() *string {
-	if o == nil {
+func (u *UpdateTagRequestBody) GetName() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Name
+	return u.Name
 }
 
-func (o *UpdateTagRequestBody) GetColor() *UpdateTagColor {
-	if o == nil {
+func (u *UpdateTagRequestBody) GetColor() *UpdateTagColor {
+	if u == nil {
 		return nil
 	}
-	return o.Color
+	return u.Color
 }
 
-func (o *UpdateTagRequestBody) GetTag() *string {
-	if o == nil {
+func (u *UpdateTagRequestBody) GetTag() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Tag
+	return u.Tag
 }
 
 type UpdateTagRequest struct {
@@ -89,18 +89,18 @@ type UpdateTagRequest struct {
 	RequestBody *UpdateTagRequestBody `request:"mediaType=application/json"`
 }
 
-func (o *UpdateTagRequest) GetID() string {
-	if o == nil {
+func (u *UpdateTagRequest) GetID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ID
+	return u.ID
 }
 
-func (o *UpdateTagRequest) GetRequestBody() *UpdateTagRequestBody {
-	if o == nil {
+func (u *UpdateTagRequest) GetRequestBody() *UpdateTagRequestBody {
+	if u == nil {
 		return nil
 	}
-	return o.RequestBody
+	return u.RequestBody
 }
 
 type UpdateTagResponse struct {
@@ -132,93 +132,93 @@ type UpdateTagResponse struct {
 	FiveHundred *shared.FiveHundred
 }
 
-func (o *UpdateTagResponse) GetContentType() string {
-	if o == nil {
+func (u *UpdateTagResponse) GetContentType() string {
+	if u == nil {
 		return ""
 	}
-	return o.ContentType
+	return u.ContentType
 }
 
-func (o *UpdateTagResponse) GetStatusCode() int {
-	if o == nil {
+func (u *UpdateTagResponse) GetStatusCode() int {
+	if u == nil {
 		return 0
 	}
-	return o.StatusCode
+	return u.StatusCode
 }
 
-func (o *UpdateTagResponse) GetRawResponse() *http.Response {
-	if o == nil {
+func (u *UpdateTagResponse) GetRawResponse() *http.Response {
+	if u == nil {
 		return nil
 	}
-	return o.RawResponse
+	return u.RawResponse
 }
 
-func (o *UpdateTagResponse) GetTagSchema() *shared.TagSchema {
-	if o == nil {
+func (u *UpdateTagResponse) GetTagSchema() *shared.TagSchema {
+	if u == nil {
 		return nil
 	}
-	return o.TagSchema
+	return u.TagSchema
 }
 
-func (o *UpdateTagResponse) GetFourHundred() *shared.FourHundred {
-	if o == nil {
+func (u *UpdateTagResponse) GetFourHundred() *shared.FourHundred {
+	if u == nil {
 		return nil
 	}
-	return o.FourHundred
+	return u.FourHundred
 }
 
-func (o *UpdateTagResponse) GetFourHundredAndOne() *shared.FourHundredAndOne {
-	if o == nil {
+func (u *UpdateTagResponse) GetFourHundredAndOne() *shared.FourHundredAndOne {
+	if u == nil {
 		return nil
 	}
-	return o.FourHundredAndOne
+	return u.FourHundredAndOne
 }
 
-func (o *UpdateTagResponse) GetFourHundredAndThree() *shared.FourHundredAndThree {
-	if o == nil {
+func (u *UpdateTagResponse) GetFourHundredAndThree() *shared.FourHundredAndThree {
+	if u == nil {
 		return nil
 	}
-	return o.FourHundredAndThree
+	return u.FourHundredAndThree
 }
 
-func (o *UpdateTagResponse) GetFourHundredAndFour() *shared.FourHundredAndFour {
-	if o == nil {
+func (u *UpdateTagResponse) GetFourHundredAndFour() *shared.FourHundredAndFour {
+	if u == nil {
 		return nil
 	}
-	return o.FourHundredAndFour
+	return u.FourHundredAndFour
 }
 
-func (o *UpdateTagResponse) GetFourHundredAndNine() *shared.FourHundredAndNine {
-	if o == nil {
+func (u *UpdateTagResponse) GetFourHundredAndNine() *shared.FourHundredAndNine {
+	if u == nil {
 		return nil
 	}
-	return o.FourHundredAndNine
+	return u.FourHundredAndNine
 }
 
-func (o *UpdateTagResponse) GetFourHundredAndTen() *shared.FourHundredAndTen {
-	if o == nil {
+func (u *UpdateTagResponse) GetFourHundredAndTen() *shared.FourHundredAndTen {
+	if u == nil {
 		return nil
 	}
-	return o.FourHundredAndTen
+	return u.FourHundredAndTen
 }
 
-func (o *UpdateTagResponse) GetFourHundredAndTwentyTwo() *shared.FourHundredAndTwentyTwo {
-	if o == nil {
+func (u *UpdateTagResponse) GetFourHundredAndTwentyTwo() *shared.FourHundredAndTwentyTwo {
+	if u == nil {
 		return nil
 	}
-	return o.FourHundredAndTwentyTwo
+	return u.FourHundredAndTwentyTwo
 }
 
-func (o *UpdateTagResponse) GetFourHundredAndTwentyNine() *shared.FourHundredAndTwentyNine {
-	if o == nil {
+func (u *UpdateTagResponse) GetFourHundredAndTwentyNine() *shared.FourHundredAndTwentyNine {
+	if u == nil {
 		return nil
 	}
-	return o.FourHundredAndTwentyNine
+	return u.FourHundredAndTwentyNine
 }
 
-func (o *UpdateTagResponse) GetFiveHundred() *shared.FiveHundred {
-	if o == nil {
+func (u *UpdateTagResponse) GetFiveHundred() *shared.FiveHundred {
+	if u == nil {
 		return nil
 	}
-	return o.FiveHundred
+	return u.FiveHundred
 }

@@ -302,21 +302,15 @@ func (r *LinkDataSourceModel) RefreshFromSharedLinkSchema(ctx context.Context, r
 		r.TagID = types.StringPointerValue(resp.TagID)
 		if resp.Tags != nil {
 			r.Tags = []tfTypes.TagSchema{}
-			if len(r.Tags) > len(resp.Tags) {
-				r.Tags = r.Tags[:len(resp.Tags)]
-			}
-			for tagsCount, tagsItem := range resp.Tags {
+
+			for _, tagsItem := range resp.Tags {
 				var tags tfTypes.TagSchema
+
 				tags.Color = types.StringValue(string(tagsItem.Color))
 				tags.ID = types.StringValue(tagsItem.ID)
 				tags.Name = types.StringValue(tagsItem.Name)
-				if tagsCount+1 > len(r.Tags) {
-					r.Tags = append(r.Tags, tags)
-				} else {
-					r.Tags[tagsCount].Color = tags.Color
-					r.Tags[tagsCount].ID = tags.ID
-					r.Tags[tagsCount].Name = tags.Name
-				}
+
+				r.Tags = append(r.Tags, tags)
 			}
 		}
 		r.TenantID = types.StringPointerValue(resp.TenantID)
@@ -324,19 +318,14 @@ func (r *LinkDataSourceModel) RefreshFromSharedLinkSchema(ctx context.Context, r
 		r.TestStartedAt = types.StringPointerValue(resp.TestStartedAt)
 		if resp.TestVariants != nil {
 			r.TestVariants = []tfTypes.TestVariant{}
-			if len(r.TestVariants) > len(resp.TestVariants) {
-				r.TestVariants = r.TestVariants[:len(resp.TestVariants)]
-			}
-			for testVariantsCount, testVariantsItem := range resp.TestVariants {
+
+			for _, testVariantsItem := range resp.TestVariants {
 				var testVariants tfTypes.TestVariant
+
 				testVariants.Percentage = types.Float64Value(testVariantsItem.Percentage)
 				testVariants.URL = types.StringValue(testVariantsItem.URL)
-				if testVariantsCount+1 > len(r.TestVariants) {
-					r.TestVariants = append(r.TestVariants, testVariants)
-				} else {
-					r.TestVariants[testVariantsCount].Percentage = testVariants.Percentage
-					r.TestVariants[testVariantsCount].URL = testVariants.URL
-				}
+
+				r.TestVariants = append(r.TestVariants, testVariants)
 			}
 		}
 		r.Title = types.StringPointerValue(resp.Title)

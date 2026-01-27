@@ -40,25 +40,25 @@ type FourHundredAndFourError struct {
 	DocURL *string `json:"doc_url,omitempty"`
 }
 
-func (o *FourHundredAndFourError) GetCode() FourHundredAndFourCode {
-	if o == nil {
+func (f *FourHundredAndFourError) GetCode() FourHundredAndFourCode {
+	if f == nil {
 		return FourHundredAndFourCode("")
 	}
-	return o.Code
+	return f.Code
 }
 
-func (o *FourHundredAndFourError) GetMessage() string {
-	if o == nil {
+func (f *FourHundredAndFourError) GetMessage() string {
+	if f == nil {
 		return ""
 	}
-	return o.Message
+	return f.Message
 }
 
-func (o *FourHundredAndFourError) GetDocURL() *string {
-	if o == nil {
+func (f *FourHundredAndFourError) GetDocURL() *string {
+	if f == nil {
 		return nil
 	}
-	return o.DocURL
+	return f.DocURL
 }
 
 // FourHundredAndFour - The server cannot find the requested resource.
@@ -66,9 +66,9 @@ type FourHundredAndFour struct {
 	Error FourHundredAndFourError `json:"error"`
 }
 
-func (o *FourHundredAndFour) GetError() FourHundredAndFourError {
-	if o == nil {
+func (f *FourHundredAndFour) GetError() FourHundredAndFourError {
+	if f == nil {
 		return FourHundredAndFourError{}
 	}
-	return o.Error
+	return f.Error
 }

@@ -5,11 +5,15 @@ package provider
 import (
 	"context"
 	"fmt"
+	"github.com/hashicorp/terraform-plugin-framework-validators/float64validator"
+	"github.com/hashicorp/terraform-plugin-framework-validators/listvalidator"
+	"github.com/hashicorp/terraform-plugin-framework-validators/stringvalidator"
 	"github.com/hashicorp/terraform-plugin-framework/datasource"
 	"github.com/hashicorp/terraform-plugin-framework/datasource/schema"
+	"github.com/hashicorp/terraform-plugin-framework/path"
+	"github.com/hashicorp/terraform-plugin-framework/schema/validator"
 	"github.com/hashicorp/terraform-plugin-framework/types"
 	"github.com/hashicorp/terraform-plugin-framework/types/basetypes"
-	tfTypes "github.com/ryan-blunden/terraform-provider-dub/internal/provider/types"
 	"github.com/ryan-blunden/terraform-provider-dub/internal/sdk"
 )
 
@@ -29,15 +33,16 @@ type TagDataSource struct {
 
 // TagDataSourceModel describes the data model.
 type TagDataSourceModel struct {
-	Color     types.String  `tfsdk:"color"`
-	ID        types.String  `tfsdk:"id"`
-	Ids       *tfTypes.Ids  `queryParam:"style=form,explode=true,name=ids" tfsdk:"ids"`
-	Name      types.String  `tfsdk:"name"`
-	Page      types.Float64 `queryParam:"style=form,explode=true,name=page" tfsdk:"page"`
-	PageSize  types.Float64 `queryParam:"style=form,explode=true,name=pageSize" tfsdk:"page_size"`
-	Search    types.String  `queryParam:"style=form,explode=true,name=search" tfsdk:"search"`
-	SortBy    types.String  `queryParam:"style=form,explode=true,name=sortBy" tfsdk:"sort_by"`
-	SortOrder types.String  `queryParam:"style=form,explode=true,name=sortOrder" tfsdk:"sort_order"`
+	ArrayOfStr []types.String `queryParam:"inline" tfsdk:"array_of_str"`
+	Color      types.String   `tfsdk:"color"`
+	ID         types.String   `tfsdk:"id"`
+	Name       types.String   `tfsdk:"name"`
+	Page       types.Float64  `queryParam:"style=form,explode=true,name=page" tfsdk:"page"`
+	PageSize   types.Float64  `queryParam:"style=form,explode=true,name=pageSize" tfsdk:"page_size"`
+	Search     types.String   `queryParam:"style=form,explode=true,name=search" tfsdk:"search"`
+	SortBy     types.String   `queryParam:"style=form,explode=true,name=sortBy" tfsdk:"sort_by"`
+	SortOrder  types.String   `queryParam:"style=form,explode=true,name=sortOrder" tfsdk:"sort_order"`
+	Str        types.String   `queryParam:"inline" tfsdk:"str"`
 }
 
 // Metadata returns the data source type name.
@@ -51,6 +56,15 @@ func (r *TagDataSource) Schema(ctx context.Context, req datasource.SchemaRequest
 		MarkdownDescription: "Tag DataSource",
 
 		Attributes: map[string]schema.Attribute{
+			"array_of_str": schema.ListAttribute{
+				Optional:    true,
+				ElementType: types.StringType,
+				Validators: []validator.List{
+					listvalidator.ConflictsWith(path.Expressions{
+						path.MatchRelative().AtParent().AtName("str"),
+					}...),
+				},
+			},
 			"color": schema.StringAttribute{
 				Computed:    true,
 				Description: `The color of the tag.`,
@@ -58,19 +72,6 @@ func (r *TagDataSource) Schema(ctx context.Context, req datasource.SchemaRequest
 			"id": schema.StringAttribute{
 				Computed:    true,
 				Description: `The unique ID of the tag.`,
-			},
-			"ids": schema.SingleNestedAttribute{
-				Optional: true,
-				Attributes: map[string]schema.Attribute{
-					"array_of_str": schema.ListAttribute{
-						Optional:    true,
-						ElementType: types.StringType,
-					},
-					"str": schema.StringAttribute{
-						Optional: true,
-					},
-				},
-				Description: `IDs of tags to filter by.`,
 			},
 			"name": schema.StringAttribute{
 				Computed:    true,
@@ -83,6 +84,9 @@ func (r *TagDataSource) Schema(ctx context.Context, req datasource.SchemaRequest
 			"page_size": schema.Float64Attribute{
 				Optional:    true,
 				Description: `The number of items per page.`,
+				Validators: []validator.Float64{
+					float64validator.AtMost(100),
+				},
 			},
 			"search": schema.StringAttribute{
 				Optional:    true,
@@ -90,11 +94,31 @@ func (r *TagDataSource) Schema(ctx context.Context, req datasource.SchemaRequest
 			},
 			"sort_by": schema.StringAttribute{
 				Optional:    true,
-				Description: `The field to sort the tags by.`,
+				Description: `The field to sort the tags by. must be one of ["name", "createdAt"]`,
+				Validators: []validator.String{
+					stringvalidator.OneOf(
+						"name",
+						"createdAt",
+					),
+				},
 			},
 			"sort_order": schema.StringAttribute{
 				Optional:    true,
-				Description: `The order to sort the tags by.`,
+				Description: `The order to sort the tags by. must be one of ["asc", "desc"]`,
+				Validators: []validator.String{
+					stringvalidator.OneOf(
+						"asc",
+						"desc",
+					),
+				},
+			},
+			"str": schema.StringAttribute{
+				Optional: true,
+				Validators: []validator.String{
+					stringvalidator.ConflictsWith(path.Expressions{
+						path.MatchRelative().AtParent().AtName("array_of_str"),
+					}...),
+				},
 			},
 		},
 	}
@@ -160,11 +184,11 @@ func (r *TagDataSource) Read(ctx context.Context, req datasource.ReadRequest, re
 		resp.Diagnostics.AddError(fmt.Sprintf("unexpected response from API. Got an unexpected response code %v", res.StatusCode), debugResponse(res.RawResponse))
 		return
 	}
-	if !(res.TagSchemas != nil && len(res.TagSchemas) > 0) {
+	if !(res.TagSchemas != nil) {
 		resp.Diagnostics.AddError("unexpected response from API. Got an unexpected response body", debugResponse(res.RawResponse))
 		return
 	}
-	resp.Diagnostics.Append(data.RefreshFromSharedTagSchema(ctx, &res.TagSchemas[0])...)
+	resp.Diagnostics.Append(data.RefreshFromArrayOfSharedTagSchema(ctx, res.TagSchemas)...)
 
 	if resp.Diagnostics.HasError() {
 		return

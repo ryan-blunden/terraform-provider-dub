@@ -62,25 +62,25 @@ type CreateTagRequest struct {
 	Tag *string `json:"tag,omitempty"`
 }
 
-func (o *CreateTagRequest) GetName() *string {
-	if o == nil {
+func (c *CreateTagRequest) GetName() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Name
+	return c.Name
 }
 
-func (o *CreateTagRequest) GetColor() *CreateTagColor {
-	if o == nil {
+func (c *CreateTagRequest) GetColor() *CreateTagColor {
+	if c == nil {
 		return nil
 	}
-	return o.Color
+	return c.Color
 }
 
-func (o *CreateTagRequest) GetTag() *string {
-	if o == nil {
+func (c *CreateTagRequest) GetTag() *string {
+	if c == nil {
 		return nil
 	}
-	return o.Tag
+	return c.Tag
 }
 
 type CreateTagResponse struct {
@@ -112,93 +112,93 @@ type CreateTagResponse struct {
 	FiveHundred *shared.FiveHundred
 }
 
-func (o *CreateTagResponse) GetContentType() string {
-	if o == nil {
+func (c *CreateTagResponse) GetContentType() string {
+	if c == nil {
 		return ""
 	}
-	return o.ContentType
+	return c.ContentType
 }
 
-func (o *CreateTagResponse) GetStatusCode() int {
-	if o == nil {
+func (c *CreateTagResponse) GetStatusCode() int {
+	if c == nil {
 		return 0
 	}
-	return o.StatusCode
+	return c.StatusCode
 }
 
-func (o *CreateTagResponse) GetRawResponse() *http.Response {
-	if o == nil {
+func (c *CreateTagResponse) GetRawResponse() *http.Response {
+	if c == nil {
 		return nil
 	}
-	return o.RawResponse
+	return c.RawResponse
 }
 
-func (o *CreateTagResponse) GetTagSchema() *shared.TagSchema {
-	if o == nil {
+func (c *CreateTagResponse) GetTagSchema() *shared.TagSchema {
+	if c == nil {
 		return nil
 	}
-	return o.TagSchema
+	return c.TagSchema
 }
 
-func (o *CreateTagResponse) GetFourHundred() *shared.FourHundred {
-	if o == nil {
+func (c *CreateTagResponse) GetFourHundred() *shared.FourHundred {
+	if c == nil {
 		return nil
 	}
-	return o.FourHundred
+	return c.FourHundred
 }
 
-func (o *CreateTagResponse) GetFourHundredAndOne() *shared.FourHundredAndOne {
-	if o == nil {
+func (c *CreateTagResponse) GetFourHundredAndOne() *shared.FourHundredAndOne {
+	if c == nil {
 		return nil
 	}
-	return o.FourHundredAndOne
+	return c.FourHundredAndOne
 }
 
-func (o *CreateTagResponse) GetFourHundredAndThree() *shared.FourHundredAndThree {
-	if o == nil {
+func (c *CreateTagResponse) GetFourHundredAndThree() *shared.FourHundredAndThree {
+	if c == nil {
 		return nil
 	}
-	return o.FourHundredAndThree
+	return c.FourHundredAndThree
 }
 
-func (o *CreateTagResponse) GetFourHundredAndFour() *shared.FourHundredAndFour {
-	if o == nil {
+func (c *CreateTagResponse) GetFourHundredAndFour() *shared.FourHundredAndFour {
+	if c == nil {
 		return nil
 	}
-	return o.FourHundredAndFour
+	return c.FourHundredAndFour
 }
 
-func (o *CreateTagResponse) GetFourHundredAndNine() *shared.FourHundredAndNine {
-	if o == nil {
+func (c *CreateTagResponse) GetFourHundredAndNine() *shared.FourHundredAndNine {
+	if c == nil {
 		return nil
 	}
-	return o.FourHundredAndNine
+	return c.FourHundredAndNine
 }
 
-func (o *CreateTagResponse) GetFourHundredAndTen() *shared.FourHundredAndTen {
-	if o == nil {
+func (c *CreateTagResponse) GetFourHundredAndTen() *shared.FourHundredAndTen {
+	if c == nil {
 		return nil
 	}
-	return o.FourHundredAndTen
+	return c.FourHundredAndTen
 }
 
-func (o *CreateTagResponse) GetFourHundredAndTwentyTwo() *shared.FourHundredAndTwentyTwo {
-	if o == nil {
+func (c *CreateTagResponse) GetFourHundredAndTwentyTwo() *shared.FourHundredAndTwentyTwo {
+	if c == nil {
 		return nil
 	}
-	return o.FourHundredAndTwentyTwo
+	return c.FourHundredAndTwentyTwo
 }
 
-func (o *CreateTagResponse) GetFourHundredAndTwentyNine() *shared.FourHundredAndTwentyNine {
-	if o == nil {
+func (c *CreateTagResponse) GetFourHundredAndTwentyNine() *shared.FourHundredAndTwentyNine {
+	if c == nil {
 		return nil
 	}
-	return o.FourHundredAndTwentyNine
+	return c.FourHundredAndTwentyNine
 }
 
-func (o *CreateTagResponse) GetFiveHundred() *shared.FiveHundred {
-	if o == nil {
+func (c *CreateTagResponse) GetFiveHundred() *shared.FiveHundred {
+	if c == nil {
 		return nil
 	}
-	return o.FiveHundred
+	return c.FiveHundred
 }
