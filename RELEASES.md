@@ -9,3 +9,13 @@ Based on:
 - [terraform v0.0.1] .
 ### Releases
 - [Terraform v0.0.1] https://registry.terraform.io/providers/ryan-blunden/dub/0.0.1 - .
+
+## 2026-04-18 00:35:30
+### Changes
+Based on:
+- OpenAPI Doc  
+- Speakeasy CLI 1.761.8 (2.881.2) https://github.com/speakeasy-api/speakeasy
+### Generated
+- [terraform v0.1.0] .
+### Releases
+- [Terraform v0.1.0] https://registry.terraform.io/providers/ryan-blunden/dub/0.1.0 - .

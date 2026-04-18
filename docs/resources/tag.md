@@ -31,4 +31,4 @@ resource "dub_tag" "my_tag" {
 
 ### Read-Only
 
-- `id` (String) The unique ID of the tag.
+- `id` (String) The ID of the tag to update.

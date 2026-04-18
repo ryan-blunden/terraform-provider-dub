@@ -21,6 +21,7 @@ A Dub API key is required for authentication, which can be set using a `token` v
 <!-- $toc-max-depth=2 -->
 * [Dub Terraform Provider](#dub-terraform-provider)
   * [Installation](#installation)
+  * [Authentication](#authentication)
   * [Available Resources and Data Sources](#available-resources-and-data-sources)
   * [Testing the provider locally](#testing-the-provider-locally)
 * [Development](#development)
@@ -38,24 +39,42 @@ terraform {
   required_providers {
     dub = {
       source  = "ryan-blunden/dub"
-      version = "0.0.1"
+      version = "0.1.0"
     }
   }
 }
 
 provider "dub" {
-  # Configuration options
+  server_url = "..." # Optional
 }
 ```
 <!-- End Installation [installation] -->
 
+<!-- Start Authentication [security] -->
+## Authentication
+
+This provider supports authentication configuration via environment variables and provider configuration.
+
+The configuration precedence is:
+
+- Provider configuration
+- Environment variables
+
+Available configuration:
+
+| Provider Attribute | Description |
+|---|---|
+| `token` | Default authentication mechanism. Configurable via environment variable `DUB_API_KEY`. |
+<!-- End Authentication [security] -->
+
 <!-- Start Available Resources and Data Sources [operations] -->
 ## Available Resources and Data Sources
 
-### Resources
+### Managed Resources
 
 * [dub_link](docs/resources/link.md)
 * [dub_tag](docs/resources/tag.md)
+
 ### Data Sources
 
 * [dub_link](docs/data-sources/link.md)

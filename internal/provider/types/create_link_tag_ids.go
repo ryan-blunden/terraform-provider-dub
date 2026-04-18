@@ -7,6 +7,6 @@ import (
 )
 
 type CreateLinkTagIds struct {
-	Str        types.String   `queryParam:"inline" tfsdk:"str" tfPlanOnly:"true"`
-	ArrayOfStr []types.String `queryParam:"inline" tfsdk:"array_of_str" tfPlanOnly:"true"`
+	Str        types.String   `queryParam:"inline" tfsdk:"str"`
+	ArrayOfStr []types.String `queryParam:"inline" tfsdk:"array_of_str"`
 }
