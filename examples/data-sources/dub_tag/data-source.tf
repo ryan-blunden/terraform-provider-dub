@@ -1,12 +1,11 @@
 data "dub_tag" "my_tag" {
-  ids = {
-    array_of_str = [
-      "..."
-    ]
-  }
+  array_of_str = [
+    "..."
+  ]
   page       = 1
   page_size  = 50
   search     = "...my_search..."
-  sort_by    = "createdAt"
-  sort_order = "desc"
+  sort_by    = "name"
+  sort_order = "asc"
+  str        = "...my_str..."
 }
