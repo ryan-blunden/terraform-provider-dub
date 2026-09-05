@@ -40,25 +40,25 @@ type FourHundredAndTwentyNineError struct {
 	DocURL *string `json:"doc_url,omitempty"`
 }
 
-func (o *FourHundredAndTwentyNineError) GetCode() FourHundredAndTwentyNineCode {
-	if o == nil {
+func (f *FourHundredAndTwentyNineError) GetCode() FourHundredAndTwentyNineCode {
+	if f == nil {
 		return FourHundredAndTwentyNineCode("")
 	}
-	return o.Code
+	return f.Code
 }
 
-func (o *FourHundredAndTwentyNineError) GetMessage() string {
-	if o == nil {
+func (f *FourHundredAndTwentyNineError) GetMessage() string {
+	if f == nil {
 		return ""
 	}
-	return o.Message
+	return f.Message
 }
 
-func (o *FourHundredAndTwentyNineError) GetDocURL() *string {
-	if o == nil {
+func (f *FourHundredAndTwentyNineError) GetDocURL() *string {
+	if f == nil {
 		return nil
 	}
-	return o.DocURL
+	return f.DocURL
 }
 
 // FourHundredAndTwentyNine - The user has sent too many requests in a given amount of time ("rate limiting")
@@ -66,9 +66,9 @@ type FourHundredAndTwentyNine struct {
 	Error FourHundredAndTwentyNineError `json:"error"`
 }
 
-func (o *FourHundredAndTwentyNine) GetError() FourHundredAndTwentyNineError {
-	if o == nil {
+func (f *FourHundredAndTwentyNine) GetError() FourHundredAndTwentyNineError {
+	if f == nil {
 		return FourHundredAndTwentyNineError{}
 	}
-	return o.Error
+	return f.Error
 }
