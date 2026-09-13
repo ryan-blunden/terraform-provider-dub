@@ -19,8 +19,8 @@ const (
 
 // UpdateLinkTagIds - The unique IDs of the tags assigned to the short link.
 type UpdateLinkTagIds struct {
-	Str        *string  `queryParam:"inline"`
-	ArrayOfStr []string `queryParam:"inline"`
+	Str        *string  `queryParam:"inline" union:"member"`
+	ArrayOfStr []string `queryParam:"inline" union:"member"`
 
 	Type UpdateLinkTagIdsType
 }
@@ -43,19 +43,52 @@ func CreateUpdateLinkTagIdsArrayOfStr(arrayOfStr []string) UpdateLinkTagIds {
 	}
 }
 
-func (u *UpdateLinkTagIds) UnmarshalJSON(data []byte) error {
+func (u *UpdateLinkTagIds) UnmarshalJSON(data []byte) (err error) {
+	previous := *u
+	*u = UpdateLinkTagIds{}
+	defer func() {
+		if err != nil {
+			*u = previous
+		}
+	}()
 
+	var candidates []utils.UnionCandidate
+
+	// Collect all valid candidates
 	var str string = ""
-	if err := utils.UnmarshalJSON(data, &str, "", true, true); err == nil {
-		u.Str = &str
-		u.Type = UpdateLinkTagIdsTypeStr
-		return nil
+	if err := utils.UnmarshalJSON(data, &str, "", true, nil); err == nil {
+		candidates = append(candidates, utils.UnionCandidate{
+			Type:  UpdateLinkTagIdsTypeStr,
+			Value: &str,
+		})
 	}
 
 	var arrayOfStr []string = []string{}
-	if err := utils.UnmarshalJSON(data, &arrayOfStr, "", true, true); err == nil {
-		u.ArrayOfStr = arrayOfStr
-		u.Type = UpdateLinkTagIdsTypeArrayOfStr
+	if err := utils.UnmarshalJSON(data, &arrayOfStr, "", true, nil); err == nil {
+		candidates = append(candidates, utils.UnionCandidate{
+			Type:  UpdateLinkTagIdsTypeArrayOfStr,
+			Value: arrayOfStr,
+		})
+	}
+
+	if len(candidates) == 0 {
+		return fmt.Errorf("could not unmarshal `%s` into any supported union types for UpdateLinkTagIds", string(data))
+	}
+
+	// Pick the best candidate using multi-stage filtering
+	best := utils.PickBestUnionCandidate(candidates, data)
+	if best == nil {
+		return fmt.Errorf("could not unmarshal `%s` into any supported union types for UpdateLinkTagIds", string(data))
+	}
+
+	// Set the union type and value based on the best candidate
+	u.Type = best.Type.(UpdateLinkTagIdsType)
+	switch best.Type {
+	case UpdateLinkTagIdsTypeStr:
+		u.Str = best.Value.(*string)
+		return nil
+	case UpdateLinkTagIdsTypeArrayOfStr:
+		u.ArrayOfStr = best.Value.([]string)
 		return nil
 	}
 
@@ -83,8 +116,8 @@ const (
 
 // UpdateLinkTagNames - The unique name of the tags assigned to the short link (case insensitive).
 type UpdateLinkTagNames struct {
-	Str        *string  `queryParam:"inline"`
-	ArrayOfStr []string `queryParam:"inline"`
+	Str        *string  `queryParam:"inline" union:"member"`
+	ArrayOfStr []string `queryParam:"inline" union:"member"`
 
 	Type UpdateLinkTagNamesType
 }
@@ -107,19 +140,52 @@ func CreateUpdateLinkTagNamesArrayOfStr(arrayOfStr []string) UpdateLinkTagNames 
 	}
 }
 
-func (u *UpdateLinkTagNames) UnmarshalJSON(data []byte) error {
+func (u *UpdateLinkTagNames) UnmarshalJSON(data []byte) (err error) {
+	previous := *u
+	*u = UpdateLinkTagNames{}
+	defer func() {
+		if err != nil {
+			*u = previous
+		}
+	}()
 
+	var candidates []utils.UnionCandidate
+
+	// Collect all valid candidates
 	var str string = ""
-	if err := utils.UnmarshalJSON(data, &str, "", true, true); err == nil {
-		u.Str = &str
-		u.Type = UpdateLinkTagNamesTypeStr
-		return nil
+	if err := utils.UnmarshalJSON(data, &str, "", true, nil); err == nil {
+		candidates = append(candidates, utils.UnionCandidate{
+			Type:  UpdateLinkTagNamesTypeStr,
+			Value: &str,
+		})
 	}
 
 	var arrayOfStr []string = []string{}
-	if err := utils.UnmarshalJSON(data, &arrayOfStr, "", true, true); err == nil {
-		u.ArrayOfStr = arrayOfStr
-		u.Type = UpdateLinkTagNamesTypeArrayOfStr
+	if err := utils.UnmarshalJSON(data, &arrayOfStr, "", true, nil); err == nil {
+		candidates = append(candidates, utils.UnionCandidate{
+			Type:  UpdateLinkTagNamesTypeArrayOfStr,
+			Value: arrayOfStr,
+		})
+	}
+
+	if len(candidates) == 0 {
+		return fmt.Errorf("could not unmarshal `%s` into any supported union types for UpdateLinkTagNames", string(data))
+	}
+
+	// Pick the best candidate using multi-stage filtering
+	best := utils.PickBestUnionCandidate(candidates, data)
+	if best == nil {
+		return fmt.Errorf("could not unmarshal `%s` into any supported union types for UpdateLinkTagNames", string(data))
+	}
+
+	// Set the union type and value based on the best candidate
+	u.Type = best.Type.(UpdateLinkTagNamesType)
+	switch best.Type {
+	case UpdateLinkTagNamesTypeStr:
+		u.Str = best.Value.(*string)
+		return nil
+	case UpdateLinkTagNamesTypeArrayOfStr:
+		u.ArrayOfStr = best.Value.([]string)
 		return nil
 	}
 
@@ -143,18 +209,18 @@ type UpdateLinkTestVariant struct {
 	Percentage float64 `json:"percentage"`
 }
 
-func (o *UpdateLinkTestVariant) GetURL() string {
-	if o == nil {
+func (u *UpdateLinkTestVariant) GetURL() string {
+	if u == nil {
 		return ""
 	}
-	return o.URL
+	return u.URL
 }
 
-func (o *UpdateLinkTestVariant) GetPercentage() float64 {
-	if o == nil {
+func (u *UpdateLinkTestVariant) GetPercentage() float64 {
+	if u == nil {
 		return 0.0
 	}
-	return o.Percentage
+	return u.Percentage
 }
 
 type UpdateLinkRequestBody struct {
@@ -239,270 +305,270 @@ type UpdateLinkRequestBody struct {
 	TestCompletedAt *string `json:"testCompletedAt,omitempty"`
 }
 
-func (o *UpdateLinkRequestBody) GetURL() *string {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetURL() *string {
+	if u == nil {
 		return nil
 	}
-	return o.URL
+	return u.URL
 }
 
-func (o *UpdateLinkRequestBody) GetDomain() *string {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetDomain() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Domain
+	return u.Domain
 }
 
-func (o *UpdateLinkRequestBody) GetKey() *string {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetKey() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Key
+	return u.Key
 }
 
-func (o *UpdateLinkRequestBody) GetExternalID() *string {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetExternalID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.ExternalID
+	return u.ExternalID
 }
 
-func (o *UpdateLinkRequestBody) GetTenantID() *string {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetTenantID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.TenantID
+	return u.TenantID
 }
 
-func (o *UpdateLinkRequestBody) GetProgramID() *string {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetProgramID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.ProgramID
+	return u.ProgramID
 }
 
-func (o *UpdateLinkRequestBody) GetPartnerID() *string {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetPartnerID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.PartnerID
+	return u.PartnerID
 }
 
-func (o *UpdateLinkRequestBody) GetTrackConversion() *bool {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetTrackConversion() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.TrackConversion
+	return u.TrackConversion
 }
 
-func (o *UpdateLinkRequestBody) GetArchived() *bool {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetArchived() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.Archived
+	return u.Archived
 }
 
-func (o *UpdateLinkRequestBody) GetPublicStats() *bool {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetPublicStats() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.PublicStats
+	return u.PublicStats
 }
 
-func (o *UpdateLinkRequestBody) GetTagID() *string {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetTagID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.TagID
+	return u.TagID
 }
 
-func (o *UpdateLinkRequestBody) GetTagIds() *UpdateLinkTagIds {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetTagIds() *UpdateLinkTagIds {
+	if u == nil {
 		return nil
 	}
-	return o.TagIds
+	return u.TagIds
 }
 
-func (o *UpdateLinkRequestBody) GetTagNames() *UpdateLinkTagNames {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetTagNames() *UpdateLinkTagNames {
+	if u == nil {
 		return nil
 	}
-	return o.TagNames
+	return u.TagNames
 }
 
-func (o *UpdateLinkRequestBody) GetFolderID() *string {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetFolderID() *string {
+	if u == nil {
 		return nil
 	}
-	return o.FolderID
+	return u.FolderID
 }
 
-func (o *UpdateLinkRequestBody) GetComments() *string {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetComments() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Comments
+	return u.Comments
 }
 
-func (o *UpdateLinkRequestBody) GetExpiresAt() *string {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetExpiresAt() *string {
+	if u == nil {
 		return nil
 	}
-	return o.ExpiresAt
+	return u.ExpiresAt
 }
 
-func (o *UpdateLinkRequestBody) GetExpiredURL() *string {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetExpiredURL() *string {
+	if u == nil {
 		return nil
 	}
-	return o.ExpiredURL
+	return u.ExpiredURL
 }
 
-func (o *UpdateLinkRequestBody) GetPassword() *string {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetPassword() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Password
+	return u.Password
 }
 
-func (o *UpdateLinkRequestBody) GetProxy() *bool {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetProxy() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.Proxy
+	return u.Proxy
 }
 
-func (o *UpdateLinkRequestBody) GetTitle() *string {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetTitle() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Title
+	return u.Title
 }
 
-func (o *UpdateLinkRequestBody) GetDescription() *string {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetDescription() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Description
+	return u.Description
 }
 
-func (o *UpdateLinkRequestBody) GetImage() *string {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetImage() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Image
+	return u.Image
 }
 
-func (o *UpdateLinkRequestBody) GetVideo() *string {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetVideo() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Video
+	return u.Video
 }
 
-func (o *UpdateLinkRequestBody) GetRewrite() *bool {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetRewrite() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.Rewrite
+	return u.Rewrite
 }
 
-func (o *UpdateLinkRequestBody) GetIos() *string {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetIos() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Ios
+	return u.Ios
 }
 
-func (o *UpdateLinkRequestBody) GetAndroid() *string {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetAndroid() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Android
+	return u.Android
 }
 
-func (o *UpdateLinkRequestBody) GetGeo() *shared.LinkGeoTargeting {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetGeo() *shared.LinkGeoTargeting {
+	if u == nil {
 		return nil
 	}
-	return o.Geo
+	return u.Geo
 }
 
-func (o *UpdateLinkRequestBody) GetDoIndex() *bool {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetDoIndex() *bool {
+	if u == nil {
 		return nil
 	}
-	return o.DoIndex
+	return u.DoIndex
 }
 
-func (o *UpdateLinkRequestBody) GetUtmSource() *string {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetUtmSource() *string {
+	if u == nil {
 		return nil
 	}
-	return o.UtmSource
+	return u.UtmSource
 }
 
-func (o *UpdateLinkRequestBody) GetUtmMedium() *string {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetUtmMedium() *string {
+	if u == nil {
 		return nil
 	}
-	return o.UtmMedium
+	return u.UtmMedium
 }
 
-func (o *UpdateLinkRequestBody) GetUtmCampaign() *string {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetUtmCampaign() *string {
+	if u == nil {
 		return nil
 	}
-	return o.UtmCampaign
+	return u.UtmCampaign
 }
 
-func (o *UpdateLinkRequestBody) GetUtmTerm() *string {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetUtmTerm() *string {
+	if u == nil {
 		return nil
 	}
-	return o.UtmTerm
+	return u.UtmTerm
 }
 
-func (o *UpdateLinkRequestBody) GetUtmContent() *string {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetUtmContent() *string {
+	if u == nil {
 		return nil
 	}
-	return o.UtmContent
+	return u.UtmContent
 }
 
-func (o *UpdateLinkRequestBody) GetRef() *string {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetRef() *string {
+	if u == nil {
 		return nil
 	}
-	return o.Ref
+	return u.Ref
 }
 
-func (o *UpdateLinkRequestBody) GetWebhookIds() []string {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetWebhookIds() []string {
+	if u == nil {
 		return nil
 	}
-	return o.WebhookIds
+	return u.WebhookIds
 }
 
-func (o *UpdateLinkRequestBody) GetTestVariants() []UpdateLinkTestVariant {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetTestVariants() []UpdateLinkTestVariant {
+	if u == nil {
 		return nil
 	}
-	return o.TestVariants
+	return u.TestVariants
 }
 
-func (o *UpdateLinkRequestBody) GetTestStartedAt() *string {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetTestStartedAt() *string {
+	if u == nil {
 		return nil
 	}
-	return o.TestStartedAt
+	return u.TestStartedAt
 }
 
-func (o *UpdateLinkRequestBody) GetTestCompletedAt() *string {
-	if o == nil {
+func (u *UpdateLinkRequestBody) GetTestCompletedAt() *string {
+	if u == nil {
 		return nil
 	}
-	return o.TestCompletedAt
+	return u.TestCompletedAt
 }
 
 type UpdateLinkRequest struct {
@@ -511,18 +577,18 @@ type UpdateLinkRequest struct {
 	RequestBody *UpdateLinkRequestBody `request:"mediaType=application/json"`
 }
 
-func (o *UpdateLinkRequest) GetID() string {
-	if o == nil {
+func (u *UpdateLinkRequest) GetID() string {
+	if u == nil {
 		return ""
 	}
-	return o.ID
+	return u.ID
 }
 
-func (o *UpdateLinkRequest) GetRequestBody() *UpdateLinkRequestBody {
-	if o == nil {
+func (u *UpdateLinkRequest) GetRequestBody() *UpdateLinkRequestBody {
+	if u == nil {
 		return nil
 	}
-	return o.RequestBody
+	return u.RequestBody
 }
 
 type UpdateLinkResponse struct {
@@ -554,93 +620,93 @@ type UpdateLinkResponse struct {
 	FiveHundred *shared.FiveHundred
 }
 
-func (o *UpdateLinkResponse) GetContentType() string {
-	if o == nil {
+func (u *UpdateLinkResponse) GetContentType() string {
+	if u == nil {
 		return ""
 	}
-	return o.ContentType
+	return u.ContentType
 }
 
-func (o *UpdateLinkResponse) GetStatusCode() int {
-	if o == nil {
+func (u *UpdateLinkResponse) GetStatusCode() int {
+	if u == nil {
 		return 0
 	}
-	return o.StatusCode
+	return u.StatusCode
 }
 
-func (o *UpdateLinkResponse) GetRawResponse() *http.Response {
-	if o == nil {
+func (u *UpdateLinkResponse) GetRawResponse() *http.Response {
+	if u == nil {
 		return nil
 	}
-	return o.RawResponse
+	return u.RawResponse
 }
 
-func (o *UpdateLinkResponse) GetLinkSchema() *shared.LinkSchema {
-	if o == nil {
+func (u *UpdateLinkResponse) GetLinkSchema() *shared.LinkSchema {
+	if u == nil {
 		return nil
 	}
-	return o.LinkSchema
+	return u.LinkSchema
 }
 
-func (o *UpdateLinkResponse) GetFourHundred() *shared.FourHundred {
-	if o == nil {
+func (u *UpdateLinkResponse) GetFourHundred() *shared.FourHundred {
+	if u == nil {
 		return nil
 	}
-	return o.FourHundred
+	return u.FourHundred
 }
 
-func (o *UpdateLinkResponse) GetFourHundredAndOne() *shared.FourHundredAndOne {
-	if o == nil {
+func (u *UpdateLinkResponse) GetFourHundredAndOne() *shared.FourHundredAndOne {
+	if u == nil {
 		return nil
 	}
-	return o.FourHundredAndOne
+	return u.FourHundredAndOne
 }
 
-func (o *UpdateLinkResponse) GetFourHundredAndThree() *shared.FourHundredAndThree {
-	if o == nil {
+func (u *UpdateLinkResponse) GetFourHundredAndThree() *shared.FourHundredAndThree {
+	if u == nil {
 		return nil
 	}
-	return o.FourHundredAndThree
+	return u.FourHundredAndThree
 }
 
-func (o *UpdateLinkResponse) GetFourHundredAndFour() *shared.FourHundredAndFour {
-	if o == nil {
+func (u *UpdateLinkResponse) GetFourHundredAndFour() *shared.FourHundredAndFour {
+	if u == nil {
 		return nil
 	}
-	return o.FourHundredAndFour
+	return u.FourHundredAndFour
 }
 
-func (o *UpdateLinkResponse) GetFourHundredAndNine() *shared.FourHundredAndNine {
-	if o == nil {
+func (u *UpdateLinkResponse) GetFourHundredAndNine() *shared.FourHundredAndNine {
+	if u == nil {
 		return nil
 	}
-	return o.FourHundredAndNine
+	return u.FourHundredAndNine
 }
 
-func (o *UpdateLinkResponse) GetFourHundredAndTen() *shared.FourHundredAndTen {
-	if o == nil {
+func (u *UpdateLinkResponse) GetFourHundredAndTen() *shared.FourHundredAndTen {
+	if u == nil {
 		return nil
 	}
-	return o.FourHundredAndTen
+	return u.FourHundredAndTen
 }
 
-func (o *UpdateLinkResponse) GetFourHundredAndTwentyTwo() *shared.FourHundredAndTwentyTwo {
-	if o == nil {
+func (u *UpdateLinkResponse) GetFourHundredAndTwentyTwo() *shared.FourHundredAndTwentyTwo {
+	if u == nil {
 		return nil
 	}
-	return o.FourHundredAndTwentyTwo
+	return u.FourHundredAndTwentyTwo
 }
 
-func (o *UpdateLinkResponse) GetFourHundredAndTwentyNine() *shared.FourHundredAndTwentyNine {
-	if o == nil {
+func (u *UpdateLinkResponse) GetFourHundredAndTwentyNine() *shared.FourHundredAndTwentyNine {
+	if u == nil {
 		return nil
 	}
-	return o.FourHundredAndTwentyNine
+	return u.FourHundredAndTwentyNine
 }
 
-func (o *UpdateLinkResponse) GetFiveHundred() *shared.FiveHundred {
-	if o == nil {
+func (u *UpdateLinkResponse) GetFiveHundred() *shared.FiveHundred {
+	if u == nil {
 		return nil
 	}
-	return o.FiveHundred
+	return u.FiveHundred
 }

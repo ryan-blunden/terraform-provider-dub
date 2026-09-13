@@ -10,12 +10,31 @@ import (
 	"github.com/ryan-blunden/terraform-provider-dub/internal/sdk/models/shared"
 )
 
+func (r *TagDataSourceModel) RefreshFromArrayOfSharedTagSchema(ctx context.Context, resp []shared.TagSchema) diag.Diagnostics {
+	var diags diag.Diagnostics
+
+	if len(resp) == 0 {
+		diags.AddError("Unexpected response from API", "Missing response body array data.")
+		return diags
+	}
+
+	diags.Append(r.RefreshFromSharedTagSchema(ctx, &resp[0])...)
+
+	if diags.HasError() {
+		return diags
+	}
+
+	return diags
+}
+
 func (r *TagDataSourceModel) RefreshFromSharedTagSchema(ctx context.Context, resp *shared.TagSchema) diag.Diagnostics {
 	var diags diag.Diagnostics
 
-	r.Color = types.StringValue(string(resp.Color))
-	r.ID = types.StringValue(resp.ID)
-	r.Name = types.StringValue(resp.Name)
+	if resp != nil {
+		r.Color = types.StringValue(string(resp.Color))
+		r.ID = types.StringValue(resp.ID)
+		r.Name = types.StringValue(resp.Name)
+	}
 
 	return diags
 }
@@ -41,32 +60,6 @@ func (r *TagDataSourceModel) ToOperationsGetTagsRequest(ctx context.Context) (*o
 	} else {
 		search = nil
 	}
-	var ids *operations.Ids
-	if r.Ids != nil {
-		str := new(string)
-		if !r.Ids.Str.IsUnknown() && !r.Ids.Str.IsNull() {
-			*str = r.Ids.Str.ValueString()
-		} else {
-			str = nil
-		}
-		if str != nil {
-			ids = &operations.Ids{
-				Str: str,
-			}
-		}
-		var arrayOfStr []string
-		if r.Ids.ArrayOfStr != nil {
-			arrayOfStr = make([]string, 0, len(r.Ids.ArrayOfStr))
-			for _, arrayOfStrItem := range r.Ids.ArrayOfStr {
-				arrayOfStr = append(arrayOfStr, arrayOfStrItem.ValueString())
-			}
-		}
-		if arrayOfStr != nil {
-			ids = &operations.Ids{
-				ArrayOfStr: arrayOfStr,
-			}
-		}
-	}
 	page := new(float64)
 	if !r.Page.IsUnknown() && !r.Page.IsNull() {
 		*page = r.Page.ValueFloat64()
@@ -83,7 +76,6 @@ func (r *TagDataSourceModel) ToOperationsGetTagsRequest(ctx context.Context) (*o
 		SortBy:    sortBy,
 		SortOrder: sortOrder,
 		Search:    search,
-		Ids:       ids,
 		Page:      page,
 		PageSize:  pageSize,
 	}
