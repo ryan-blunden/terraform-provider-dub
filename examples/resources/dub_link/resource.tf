@@ -275,7 +275,7 @@ resource "dub_link" "my_link" {
   rewrite      = false
   tag_id       = "...my_tag_id..."
   tag_ids = {
-    str = ["clux0rgak00011..."]
+    str = "...my_str..."
   }
   tag_names = {
     str = "...my_str..."

@@ -1,4 +1,4 @@
-speakeasyVersion: 1.584.0
+speakeasyVersion: 1.796.4
 sources:
     Dub API:
         sourceNamespace: dub-api
