@@ -11,8 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ericlagergren/decimal"
-
+	"github.com/ryan-blunden/terraform-provider-dub/internal/sdk/optionalnullable"
 	"github.com/ryan-blunden/terraform-provider-dub/internal/sdk/types"
 )
 
@@ -114,6 +113,17 @@ func getSimplePathParams(parentName string, objType reflect.Type, objValue refle
 		}
 		pathParams[parentName] = strings.Join(ppVals, ",")
 	case reflect.Map:
+		// check if optionalnullable.OptionalNullable[T]
+		if nullableValue, ok := optionalnullable.AsOptionalNullable(objValue); ok {
+			// Serialize the wrapped value using the rules for its own type
+			if value, isSet := nullableValue.GetUntyped(); isSet && value != nil {
+				innerValue := reflect.ValueOf(value)
+				return getSimplePathParams(parentName, innerValue.Type(), innerValue, explode)
+			}
+			// If not set or explicitly null, return nil (skip parameter)
+			return pathParams
+		}
+
 		if objValue.Len() == 0 {
 			return nil
 		}
@@ -135,8 +145,6 @@ func getSimplePathParams(parentName string, objType reflect.Type, objValue refle
 			pathParams[parentName] = valToString(objValue.Interface())
 		case big.Int:
 			pathParams[parentName] = valToString(objValue.Interface())
-		case decimal.Big:
-			pathParams[parentName] = valToString(objValue.Interface())
 		default:
 			var ppVals []string
 			for i := 0; i < objType.NumField(); i++ {
@@ -154,6 +162,11 @@ func getSimplePathParams(parentName string, objType reflect.Type, objValue refle
 
 				if fieldType.Type.Kind() == reflect.Pointer {
 					valType = valType.Elem()
+				}
+
+				valType, hasValue := unwrapOptionalNullable(valType)
+				if !hasValue {
+					continue
 				}
 
 				if explode {

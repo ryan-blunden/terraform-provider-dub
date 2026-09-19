@@ -302,42 +302,35 @@ func (r *LinkResourceModel) RefreshFromSharedLinkSchema(ctx context.Context, res
 		r.TagID = types.StringPointerValue(resp.TagID)
 		if resp.Tags != nil {
 			r.Tags = []tfTypes.TagSchema{}
-			if len(r.Tags) > len(resp.Tags) {
-				r.Tags = r.Tags[:len(resp.Tags)]
-			}
-			for tagsCount, tagsItem := range resp.Tags {
+
+			for _, tagsItem := range resp.Tags {
 				var tags tfTypes.TagSchema
+
 				tags.Color = types.StringValue(string(tagsItem.Color))
 				tags.ID = types.StringValue(tagsItem.ID)
 				tags.Name = types.StringValue(tagsItem.Name)
-				if tagsCount+1 > len(r.Tags) {
-					r.Tags = append(r.Tags, tags)
-				} else {
-					r.Tags[tagsCount].Color = tags.Color
-					r.Tags[tagsCount].ID = tags.ID
-					r.Tags[tagsCount].Name = tags.Name
-				}
+
+				r.Tags = append(r.Tags, tags)
 			}
+		} else {
+			r.Tags = nil
 		}
 		r.TenantID = types.StringPointerValue(resp.TenantID)
 		r.TestCompletedAt = types.StringPointerValue(resp.TestCompletedAt)
 		r.TestStartedAt = types.StringPointerValue(resp.TestStartedAt)
 		if resp.TestVariants != nil {
 			r.TestVariants = []tfTypes.TestVariant{}
-			if len(r.TestVariants) > len(resp.TestVariants) {
-				r.TestVariants = r.TestVariants[:len(resp.TestVariants)]
-			}
-			for testVariantsCount, testVariantsItem := range resp.TestVariants {
+
+			for _, testVariantsItem := range resp.TestVariants {
 				var testVariants tfTypes.TestVariant
+
 				testVariants.Percentage = types.Float64Value(testVariantsItem.Percentage)
 				testVariants.URL = types.StringValue(testVariantsItem.URL)
-				if testVariantsCount+1 > len(r.TestVariants) {
-					r.TestVariants = append(r.TestVariants, testVariants)
-				} else {
-					r.TestVariants[testVariantsCount].Percentage = testVariants.Percentage
-					r.TestVariants[testVariantsCount].URL = testVariants.URL
-				}
+
+				r.TestVariants = append(r.TestVariants, testVariants)
 			}
+		} else {
+			r.TestVariants = nil
 		}
 		r.Title = types.StringPointerValue(resp.Title)
 		r.TrackConversion = types.BoolPointerValue(resp.TrackConversion)
@@ -355,6 +348,8 @@ func (r *LinkResourceModel) RefreshFromSharedLinkSchema(ctx context.Context, res
 			for _, v := range resp.WebhookIds {
 				r.WebhookIds = append(r.WebhookIds, types.StringValue(v))
 			}
+		} else {
+			r.WebhookIds = nil
 		}
 		r.WorkspaceID = types.StringValue(resp.WorkspaceID)
 	}
@@ -456,8 +451,8 @@ func (r *LinkResourceModel) ToOperationsCreateLinkRequest(ctx context.Context) (
 		var arrayOfStr []string
 		if r.TagIds.ArrayOfStr != nil {
 			arrayOfStr = make([]string, 0, len(r.TagIds.ArrayOfStr))
-			for _, arrayOfStrItem := range r.TagIds.ArrayOfStr {
-				arrayOfStr = append(arrayOfStr, arrayOfStrItem.ValueString())
+			for arrayOfStrIndex := range r.TagIds.ArrayOfStr {
+				arrayOfStr = append(arrayOfStr, r.TagIds.ArrayOfStr[arrayOfStrIndex].ValueString())
 			}
 		}
 		if arrayOfStr != nil {
@@ -482,8 +477,8 @@ func (r *LinkResourceModel) ToOperationsCreateLinkRequest(ctx context.Context) (
 		var arrayOfStr1 []string
 		if r.TagNames.ArrayOfStr != nil {
 			arrayOfStr1 = make([]string, 0, len(r.TagNames.ArrayOfStr))
-			for _, arrayOfStrItem1 := range r.TagNames.ArrayOfStr {
-				arrayOfStr1 = append(arrayOfStr1, arrayOfStrItem1.ValueString())
+			for arrayOfStrIndex1 := range r.TagNames.ArrayOfStr {
+				arrayOfStr1 = append(arrayOfStr1, r.TagNames.ArrayOfStr[arrayOfStrIndex1].ValueString())
 			}
 		}
 		if arrayOfStr1 != nil {
@@ -2370,19 +2365,19 @@ func (r *LinkResourceModel) ToOperationsCreateLinkRequest(ctx context.Context) (
 	var webhookIds []string
 	if r.WebhookIds != nil {
 		webhookIds = make([]string, 0, len(r.WebhookIds))
-		for _, webhookIdsItem := range r.WebhookIds {
-			webhookIds = append(webhookIds, webhookIdsItem.ValueString())
+		for webhookIdsIndex := range r.WebhookIds {
+			webhookIds = append(webhookIds, r.WebhookIds[webhookIdsIndex].ValueString())
 		}
 	}
 	var testVariants []operations.CreateLinkTestVariant
 	if r.TestVariants != nil {
 		testVariants = make([]operations.CreateLinkTestVariant, 0, len(r.TestVariants))
-		for _, testVariantsItem := range r.TestVariants {
+		for testVariantsIndex := range r.TestVariants {
 			var url1 string
-			url1 = testVariantsItem.URL.ValueString()
+			url1 = r.TestVariants[testVariantsIndex].URL.ValueString()
 
 			var percentage float64
-			percentage = testVariantsItem.Percentage.ValueFloat64()
+			percentage = r.TestVariants[testVariantsIndex].Percentage.ValueFloat64()
 
 			testVariants = append(testVariants, operations.CreateLinkTestVariant{
 				URL:        url1,
@@ -2601,8 +2596,8 @@ func (r *LinkResourceModel) ToOperationsUpdateLinkRequestBody(ctx context.Contex
 		var arrayOfStr []string
 		if r.TagIds.ArrayOfStr != nil {
 			arrayOfStr = make([]string, 0, len(r.TagIds.ArrayOfStr))
-			for _, arrayOfStrItem := range r.TagIds.ArrayOfStr {
-				arrayOfStr = append(arrayOfStr, arrayOfStrItem.ValueString())
+			for arrayOfStrIndex := range r.TagIds.ArrayOfStr {
+				arrayOfStr = append(arrayOfStr, r.TagIds.ArrayOfStr[arrayOfStrIndex].ValueString())
 			}
 		}
 		if arrayOfStr != nil {
@@ -2627,8 +2622,8 @@ func (r *LinkResourceModel) ToOperationsUpdateLinkRequestBody(ctx context.Contex
 		var arrayOfStr1 []string
 		if r.TagNames.ArrayOfStr != nil {
 			arrayOfStr1 = make([]string, 0, len(r.TagNames.ArrayOfStr))
-			for _, arrayOfStrItem1 := range r.TagNames.ArrayOfStr {
-				arrayOfStr1 = append(arrayOfStr1, arrayOfStrItem1.ValueString())
+			for arrayOfStrIndex1 := range r.TagNames.ArrayOfStr {
+				arrayOfStr1 = append(arrayOfStr1, r.TagNames.ArrayOfStr[arrayOfStrIndex1].ValueString())
 			}
 		}
 		if arrayOfStr1 != nil {
@@ -4515,19 +4510,19 @@ func (r *LinkResourceModel) ToOperationsUpdateLinkRequestBody(ctx context.Contex
 	var webhookIds []string
 	if r.WebhookIds != nil {
 		webhookIds = make([]string, 0, len(r.WebhookIds))
-		for _, webhookIdsItem := range r.WebhookIds {
-			webhookIds = append(webhookIds, webhookIdsItem.ValueString())
+		for webhookIdsIndex := range r.WebhookIds {
+			webhookIds = append(webhookIds, r.WebhookIds[webhookIdsIndex].ValueString())
 		}
 	}
 	var testVariants []operations.UpdateLinkTestVariant
 	if r.TestVariants != nil {
 		testVariants = make([]operations.UpdateLinkTestVariant, 0, len(r.TestVariants))
-		for _, testVariantsItem := range r.TestVariants {
+		for testVariantsIndex := range r.TestVariants {
 			var url1 string
-			url1 = testVariantsItem.URL.ValueString()
+			url1 = r.TestVariants[testVariantsIndex].URL.ValueString()
 
 			var percentage float64
-			percentage = testVariantsItem.Percentage.ValueFloat64()
+			percentage = r.TestVariants[testVariantsIndex].Percentage.ValueFloat64()
 
 			testVariants = append(testVariants, operations.UpdateLinkTestVariant{
 				URL:        url1,

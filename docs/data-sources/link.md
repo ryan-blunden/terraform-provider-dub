@@ -30,9 +30,9 @@ data "dub_link" "my_link" {
 
 ### Optional
 
-- `domain` (String)
-- `external_id` (String) This is the ID of the link in the your database.
-- `key` (String) The key of the link to retrieve. E.g. for `d.to/github`, the key is `github`.
+- `domain` (String) The domain of the short link. If not provided, the primary domain for the workspace will be used (or `dub.sh` if the workspace has no domains).
+- `external_id` (String) The ID of the link in your database. If set, it can be used to identify the link in future API requests (must be prefixed with 'ext_' when passed as a query parameter). This key is unique across your workspace.
+- `key` (String) The short link slug. If not provided, a random 7-character slug will be generated.
 
 ### Read-Only
 

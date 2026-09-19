@@ -61,7 +61,7 @@ func (s *Links) CreateLink(ctx context.Context, request *operations.CreateLinkRe
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "createLink",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "Request", "json", `request:"mediaType=application/json"`)
@@ -387,7 +387,7 @@ func (s *Links) GetLinkInfo(ctx context.Context, request operations.GetLinkInfoR
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "getLinkInfo",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -409,7 +409,7 @@ func (s *Links) GetLinkInfo(ctx context.Context, request operations.GetLinkInfoR
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	if err := utils.PopulateQueryParams(ctx, req, request, nil); err != nil {
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
@@ -710,7 +710,7 @@ func (s *Links) UpdateLink(ctx context.Context, request operations.UpdateLinkReq
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "updateLink",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "RequestBody", "json", `request:"mediaType=application/json"`)
@@ -1036,7 +1036,7 @@ func (s *Links) DeleteLink(ctx context.Context, request operations.DeleteLinkReq
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "deleteLink",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
