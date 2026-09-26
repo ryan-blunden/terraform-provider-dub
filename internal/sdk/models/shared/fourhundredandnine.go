@@ -40,25 +40,25 @@ type FourHundredAndNineError struct {
 	DocURL *string `json:"doc_url,omitempty"`
 }
 
-func (o *FourHundredAndNineError) GetCode() FourHundredAndNineCode {
-	if o == nil {
+func (f *FourHundredAndNineError) GetCode() FourHundredAndNineCode {
+	if f == nil {
 		return FourHundredAndNineCode("")
 	}
-	return o.Code
+	return f.Code
 }
 
-func (o *FourHundredAndNineError) GetMessage() string {
-	if o == nil {
+func (f *FourHundredAndNineError) GetMessage() string {
+	if f == nil {
 		return ""
 	}
-	return o.Message
+	return f.Message
 }
 
-func (o *FourHundredAndNineError) GetDocURL() *string {
-	if o == nil {
+func (f *FourHundredAndNineError) GetDocURL() *string {
+	if f == nil {
 		return nil
 	}
-	return o.DocURL
+	return f.DocURL
 }
 
 // FourHundredAndNine - This response is sent when a request conflicts with the current state of the server.
@@ -66,9 +66,9 @@ type FourHundredAndNine struct {
 	Error FourHundredAndNineError `json:"error"`
 }
 
-func (o *FourHundredAndNine) GetError() FourHundredAndNineError {
-	if o == nil {
+func (f *FourHundredAndNine) GetError() FourHundredAndNineError {
+	if f == nil {
 		return FourHundredAndNineError{}
 	}
-	return o.Error
+	return f.Error
 }

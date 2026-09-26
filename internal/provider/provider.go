@@ -4,8 +4,11 @@ package provider
 
 import (
 	"context"
+	"github.com/hashicorp/terraform-plugin-framework/action"
 	"github.com/hashicorp/terraform-plugin-framework/datasource"
 	"github.com/hashicorp/terraform-plugin-framework/ephemeral"
+	"github.com/hashicorp/terraform-plugin-framework/function"
+	"github.com/hashicorp/terraform-plugin-framework/list"
 	"github.com/hashicorp/terraform-plugin-framework/provider"
 	"github.com/hashicorp/terraform-plugin-framework/provider/schema"
 	"github.com/hashicorp/terraform-plugin-framework/resource"
@@ -17,7 +20,9 @@ import (
 )
 
 var _ provider.Provider = (*DubProvider)(nil)
+var _ provider.ProviderWithActions = (*DubProvider)(nil)
 var _ provider.ProviderWithEphemeralResources = (*DubProvider)(nil)
+var _ provider.ProviderWithFunctions = (*DubProvider)(nil)
 
 type DubProvider struct {
 	// version is set to the provider version on release, "dev" when the
@@ -45,8 +50,9 @@ func (p *DubProvider) Schema(ctx context.Context, req provider.SchemaRequest, re
 				Optional:    true,
 			},
 			"token": schema.StringAttribute{
-				Optional:  true,
-				Sensitive: true,
+				MarkdownDescription: `Default authentication mechanism. Configurable via environment variable ` + "`" + `DUB_API_KEY` + "`" + `.`,
+				Optional:            true,
+				Sensitive:           true,
 			},
 		},
 		MarkdownDescription: `Dub API: Welcome to the Dub Terraform provider.` + "\n" +
@@ -64,10 +70,10 @@ func (p *DubProvider) Configure(ctx context.Context, req provider.ConfigureReque
 		return
 	}
 
-	ServerURL := data.ServerURL.ValueString()
+	serverUrl := data.ServerURL.ValueString()
 
-	if ServerURL == "" {
-		ServerURL = "https://api.dub.co"
+	if serverUrl == "" {
+		serverUrl = "https://api.dub.co"
 	}
 
 	security := shared.Security{}
@@ -96,15 +102,25 @@ func (p *DubProvider) Configure(ctx context.Context, req provider.ConfigureReque
 	httpClient.Transport = NewProviderHTTPTransport(providerHTTPTransportOpts)
 
 	opts := []sdk.SDKOption{
-		sdk.WithServerURL(ServerURL),
+		sdk.WithServerURL(serverUrl),
 		sdk.WithSecurity(security),
 		sdk.WithClient(httpClient),
 	}
 
 	client := sdk.New(opts...)
+	resp.ActionData = client
 	resp.DataSourceData = client
 	resp.EphemeralResourceData = client
+	resp.ListResourceData = client
 	resp.ResourceData = client
+}
+
+func (p *DubProvider) Functions(_ context.Context) []func() function.Function {
+	return []func() function.Function{}
+}
+
+func (p *DubProvider) Actions(_ context.Context) []func() action.Action {
+	return []func() action.Action{}
 }
 
 func (p *DubProvider) Resources(ctx context.Context) []func() resource.Resource {
@@ -123,6 +139,10 @@ func (p *DubProvider) DataSources(ctx context.Context) []func() datasource.DataS
 
 func (p *DubProvider) EphemeralResources(ctx context.Context) []func() ephemeral.EphemeralResource {
 	return []func() ephemeral.EphemeralResource{}
+}
+
+func (p *DubProvider) ListResources(ctx context.Context) []func() list.ListResource {
+	return []func() list.ListResource{}
 }
 
 func New(version string) func() provider.Provider {

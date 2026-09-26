@@ -10,6 +10,23 @@ import (
 	"github.com/ryan-blunden/terraform-provider-dub/internal/sdk/models/shared"
 )
 
+func (r *TagResourceModel) RefreshFromArrayOfSharedTagSchema(ctx context.Context, resp []shared.TagSchema) diag.Diagnostics {
+	var diags diag.Diagnostics
+
+	if len(resp) == 0 {
+		diags.AddError("Unexpected response from API", "Missing response body array data.")
+		return diags
+	}
+
+	diags.Append(r.RefreshFromSharedTagSchema(ctx, &resp[0])...)
+
+	if diags.HasError() {
+		return diags
+	}
+
+	return diags
+}
+
 func (r *TagResourceModel) RefreshFromSharedTagSchema(ctx context.Context, resp *shared.TagSchema) diag.Diagnostics {
 	var diags diag.Diagnostics
 
