@@ -12,11 +12,11 @@ type DeleteLinkRequest struct {
 	ID string `pathParam:"style=simple,explode=false,name=linkId"`
 }
 
-func (o *DeleteLinkRequest) GetID() string {
-	if o == nil {
+func (d *DeleteLinkRequest) GetID() string {
+	if d == nil {
 		return ""
 	}
-	return o.ID
+	return d.ID
 }
 
 // DeleteLinkResponseBody - The deleted link ID.
@@ -25,11 +25,11 @@ type DeleteLinkResponseBody struct {
 	ID string `json:"id"`
 }
 
-func (o *DeleteLinkResponseBody) GetID() string {
-	if o == nil {
+func (d *DeleteLinkResponseBody) GetID() string {
+	if d == nil {
 		return ""
 	}
-	return o.ID
+	return d.ID
 }
 
 type DeleteLinkResponse struct {
@@ -61,93 +61,93 @@ type DeleteLinkResponse struct {
 	FiveHundred *shared.FiveHundred
 }
 
-func (o *DeleteLinkResponse) GetContentType() string {
-	if o == nil {
+func (d *DeleteLinkResponse) GetContentType() string {
+	if d == nil {
 		return ""
 	}
-	return o.ContentType
+	return d.ContentType
 }
 
-func (o *DeleteLinkResponse) GetStatusCode() int {
-	if o == nil {
+func (d *DeleteLinkResponse) GetStatusCode() int {
+	if d == nil {
 		return 0
 	}
-	return o.StatusCode
+	return d.StatusCode
 }
 
-func (o *DeleteLinkResponse) GetRawResponse() *http.Response {
-	if o == nil {
+func (d *DeleteLinkResponse) GetRawResponse() *http.Response {
+	if d == nil {
 		return nil
 	}
-	return o.RawResponse
+	return d.RawResponse
 }
 
-func (o *DeleteLinkResponse) GetObject() *DeleteLinkResponseBody {
-	if o == nil {
+func (d *DeleteLinkResponse) GetObject() *DeleteLinkResponseBody {
+	if d == nil {
 		return nil
 	}
-	return o.Object
+	return d.Object
 }
 
-func (o *DeleteLinkResponse) GetFourHundred() *shared.FourHundred {
-	if o == nil {
+func (d *DeleteLinkResponse) GetFourHundred() *shared.FourHundred {
+	if d == nil {
 		return nil
 	}
-	return o.FourHundred
+	return d.FourHundred
 }
 
-func (o *DeleteLinkResponse) GetFourHundredAndOne() *shared.FourHundredAndOne {
-	if o == nil {
+func (d *DeleteLinkResponse) GetFourHundredAndOne() *shared.FourHundredAndOne {
+	if d == nil {
 		return nil
 	}
-	return o.FourHundredAndOne
+	return d.FourHundredAndOne
 }
 
-func (o *DeleteLinkResponse) GetFourHundredAndThree() *shared.FourHundredAndThree {
-	if o == nil {
+func (d *DeleteLinkResponse) GetFourHundredAndThree() *shared.FourHundredAndThree {
+	if d == nil {
 		return nil
 	}
-	return o.FourHundredAndThree
+	return d.FourHundredAndThree
 }
 
-func (o *DeleteLinkResponse) GetFourHundredAndFour() *shared.FourHundredAndFour {
-	if o == nil {
+func (d *DeleteLinkResponse) GetFourHundredAndFour() *shared.FourHundredAndFour {
+	if d == nil {
 		return nil
 	}
-	return o.FourHundredAndFour
+	return d.FourHundredAndFour
 }
 
-func (o *DeleteLinkResponse) GetFourHundredAndNine() *shared.FourHundredAndNine {
-	if o == nil {
+func (d *DeleteLinkResponse) GetFourHundredAndNine() *shared.FourHundredAndNine {
+	if d == nil {
 		return nil
 	}
-	return o.FourHundredAndNine
+	return d.FourHundredAndNine
 }
 
-func (o *DeleteLinkResponse) GetFourHundredAndTen() *shared.FourHundredAndTen {
-	if o == nil {
+func (d *DeleteLinkResponse) GetFourHundredAndTen() *shared.FourHundredAndTen {
+	if d == nil {
 		return nil
 	}
-	return o.FourHundredAndTen
+	return d.FourHundredAndTen
 }
 
-func (o *DeleteLinkResponse) GetFourHundredAndTwentyTwo() *shared.FourHundredAndTwentyTwo {
-	if o == nil {
+func (d *DeleteLinkResponse) GetFourHundredAndTwentyTwo() *shared.FourHundredAndTwentyTwo {
+	if d == nil {
 		return nil
 	}
-	return o.FourHundredAndTwentyTwo
+	return d.FourHundredAndTwentyTwo
 }
 
-func (o *DeleteLinkResponse) GetFourHundredAndTwentyNine() *shared.FourHundredAndTwentyNine {
-	if o == nil {
+func (d *DeleteLinkResponse) GetFourHundredAndTwentyNine() *shared.FourHundredAndTwentyNine {
+	if d == nil {
 		return nil
 	}
-	return o.FourHundredAndTwentyNine
+	return d.FourHundredAndTwentyNine
 }
 
-func (o *DeleteLinkResponse) GetFiveHundred() *shared.FiveHundred {
-	if o == nil {
+func (d *DeleteLinkResponse) GetFiveHundred() *shared.FiveHundred {
+	if d == nil {
 		return nil
 	}
-	return o.FiveHundred
+	return d.FiveHundred
 }

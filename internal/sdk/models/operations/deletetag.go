@@ -12,11 +12,11 @@ type DeleteTagRequest struct {
 	ID string `pathParam:"style=simple,explode=false,name=id"`
 }
 
-func (o *DeleteTagRequest) GetID() string {
-	if o == nil {
+func (d *DeleteTagRequest) GetID() string {
+	if d == nil {
 		return ""
 	}
-	return o.ID
+	return d.ID
 }
 
 // DeleteTagResponseBody - The deleted tag ID.
@@ -25,11 +25,11 @@ type DeleteTagResponseBody struct {
 	ID string `json:"id"`
 }
 
-func (o *DeleteTagResponseBody) GetID() string {
-	if o == nil {
+func (d *DeleteTagResponseBody) GetID() string {
+	if d == nil {
 		return ""
 	}
-	return o.ID
+	return d.ID
 }
 
 type DeleteTagResponse struct {
@@ -61,93 +61,93 @@ type DeleteTagResponse struct {
 	FiveHundred *shared.FiveHundred
 }
 
-func (o *DeleteTagResponse) GetContentType() string {
-	if o == nil {
+func (d *DeleteTagResponse) GetContentType() string {
+	if d == nil {
 		return ""
 	}
-	return o.ContentType
+	return d.ContentType
 }
 
-func (o *DeleteTagResponse) GetStatusCode() int {
-	if o == nil {
+func (d *DeleteTagResponse) GetStatusCode() int {
+	if d == nil {
 		return 0
 	}
-	return o.StatusCode
+	return d.StatusCode
 }
 
-func (o *DeleteTagResponse) GetRawResponse() *http.Response {
-	if o == nil {
+func (d *DeleteTagResponse) GetRawResponse() *http.Response {
+	if d == nil {
 		return nil
 	}
-	return o.RawResponse
+	return d.RawResponse
 }
 
-func (o *DeleteTagResponse) GetObject() *DeleteTagResponseBody {
-	if o == nil {
+func (d *DeleteTagResponse) GetObject() *DeleteTagResponseBody {
+	if d == nil {
 		return nil
 	}
-	return o.Object
+	return d.Object
 }
 
-func (o *DeleteTagResponse) GetFourHundred() *shared.FourHundred {
-	if o == nil {
+func (d *DeleteTagResponse) GetFourHundred() *shared.FourHundred {
+	if d == nil {
 		return nil
 	}
-	return o.FourHundred
+	return d.FourHundred
 }
 
-func (o *DeleteTagResponse) GetFourHundredAndOne() *shared.FourHundredAndOne {
-	if o == nil {
+func (d *DeleteTagResponse) GetFourHundredAndOne() *shared.FourHundredAndOne {
+	if d == nil {
 		return nil
 	}
-	return o.FourHundredAndOne
+	return d.FourHundredAndOne
 }
 
-func (o *DeleteTagResponse) GetFourHundredAndThree() *shared.FourHundredAndThree {
-	if o == nil {
+func (d *DeleteTagResponse) GetFourHundredAndThree() *shared.FourHundredAndThree {
+	if d == nil {
 		return nil
 	}
-	return o.FourHundredAndThree
+	return d.FourHundredAndThree
 }
 
-func (o *DeleteTagResponse) GetFourHundredAndFour() *shared.FourHundredAndFour {
-	if o == nil {
+func (d *DeleteTagResponse) GetFourHundredAndFour() *shared.FourHundredAndFour {
+	if d == nil {
 		return nil
 	}
-	return o.FourHundredAndFour
+	return d.FourHundredAndFour
 }
 
-func (o *DeleteTagResponse) GetFourHundredAndNine() *shared.FourHundredAndNine {
-	if o == nil {
+func (d *DeleteTagResponse) GetFourHundredAndNine() *shared.FourHundredAndNine {
+	if d == nil {
 		return nil
 	}
-	return o.FourHundredAndNine
+	return d.FourHundredAndNine
 }
 
-func (o *DeleteTagResponse) GetFourHundredAndTen() *shared.FourHundredAndTen {
-	if o == nil {
+func (d *DeleteTagResponse) GetFourHundredAndTen() *shared.FourHundredAndTen {
+	if d == nil {
 		return nil
 	}
-	return o.FourHundredAndTen
+	return d.FourHundredAndTen
 }
 
-func (o *DeleteTagResponse) GetFourHundredAndTwentyTwo() *shared.FourHundredAndTwentyTwo {
-	if o == nil {
+func (d *DeleteTagResponse) GetFourHundredAndTwentyTwo() *shared.FourHundredAndTwentyTwo {
+	if d == nil {
 		return nil
 	}
-	return o.FourHundredAndTwentyTwo
+	return d.FourHundredAndTwentyTwo
 }
 
-func (o *DeleteTagResponse) GetFourHundredAndTwentyNine() *shared.FourHundredAndTwentyNine {
-	if o == nil {
+func (d *DeleteTagResponse) GetFourHundredAndTwentyNine() *shared.FourHundredAndTwentyNine {
+	if d == nil {
 		return nil
 	}
-	return o.FourHundredAndTwentyNine
+	return d.FourHundredAndTwentyNine
 }
 
-func (o *DeleteTagResponse) GetFiveHundred() *shared.FiveHundred {
-	if o == nil {
+func (d *DeleteTagResponse) GetFiveHundred() *shared.FiveHundred {
+	if d == nil {
 		return nil
 	}
-	return o.FiveHundred
+	return d.FiveHundred
 }
