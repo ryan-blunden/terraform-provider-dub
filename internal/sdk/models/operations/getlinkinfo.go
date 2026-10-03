@@ -17,32 +17,32 @@ type GetLinkInfoRequest struct {
 	ExternalID *string `queryParam:"style=form,explode=true,name=externalId"`
 }
 
-func (o *GetLinkInfoRequest) GetDomain() *string {
-	if o == nil {
+func (g *GetLinkInfoRequest) GetDomain() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Domain
+	return g.Domain
 }
 
-func (o *GetLinkInfoRequest) GetKey() *string {
-	if o == nil {
+func (g *GetLinkInfoRequest) GetKey() *string {
+	if g == nil {
 		return nil
 	}
-	return o.Key
+	return g.Key
 }
 
-func (o *GetLinkInfoRequest) GetID() string {
-	if o == nil {
+func (g *GetLinkInfoRequest) GetID() string {
+	if g == nil {
 		return ""
 	}
-	return o.ID
+	return g.ID
 }
 
-func (o *GetLinkInfoRequest) GetExternalID() *string {
-	if o == nil {
+func (g *GetLinkInfoRequest) GetExternalID() *string {
+	if g == nil {
 		return nil
 	}
-	return o.ExternalID
+	return g.ExternalID
 }
 
 type GetLinkInfoResponse struct {
@@ -74,93 +74,93 @@ type GetLinkInfoResponse struct {
 	FiveHundred *shared.FiveHundred
 }
 
-func (o *GetLinkInfoResponse) GetContentType() string {
-	if o == nil {
+func (g *GetLinkInfoResponse) GetContentType() string {
+	if g == nil {
 		return ""
 	}
-	return o.ContentType
+	return g.ContentType
 }
 
-func (o *GetLinkInfoResponse) GetStatusCode() int {
-	if o == nil {
+func (g *GetLinkInfoResponse) GetStatusCode() int {
+	if g == nil {
 		return 0
 	}
-	return o.StatusCode
+	return g.StatusCode
 }
 
-func (o *GetLinkInfoResponse) GetRawResponse() *http.Response {
-	if o == nil {
+func (g *GetLinkInfoResponse) GetRawResponse() *http.Response {
+	if g == nil {
 		return nil
 	}
-	return o.RawResponse
+	return g.RawResponse
 }
 
-func (o *GetLinkInfoResponse) GetLinkSchema() *shared.LinkSchema {
-	if o == nil {
+func (g *GetLinkInfoResponse) GetLinkSchema() *shared.LinkSchema {
+	if g == nil {
 		return nil
 	}
-	return o.LinkSchema
+	return g.LinkSchema
 }
 
-func (o *GetLinkInfoResponse) GetFourHundred() *shared.FourHundred {
-	if o == nil {
+func (g *GetLinkInfoResponse) GetFourHundred() *shared.FourHundred {
+	if g == nil {
 		return nil
 	}
-	return o.FourHundred
+	return g.FourHundred
 }
 
-func (o *GetLinkInfoResponse) GetFourHundredAndOne() *shared.FourHundredAndOne {
-	if o == nil {
+func (g *GetLinkInfoResponse) GetFourHundredAndOne() *shared.FourHundredAndOne {
+	if g == nil {
 		return nil
 	}
-	return o.FourHundredAndOne
+	return g.FourHundredAndOne
 }
 
-func (o *GetLinkInfoResponse) GetFourHundredAndThree() *shared.FourHundredAndThree {
-	if o == nil {
+func (g *GetLinkInfoResponse) GetFourHundredAndThree() *shared.FourHundredAndThree {
+	if g == nil {
 		return nil
 	}
-	return o.FourHundredAndThree
+	return g.FourHundredAndThree
 }
 
-func (o *GetLinkInfoResponse) GetFourHundredAndFour() *shared.FourHundredAndFour {
-	if o == nil {
+func (g *GetLinkInfoResponse) GetFourHundredAndFour() *shared.FourHundredAndFour {
+	if g == nil {
 		return nil
 	}
-	return o.FourHundredAndFour
+	return g.FourHundredAndFour
 }
 
-func (o *GetLinkInfoResponse) GetFourHundredAndNine() *shared.FourHundredAndNine {
-	if o == nil {
+func (g *GetLinkInfoResponse) GetFourHundredAndNine() *shared.FourHundredAndNine {
+	if g == nil {
 		return nil
 	}
-	return o.FourHundredAndNine
+	return g.FourHundredAndNine
 }
 
-func (o *GetLinkInfoResponse) GetFourHundredAndTen() *shared.FourHundredAndTen {
-	if o == nil {
+func (g *GetLinkInfoResponse) GetFourHundredAndTen() *shared.FourHundredAndTen {
+	if g == nil {
 		return nil
 	}
-	return o.FourHundredAndTen
+	return g.FourHundredAndTen
 }
 
-func (o *GetLinkInfoResponse) GetFourHundredAndTwentyTwo() *shared.FourHundredAndTwentyTwo {
-	if o == nil {
+func (g *GetLinkInfoResponse) GetFourHundredAndTwentyTwo() *shared.FourHundredAndTwentyTwo {
+	if g == nil {
 		return nil
 	}
-	return o.FourHundredAndTwentyTwo
+	return g.FourHundredAndTwentyTwo
 }
 
-func (o *GetLinkInfoResponse) GetFourHundredAndTwentyNine() *shared.FourHundredAndTwentyNine {
-	if o == nil {
+func (g *GetLinkInfoResponse) GetFourHundredAndTwentyNine() *shared.FourHundredAndTwentyNine {
+	if g == nil {
 		return nil
 	}
-	return o.FourHundredAndTwentyNine
+	return g.FourHundredAndTwentyNine
 }
 
-func (o *GetLinkInfoResponse) GetFiveHundred() *shared.FiveHundred {
-	if o == nil {
+func (g *GetLinkInfoResponse) GetFiveHundred() *shared.FiveHundred {
+	if g == nil {
 		return nil
 	}
-	return o.FiveHundred
+	return g.FiveHundred
 }
