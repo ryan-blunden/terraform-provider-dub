@@ -23,7 +23,6 @@ import (
 	speakeasy_float64validators "github.com/ryan-blunden/terraform-provider-dub/internal/validators/float64validators"
 	speakeasy_objectvalidators "github.com/ryan-blunden/terraform-provider-dub/internal/validators/objectvalidators"
 	speakeasy_stringvalidators "github.com/ryan-blunden/terraform-provider-dub/internal/validators/stringvalidators"
-	"regexp"
 )
 
 // Ensure provider defined types fully satisfy framework interfaces.
@@ -1180,15 +1179,12 @@ func (r *LinkResource) Schema(ctx context.Context, req resource.SchemaRequest, r
 			},
 			"id": schema.StringAttribute{
 				Computed:    true,
-				Description: `The unique ID of the short link.`,
+				Description: `The id of the link to update. You may use either ` + "`" + `linkId` + "`" + ` (obtained via ` + "`" + `/links/info` + "`" + ` endpoint) or ` + "`" + `externalId` + "`" + ` prefixed with ` + "`" + `ext_` + "`" + `.`,
 			},
 			"image": schema.StringAttribute{
 				Computed:    true,
 				Optional:    true,
 				Description: `The custom link preview image (og:image). Will be used for Custom Link Previews if ` + "`" + `proxy` + "`" + ` is true. Learn more: https://d.to/og`,
-				Validators: []validator.String{
-					stringvalidator.RegexMatches(regexp.MustCompile(`^data:image\/(png|jpeg|jpg|gif|webp);base64,`), "must match pattern "+regexp.MustCompile(`^data:image\/(png|jpeg|jpg|gif|webp);base64,`).String()),
-				},
 			},
 			"ios": schema.StringAttribute{
 				Computed:    true,
@@ -1309,7 +1305,7 @@ func (r *LinkResource) Schema(ctx context.Context, req resource.SchemaRequest, r
 						Optional: true,
 						Validators: []validator.String{
 							stringvalidator.ConflictsWith(path.Expressions{
-								path.MatchRelative().AtParent().AtName("array_of_str"),
+								path.MatchRelative().AtParent().AtName("array_of"),
 							}...),
 						},
 					},
@@ -1332,7 +1328,7 @@ func (r *LinkResource) Schema(ctx context.Context, req resource.SchemaRequest, r
 						Optional: true,
 						Validators: []validator.String{
 							stringvalidator.ConflictsWith(path.Expressions{
-								path.MatchRelative().AtParent().AtName("array_of_str"),
+								path.MatchRelative().AtParent().AtName("array_of"),
 							}...),
 						},
 					},
@@ -1345,18 +1341,7 @@ func (r *LinkResource) Schema(ctx context.Context, req resource.SchemaRequest, r
 					Attributes: map[string]schema.Attribute{
 						"color": schema.StringAttribute{
 							Computed:    true,
-							Description: `The color of the tag. must be one of ["red", "yellow", "green", "blue", "purple", "pink", "brown"]`,
-							Validators: []validator.String{
-								stringvalidator.OneOf(
-									"red",
-									"yellow",
-									"green",
-									"blue",
-									"purple",
-									"pink",
-									"brown",
-								),
-							},
+							Description: `The color of the tag.`,
 						},
 						"id": schema.StringAttribute{
 							Computed:    true,
@@ -1525,6 +1510,8 @@ func (r *LinkResource) Create(ctx context.Context, req resource.CreateRequest, r
 		return
 	}
 
+	ctx = withSensitiveValues(ctx, req.Config, req.Plan)
+
 	request, requestDiags := data.ToOperationsCreateLinkRequest(ctx)
 	resp.Diagnostics.Append(requestDiags...)
 
@@ -1533,7 +1520,7 @@ func (r *LinkResource) Create(ctx context.Context, req resource.CreateRequest, r
 	}
 	res, err := r.client.Links.CreateLink(ctx, request)
 	if err != nil {
-		resp.Diagnostics.AddError("failure to invoke API", err.Error())
+		resp.Diagnostics.AddError("failure to invoke API", redactSensitiveValues(ctx, err.Error()))
 		if res != nil && res.RawResponse != nil {
 			resp.Diagnostics.AddError("unexpected http request/response", debugResponse(res.RawResponse))
 		}
@@ -1541,6 +1528,13 @@ func (r *LinkResource) Create(ctx context.Context, req resource.CreateRequest, r
 	}
 	if res == nil {
 		resp.Diagnostics.AddError("unexpected response from API", fmt.Sprintf("%v", res))
+		return
+	}
+	if res.StatusCode == 409 {
+		resp.Diagnostics.AddError(
+			"Resource Already Exists",
+			"When creating this resource, the API indicated that this resource already exists. You can bring the existing resource under management using Terraform import functionality or retry with a unique configuration.",
+		)
 		return
 	}
 	if res.StatusCode != 200 {
@@ -1552,43 +1546,6 @@ func (r *LinkResource) Create(ctx context.Context, req resource.CreateRequest, r
 		return
 	}
 	resp.Diagnostics.Append(data.RefreshFromSharedLinkSchema(ctx, res.LinkSchema)...)
-
-	if resp.Diagnostics.HasError() {
-		return
-	}
-
-	resp.Diagnostics.Append(refreshPlan(ctx, plan, &data)...)
-
-	if resp.Diagnostics.HasError() {
-		return
-	}
-	request1, request1Diags := data.ToOperationsGetLinkInfoRequest(ctx)
-	resp.Diagnostics.Append(request1Diags...)
-
-	if resp.Diagnostics.HasError() {
-		return
-	}
-	res1, err := r.client.Links.GetLinkInfo(ctx, *request1)
-	if err != nil {
-		resp.Diagnostics.AddError("failure to invoke API", err.Error())
-		if res1 != nil && res1.RawResponse != nil {
-			resp.Diagnostics.AddError("unexpected http request/response", debugResponse(res1.RawResponse))
-		}
-		return
-	}
-	if res1 == nil {
-		resp.Diagnostics.AddError("unexpected response from API", fmt.Sprintf("%v", res1))
-		return
-	}
-	if res1.StatusCode != 200 {
-		resp.Diagnostics.AddError(fmt.Sprintf("unexpected response from API. Got an unexpected response code %v", res1.StatusCode), debugResponse(res1.RawResponse))
-		return
-	}
-	if !(res1.LinkSchema != nil) {
-		resp.Diagnostics.AddError("unexpected response from API. Got an unexpected response body", debugResponse(res1.RawResponse))
-		return
-	}
-	resp.Diagnostics.Append(data.RefreshFromSharedLinkSchema(ctx, res1.LinkSchema)...)
 
 	if resp.Diagnostics.HasError() {
 		return
@@ -1622,6 +1579,8 @@ func (r *LinkResource) Read(ctx context.Context, req resource.ReadRequest, resp 
 		return
 	}
 
+	ctx = withSensitiveValues(ctx, req.State)
+
 	request, requestDiags := data.ToOperationsGetLinkInfoRequest(ctx)
 	resp.Diagnostics.Append(requestDiags...)
 
@@ -1630,7 +1589,7 @@ func (r *LinkResource) Read(ctx context.Context, req resource.ReadRequest, resp 
 	}
 	res, err := r.client.Links.GetLinkInfo(ctx, *request)
 	if err != nil {
-		resp.Diagnostics.AddError("failure to invoke API", err.Error())
+		resp.Diagnostics.AddError("failure to invoke API", redactSensitiveValues(ctx, err.Error()))
 		if res != nil && res.RawResponse != nil {
 			resp.Diagnostics.AddError("unexpected http request/response", debugResponse(res.RawResponse))
 		}
@@ -1676,6 +1635,8 @@ func (r *LinkResource) Update(ctx context.Context, req resource.UpdateRequest, r
 		return
 	}
 
+	ctx = withSensitiveValues(ctx, req.Config, req.Plan, req.State)
+
 	request, requestDiags := data.ToOperationsUpdateLinkRequest(ctx)
 	resp.Diagnostics.Append(requestDiags...)
 
@@ -1684,7 +1645,7 @@ func (r *LinkResource) Update(ctx context.Context, req resource.UpdateRequest, r
 	}
 	res, err := r.client.Links.UpdateLink(ctx, *request)
 	if err != nil {
-		resp.Diagnostics.AddError("failure to invoke API", err.Error())
+		resp.Diagnostics.AddError("failure to invoke API", redactSensitiveValues(ctx, err.Error()))
 		if res != nil && res.RawResponse != nil {
 			resp.Diagnostics.AddError("unexpected http request/response", debugResponse(res.RawResponse))
 		}
@@ -1703,43 +1664,6 @@ func (r *LinkResource) Update(ctx context.Context, req resource.UpdateRequest, r
 		return
 	}
 	resp.Diagnostics.Append(data.RefreshFromSharedLinkSchema(ctx, res.LinkSchema)...)
-
-	if resp.Diagnostics.HasError() {
-		return
-	}
-
-	resp.Diagnostics.Append(refreshPlan(ctx, plan, &data)...)
-
-	if resp.Diagnostics.HasError() {
-		return
-	}
-	request1, request1Diags := data.ToOperationsGetLinkInfoRequest(ctx)
-	resp.Diagnostics.Append(request1Diags...)
-
-	if resp.Diagnostics.HasError() {
-		return
-	}
-	res1, err := r.client.Links.GetLinkInfo(ctx, *request1)
-	if err != nil {
-		resp.Diagnostics.AddError("failure to invoke API", err.Error())
-		if res1 != nil && res1.RawResponse != nil {
-			resp.Diagnostics.AddError("unexpected http request/response", debugResponse(res1.RawResponse))
-		}
-		return
-	}
-	if res1 == nil {
-		resp.Diagnostics.AddError("unexpected response from API", fmt.Sprintf("%v", res1))
-		return
-	}
-	if res1.StatusCode != 200 {
-		resp.Diagnostics.AddError(fmt.Sprintf("unexpected response from API. Got an unexpected response code %v", res1.StatusCode), debugResponse(res1.RawResponse))
-		return
-	}
-	if !(res1.LinkSchema != nil) {
-		resp.Diagnostics.AddError("unexpected response from API. Got an unexpected response body", debugResponse(res1.RawResponse))
-		return
-	}
-	resp.Diagnostics.Append(data.RefreshFromSharedLinkSchema(ctx, res1.LinkSchema)...)
 
 	if resp.Diagnostics.HasError() {
 		return
@@ -1773,6 +1697,8 @@ func (r *LinkResource) Delete(ctx context.Context, req resource.DeleteRequest, r
 		return
 	}
 
+	ctx = withSensitiveValues(ctx, req.State)
+
 	request, requestDiags := data.ToOperationsDeleteLinkRequest(ctx)
 	resp.Diagnostics.Append(requestDiags...)
 
@@ -1781,7 +1707,7 @@ func (r *LinkResource) Delete(ctx context.Context, req resource.DeleteRequest, r
 	}
 	res, err := r.client.Links.DeleteLink(ctx, *request)
 	if err != nil {
-		resp.Diagnostics.AddError("failure to invoke API", err.Error())
+		resp.Diagnostics.AddError("failure to invoke API", redactSensitiveValues(ctx, err.Error()))
 		if res != nil && res.RawResponse != nil {
 			resp.Diagnostics.AddError("unexpected http request/response", debugResponse(res.RawResponse))
 		}
@@ -1791,7 +1717,10 @@ func (r *LinkResource) Delete(ctx context.Context, req resource.DeleteRequest, r
 		resp.Diagnostics.AddError("unexpected response from API", fmt.Sprintf("%v", res))
 		return
 	}
-	if res.StatusCode != 200 {
+	switch res.StatusCode {
+	case 200, 404:
+		break
+	default:
 		resp.Diagnostics.AddError(fmt.Sprintf("unexpected response from API. Got an unexpected response code %v", res.StatusCode), debugResponse(res.RawResponse))
 		return
 	}

@@ -62,7 +62,7 @@ func (r *TagResource) Schema(ctx context.Context, req resource.SchemaRequest, re
 			},
 			"id": schema.StringAttribute{
 				Computed:    true,
-				Description: `The unique ID of the tag.`,
+				Description: `The ID of the tag to update.`,
 			},
 			"name": schema.StringAttribute{
 				Computed:    true,
@@ -122,6 +122,8 @@ func (r *TagResource) Create(ctx context.Context, req resource.CreateRequest, re
 		return
 	}
 
+	ctx = withSensitiveValues(ctx, req.Config, req.Plan)
+
 	request, requestDiags := data.ToOperationsCreateTagRequest(ctx)
 	resp.Diagnostics.Append(requestDiags...)
 
@@ -130,7 +132,7 @@ func (r *TagResource) Create(ctx context.Context, req resource.CreateRequest, re
 	}
 	res, err := r.client.Tags.CreateTag(ctx, request)
 	if err != nil {
-		resp.Diagnostics.AddError("failure to invoke API", err.Error())
+		resp.Diagnostics.AddError("failure to invoke API", redactSensitiveValues(ctx, err.Error()))
 		if res != nil && res.RawResponse != nil {
 			resp.Diagnostics.AddError("unexpected http request/response", debugResponse(res.RawResponse))
 		}
@@ -138,6 +140,13 @@ func (r *TagResource) Create(ctx context.Context, req resource.CreateRequest, re
 	}
 	if res == nil {
 		resp.Diagnostics.AddError("unexpected response from API", fmt.Sprintf("%v", res))
+		return
+	}
+	if res.StatusCode == 409 {
+		resp.Diagnostics.AddError(
+			"Resource Already Exists",
+			"When creating this resource, the API indicated that this resource already exists. You can bring the existing resource under management using Terraform import functionality or retry with a unique configuration.",
+		)
 		return
 	}
 	if res.StatusCode != 201 {
@@ -167,7 +176,7 @@ func (r *TagResource) Create(ctx context.Context, req resource.CreateRequest, re
 	}
 	res1, err := r.client.Tags.GetTags(ctx, *request1)
 	if err != nil {
-		resp.Diagnostics.AddError("failure to invoke API", err.Error())
+		resp.Diagnostics.AddError("failure to invoke API", redactSensitiveValues(ctx, err.Error()))
 		if res1 != nil && res1.RawResponse != nil {
 			resp.Diagnostics.AddError("unexpected http request/response", debugResponse(res1.RawResponse))
 		}
@@ -177,15 +186,22 @@ func (r *TagResource) Create(ctx context.Context, req resource.CreateRequest, re
 		resp.Diagnostics.AddError("unexpected response from API", fmt.Sprintf("%v", res1))
 		return
 	}
+	if res1.StatusCode == 409 {
+		resp.Diagnostics.AddError(
+			"Resource Already Exists",
+			"When creating this resource, the API indicated that this resource already exists. You can bring the existing resource under management using Terraform import functionality or retry with a unique configuration.",
+		)
+		return
+	}
 	if res1.StatusCode != 200 {
 		resp.Diagnostics.AddError(fmt.Sprintf("unexpected response from API. Got an unexpected response code %v", res1.StatusCode), debugResponse(res1.RawResponse))
 		return
 	}
-	if !(res1.TagSchemas != nil && len(res1.TagSchemas) > 0) {
+	if !(res1.TagSchemas != nil) {
 		resp.Diagnostics.AddError("unexpected response from API. Got an unexpected response body", debugResponse(res1.RawResponse))
 		return
 	}
-	resp.Diagnostics.Append(data.RefreshFromSharedTagSchema(ctx, &res1.TagSchemas[0])...)
+	resp.Diagnostics.Append(data.RefreshFromArrayOfSharedTagSchema(ctx, res1.TagSchemas)...)
 
 	if resp.Diagnostics.HasError() {
 		return
@@ -219,6 +235,8 @@ func (r *TagResource) Read(ctx context.Context, req resource.ReadRequest, resp *
 		return
 	}
 
+	ctx = withSensitiveValues(ctx, req.State)
+
 	request, requestDiags := data.ToOperationsGetTagsRequest(ctx)
 	resp.Diagnostics.Append(requestDiags...)
 
@@ -227,7 +245,7 @@ func (r *TagResource) Read(ctx context.Context, req resource.ReadRequest, resp *
 	}
 	res, err := r.client.Tags.GetTags(ctx, *request)
 	if err != nil {
-		resp.Diagnostics.AddError("failure to invoke API", err.Error())
+		resp.Diagnostics.AddError("failure to invoke API", redactSensitiveValues(ctx, err.Error()))
 		if res != nil && res.RawResponse != nil {
 			resp.Diagnostics.AddError("unexpected http request/response", debugResponse(res.RawResponse))
 		}
@@ -245,11 +263,11 @@ func (r *TagResource) Read(ctx context.Context, req resource.ReadRequest, resp *
 		resp.Diagnostics.AddError(fmt.Sprintf("unexpected response from API. Got an unexpected response code %v", res.StatusCode), debugResponse(res.RawResponse))
 		return
 	}
-	if !(res.TagSchemas != nil && len(res.TagSchemas) > 0) {
+	if !(res.TagSchemas != nil) {
 		resp.Diagnostics.AddError("unexpected response from API. Got an unexpected response body", debugResponse(res.RawResponse))
 		return
 	}
-	resp.Diagnostics.Append(data.RefreshFromSharedTagSchema(ctx, &res.TagSchemas[0])...)
+	resp.Diagnostics.Append(data.RefreshFromArrayOfSharedTagSchema(ctx, res.TagSchemas)...)
 
 	if resp.Diagnostics.HasError() {
 		return
@@ -273,6 +291,8 @@ func (r *TagResource) Update(ctx context.Context, req resource.UpdateRequest, re
 		return
 	}
 
+	ctx = withSensitiveValues(ctx, req.Config, req.Plan, req.State)
+
 	request, requestDiags := data.ToOperationsUpdateTagRequest(ctx)
 	resp.Diagnostics.Append(requestDiags...)
 
@@ -281,7 +301,7 @@ func (r *TagResource) Update(ctx context.Context, req resource.UpdateRequest, re
 	}
 	res, err := r.client.Tags.UpdateTag(ctx, *request)
 	if err != nil {
-		resp.Diagnostics.AddError("failure to invoke API", err.Error())
+		resp.Diagnostics.AddError("failure to invoke API", redactSensitiveValues(ctx, err.Error()))
 		if res != nil && res.RawResponse != nil {
 			resp.Diagnostics.AddError("unexpected http request/response", debugResponse(res.RawResponse))
 		}
@@ -318,7 +338,7 @@ func (r *TagResource) Update(ctx context.Context, req resource.UpdateRequest, re
 	}
 	res1, err := r.client.Tags.GetTags(ctx, *request1)
 	if err != nil {
-		resp.Diagnostics.AddError("failure to invoke API", err.Error())
+		resp.Diagnostics.AddError("failure to invoke API", redactSensitiveValues(ctx, err.Error()))
 		if res1 != nil && res1.RawResponse != nil {
 			resp.Diagnostics.AddError("unexpected http request/response", debugResponse(res1.RawResponse))
 		}
@@ -332,11 +352,11 @@ func (r *TagResource) Update(ctx context.Context, req resource.UpdateRequest, re
 		resp.Diagnostics.AddError(fmt.Sprintf("unexpected response from API. Got an unexpected response code %v", res1.StatusCode), debugResponse(res1.RawResponse))
 		return
 	}
-	if !(res1.TagSchemas != nil && len(res1.TagSchemas) > 0) {
+	if !(res1.TagSchemas != nil) {
 		resp.Diagnostics.AddError("unexpected response from API. Got an unexpected response body", debugResponse(res1.RawResponse))
 		return
 	}
-	resp.Diagnostics.Append(data.RefreshFromSharedTagSchema(ctx, &res1.TagSchemas[0])...)
+	resp.Diagnostics.Append(data.RefreshFromArrayOfSharedTagSchema(ctx, res1.TagSchemas)...)
 
 	if resp.Diagnostics.HasError() {
 		return
@@ -370,6 +390,8 @@ func (r *TagResource) Delete(ctx context.Context, req resource.DeleteRequest, re
 		return
 	}
 
+	ctx = withSensitiveValues(ctx, req.State)
+
 	request, requestDiags := data.ToOperationsDeleteTagRequest(ctx)
 	resp.Diagnostics.Append(requestDiags...)
 
@@ -378,7 +400,7 @@ func (r *TagResource) Delete(ctx context.Context, req resource.DeleteRequest, re
 	}
 	res, err := r.client.Tags.DeleteTag(ctx, *request)
 	if err != nil {
-		resp.Diagnostics.AddError("failure to invoke API", err.Error())
+		resp.Diagnostics.AddError("failure to invoke API", redactSensitiveValues(ctx, err.Error()))
 		if res != nil && res.RawResponse != nil {
 			resp.Diagnostics.AddError("unexpected http request/response", debugResponse(res.RawResponse))
 		}
@@ -388,7 +410,10 @@ func (r *TagResource) Delete(ctx context.Context, req resource.DeleteRequest, re
 		resp.Diagnostics.AddError("unexpected response from API", fmt.Sprintf("%v", res))
 		return
 	}
-	if res.StatusCode != 200 {
+	switch res.StatusCode {
+	case 200, 404:
+		break
+	default:
 		resp.Diagnostics.AddError(fmt.Sprintf("unexpected response from API. Got an unexpected response code %v", res.StatusCode), debugResponse(res.RawResponse))
 		return
 	}
