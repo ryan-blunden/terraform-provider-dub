@@ -14,16 +14,15 @@ Tag DataSource
 
 ```terraform
 data "dub_tag" "my_tag" {
-  ids = {
-    array_of_str = [
-      "..."
-    ]
-  }
+  array_of_str = [
+    "..."
+  ]
   page       = 1
   page_size  = 50
   search     = "...my_search..."
-  sort_by    = "createdAt"
-  sort_order = "desc"
+  sort_by    = "name"
+  sort_order = "asc"
+  str        = "...my_str..."
 }
 ```
 
@@ -32,23 +31,16 @@ data "dub_tag" "my_tag" {
 
 ### Optional
 
-- `ids` (Attributes) IDs of tags to filter by. (see [below for nested schema](#nestedatt--ids))
+- `array_of_str` (List of String)
 - `page` (Number) The page number for pagination.
 - `page_size` (Number) The number of items per page.
 - `search` (String) The search term to filter the tags by.
-- `sort_by` (String) The field to sort the tags by.
-- `sort_order` (String) The order to sort the tags by.
+- `sort_by` (String) The field to sort the tags by. must be one of ["name", "createdAt"]
+- `sort_order` (String) The order to sort the tags by. must be one of ["asc", "desc"]
+- `str` (String)
 
 ### Read-Only
 
 - `color` (String) The color of the tag.
 - `id` (String) The unique ID of the tag.
 - `name` (String) The name of the tag.
-
-<a id="nestedatt--ids"></a>
-### Nested Schema for `ids`
-
-Optional:
-
-- `array_of_str` (List of String)
-- `str` (String)
