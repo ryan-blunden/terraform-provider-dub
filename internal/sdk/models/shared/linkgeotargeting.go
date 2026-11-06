@@ -256,1752 +256,1752 @@ type LinkGeoTargeting struct {
 	Xk *string `json:"XK,omitempty"`
 }
 
-func (o *LinkGeoTargeting) GetAf() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetAf() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Af
+	return l.Af
 }
 
-func (o *LinkGeoTargeting) GetAl() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetAl() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Al
+	return l.Al
 }
 
-func (o *LinkGeoTargeting) GetDz() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetDz() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Dz
+	return l.Dz
 }
 
-func (o *LinkGeoTargeting) GetAs() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetAs() *string {
+	if l == nil {
 		return nil
 	}
-	return o.As
+	return l.As
 }
 
-func (o *LinkGeoTargeting) GetAd() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetAd() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ad
+	return l.Ad
 }
 
-func (o *LinkGeoTargeting) GetAo() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetAo() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ao
+	return l.Ao
 }
 
-func (o *LinkGeoTargeting) GetAi() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetAi() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ai
+	return l.Ai
 }
 
-func (o *LinkGeoTargeting) GetAq() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetAq() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Aq
+	return l.Aq
 }
 
-func (o *LinkGeoTargeting) GetAg() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetAg() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ag
+	return l.Ag
 }
 
-func (o *LinkGeoTargeting) GetAr() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetAr() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ar
+	return l.Ar
 }
 
-func (o *LinkGeoTargeting) GetAm() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetAm() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Am
+	return l.Am
 }
 
-func (o *LinkGeoTargeting) GetAw() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetAw() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Aw
+	return l.Aw
 }
 
-func (o *LinkGeoTargeting) GetAu() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetAu() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Au
+	return l.Au
 }
 
-func (o *LinkGeoTargeting) GetAt() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetAt() *string {
+	if l == nil {
 		return nil
 	}
-	return o.At
+	return l.At
 }
 
-func (o *LinkGeoTargeting) GetAz() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetAz() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Az
+	return l.Az
 }
 
-func (o *LinkGeoTargeting) GetBs() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetBs() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Bs
+	return l.Bs
 }
 
-func (o *LinkGeoTargeting) GetBh() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetBh() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Bh
+	return l.Bh
 }
 
-func (o *LinkGeoTargeting) GetBd() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetBd() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Bd
+	return l.Bd
 }
 
-func (o *LinkGeoTargeting) GetBb() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetBb() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Bb
+	return l.Bb
 }
 
-func (o *LinkGeoTargeting) GetBy() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetBy() *string {
+	if l == nil {
 		return nil
 	}
-	return o.By
+	return l.By
 }
 
-func (o *LinkGeoTargeting) GetBe() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetBe() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Be
+	return l.Be
 }
 
-func (o *LinkGeoTargeting) GetBz() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetBz() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Bz
+	return l.Bz
 }
 
-func (o *LinkGeoTargeting) GetBj() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetBj() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Bj
+	return l.Bj
 }
 
-func (o *LinkGeoTargeting) GetBm() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetBm() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Bm
+	return l.Bm
 }
 
-func (o *LinkGeoTargeting) GetBt() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetBt() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Bt
+	return l.Bt
 }
 
-func (o *LinkGeoTargeting) GetBo() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetBo() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Bo
+	return l.Bo
 }
 
-func (o *LinkGeoTargeting) GetBa() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetBa() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ba
+	return l.Ba
 }
 
-func (o *LinkGeoTargeting) GetBw() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetBw() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Bw
+	return l.Bw
 }
 
-func (o *LinkGeoTargeting) GetBv() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetBv() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Bv
+	return l.Bv
 }
 
-func (o *LinkGeoTargeting) GetBr() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetBr() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Br
+	return l.Br
 }
 
-func (o *LinkGeoTargeting) GetIo() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetIo() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Io
+	return l.Io
 }
 
-func (o *LinkGeoTargeting) GetBn() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetBn() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Bn
+	return l.Bn
 }
 
-func (o *LinkGeoTargeting) GetBg() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetBg() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Bg
+	return l.Bg
 }
 
-func (o *LinkGeoTargeting) GetBf() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetBf() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Bf
+	return l.Bf
 }
 
-func (o *LinkGeoTargeting) GetBi() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetBi() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Bi
+	return l.Bi
 }
 
-func (o *LinkGeoTargeting) GetKh() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetKh() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Kh
+	return l.Kh
 }
 
-func (o *LinkGeoTargeting) GetCm() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetCm() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Cm
+	return l.Cm
 }
 
-func (o *LinkGeoTargeting) GetCa() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetCa() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ca
+	return l.Ca
 }
 
-func (o *LinkGeoTargeting) GetCv() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetCv() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Cv
+	return l.Cv
 }
 
-func (o *LinkGeoTargeting) GetKy() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetKy() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ky
+	return l.Ky
 }
 
-func (o *LinkGeoTargeting) GetCf() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetCf() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Cf
+	return l.Cf
 }
 
-func (o *LinkGeoTargeting) GetTd() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetTd() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Td
+	return l.Td
 }
 
-func (o *LinkGeoTargeting) GetCl() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetCl() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Cl
+	return l.Cl
 }
 
-func (o *LinkGeoTargeting) GetCn() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetCn() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Cn
+	return l.Cn
 }
 
-func (o *LinkGeoTargeting) GetCx() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetCx() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Cx
+	return l.Cx
 }
 
-func (o *LinkGeoTargeting) GetCc() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetCc() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Cc
+	return l.Cc
 }
 
-func (o *LinkGeoTargeting) GetCo() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetCo() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Co
+	return l.Co
 }
 
-func (o *LinkGeoTargeting) GetKm() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetKm() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Km
+	return l.Km
 }
 
-func (o *LinkGeoTargeting) GetCg() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetCg() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Cg
+	return l.Cg
 }
 
-func (o *LinkGeoTargeting) GetCd() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetCd() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Cd
+	return l.Cd
 }
 
-func (o *LinkGeoTargeting) GetCk() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetCk() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ck
+	return l.Ck
 }
 
-func (o *LinkGeoTargeting) GetCr() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetCr() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Cr
+	return l.Cr
 }
 
-func (o *LinkGeoTargeting) GetCi() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetCi() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ci
+	return l.Ci
 }
 
-func (o *LinkGeoTargeting) GetHr() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetHr() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Hr
+	return l.Hr
 }
 
-func (o *LinkGeoTargeting) GetCu() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetCu() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Cu
+	return l.Cu
 }
 
-func (o *LinkGeoTargeting) GetCy() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetCy() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Cy
+	return l.Cy
 }
 
-func (o *LinkGeoTargeting) GetCz() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetCz() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Cz
+	return l.Cz
 }
 
-func (o *LinkGeoTargeting) GetDk() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetDk() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Dk
+	return l.Dk
 }
 
-func (o *LinkGeoTargeting) GetDj() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetDj() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Dj
+	return l.Dj
 }
 
-func (o *LinkGeoTargeting) GetDm() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetDm() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Dm
+	return l.Dm
 }
 
-func (o *LinkGeoTargeting) GetDo() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetDo() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Do
+	return l.Do
 }
 
-func (o *LinkGeoTargeting) GetEc() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetEc() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ec
+	return l.Ec
 }
 
-func (o *LinkGeoTargeting) GetEg() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetEg() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Eg
+	return l.Eg
 }
 
-func (o *LinkGeoTargeting) GetSv() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetSv() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Sv
+	return l.Sv
 }
 
-func (o *LinkGeoTargeting) GetGq() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetGq() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Gq
+	return l.Gq
 }
 
-func (o *LinkGeoTargeting) GetEr() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetEr() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Er
+	return l.Er
 }
 
-func (o *LinkGeoTargeting) GetEe() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetEe() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ee
+	return l.Ee
 }
 
-func (o *LinkGeoTargeting) GetEt() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetEt() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Et
+	return l.Et
 }
 
-func (o *LinkGeoTargeting) GetFk() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetFk() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Fk
+	return l.Fk
 }
 
-func (o *LinkGeoTargeting) GetFo() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetFo() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Fo
+	return l.Fo
 }
 
-func (o *LinkGeoTargeting) GetFj() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetFj() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Fj
+	return l.Fj
 }
 
-func (o *LinkGeoTargeting) GetFi() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetFi() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Fi
+	return l.Fi
 }
 
-func (o *LinkGeoTargeting) GetFr() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetFr() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Fr
+	return l.Fr
 }
 
-func (o *LinkGeoTargeting) GetGf() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetGf() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Gf
+	return l.Gf
 }
 
-func (o *LinkGeoTargeting) GetPf() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetPf() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Pf
+	return l.Pf
 }
 
-func (o *LinkGeoTargeting) GetTf() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetTf() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Tf
+	return l.Tf
 }
 
-func (o *LinkGeoTargeting) GetGa() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetGa() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ga
+	return l.Ga
 }
 
-func (o *LinkGeoTargeting) GetGm() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetGm() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Gm
+	return l.Gm
 }
 
-func (o *LinkGeoTargeting) GetGe() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetGe() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ge
+	return l.Ge
 }
 
-func (o *LinkGeoTargeting) GetDe() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetDe() *string {
+	if l == nil {
 		return nil
 	}
-	return o.De
+	return l.De
 }
 
-func (o *LinkGeoTargeting) GetGh() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetGh() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Gh
+	return l.Gh
 }
 
-func (o *LinkGeoTargeting) GetGi() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetGi() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Gi
+	return l.Gi
 }
 
-func (o *LinkGeoTargeting) GetGr() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetGr() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Gr
+	return l.Gr
 }
 
-func (o *LinkGeoTargeting) GetGl() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetGl() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Gl
+	return l.Gl
 }
 
-func (o *LinkGeoTargeting) GetGd() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetGd() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Gd
+	return l.Gd
 }
 
-func (o *LinkGeoTargeting) GetGp() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetGp() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Gp
+	return l.Gp
 }
 
-func (o *LinkGeoTargeting) GetGu() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetGu() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Gu
+	return l.Gu
 }
 
-func (o *LinkGeoTargeting) GetGt() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetGt() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Gt
+	return l.Gt
 }
 
-func (o *LinkGeoTargeting) GetGn() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetGn() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Gn
+	return l.Gn
 }
 
-func (o *LinkGeoTargeting) GetGw() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetGw() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Gw
+	return l.Gw
 }
 
-func (o *LinkGeoTargeting) GetGy() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetGy() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Gy
+	return l.Gy
 }
 
-func (o *LinkGeoTargeting) GetHt() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetHt() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ht
+	return l.Ht
 }
 
-func (o *LinkGeoTargeting) GetHm() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetHm() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Hm
+	return l.Hm
 }
 
-func (o *LinkGeoTargeting) GetVa() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetVa() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Va
+	return l.Va
 }
 
-func (o *LinkGeoTargeting) GetHn() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetHn() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Hn
+	return l.Hn
 }
 
-func (o *LinkGeoTargeting) GetHk() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetHk() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Hk
+	return l.Hk
 }
 
-func (o *LinkGeoTargeting) GetHu() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetHu() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Hu
+	return l.Hu
 }
 
-func (o *LinkGeoTargeting) GetIs() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetIs() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Is
+	return l.Is
 }
 
-func (o *LinkGeoTargeting) GetIn() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetIn() *string {
+	if l == nil {
 		return nil
 	}
-	return o.In
+	return l.In
 }
 
-func (o *LinkGeoTargeting) GetID() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetID() *string {
+	if l == nil {
 		return nil
 	}
-	return o.ID
+	return l.ID
 }
 
-func (o *LinkGeoTargeting) GetIr() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetIr() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ir
+	return l.Ir
 }
 
-func (o *LinkGeoTargeting) GetIq() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetIq() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Iq
+	return l.Iq
 }
 
-func (o *LinkGeoTargeting) GetIe() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetIe() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ie
+	return l.Ie
 }
 
-func (o *LinkGeoTargeting) GetIl() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetIl() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Il
+	return l.Il
 }
 
-func (o *LinkGeoTargeting) GetIt() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetIt() *string {
+	if l == nil {
 		return nil
 	}
-	return o.It
+	return l.It
 }
 
-func (o *LinkGeoTargeting) GetJm() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetJm() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Jm
+	return l.Jm
 }
 
-func (o *LinkGeoTargeting) GetJp() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetJp() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Jp
+	return l.Jp
 }
 
-func (o *LinkGeoTargeting) GetJo() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetJo() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Jo
+	return l.Jo
 }
 
-func (o *LinkGeoTargeting) GetKz() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetKz() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Kz
+	return l.Kz
 }
 
-func (o *LinkGeoTargeting) GetKe() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetKe() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ke
+	return l.Ke
 }
 
-func (o *LinkGeoTargeting) GetKi() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetKi() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ki
+	return l.Ki
 }
 
-func (o *LinkGeoTargeting) GetKp() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetKp() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Kp
+	return l.Kp
 }
 
-func (o *LinkGeoTargeting) GetKr() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetKr() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Kr
+	return l.Kr
 }
 
-func (o *LinkGeoTargeting) GetKw() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetKw() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Kw
+	return l.Kw
 }
 
-func (o *LinkGeoTargeting) GetKg() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetKg() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Kg
+	return l.Kg
 }
 
-func (o *LinkGeoTargeting) GetLa() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetLa() *string {
+	if l == nil {
 		return nil
 	}
-	return o.La
+	return l.La
 }
 
-func (o *LinkGeoTargeting) GetLv() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetLv() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Lv
+	return l.Lv
 }
 
-func (o *LinkGeoTargeting) GetLb() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetLb() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Lb
+	return l.Lb
 }
 
-func (o *LinkGeoTargeting) GetLs() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetLs() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ls
+	return l.Ls
 }
 
-func (o *LinkGeoTargeting) GetLr() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetLr() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Lr
+	return l.Lr
 }
 
-func (o *LinkGeoTargeting) GetLy() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetLy() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ly
+	return l.Ly
 }
 
-func (o *LinkGeoTargeting) GetLi() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetLi() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Li
+	return l.Li
 }
 
-func (o *LinkGeoTargeting) GetLt() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetLt() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Lt
+	return l.Lt
 }
 
-func (o *LinkGeoTargeting) GetLu() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetLu() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Lu
+	return l.Lu
 }
 
-func (o *LinkGeoTargeting) GetMo() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetMo() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Mo
+	return l.Mo
 }
 
-func (o *LinkGeoTargeting) GetMg() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetMg() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Mg
+	return l.Mg
 }
 
-func (o *LinkGeoTargeting) GetMw() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetMw() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Mw
+	return l.Mw
 }
 
-func (o *LinkGeoTargeting) GetMy() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetMy() *string {
+	if l == nil {
 		return nil
 	}
-	return o.My
+	return l.My
 }
 
-func (o *LinkGeoTargeting) GetMv() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetMv() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Mv
+	return l.Mv
 }
 
-func (o *LinkGeoTargeting) GetMl() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetMl() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ml
+	return l.Ml
 }
 
-func (o *LinkGeoTargeting) GetMt() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetMt() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Mt
+	return l.Mt
 }
 
-func (o *LinkGeoTargeting) GetMh() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetMh() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Mh
+	return l.Mh
 }
 
-func (o *LinkGeoTargeting) GetMq() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetMq() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Mq
+	return l.Mq
 }
 
-func (o *LinkGeoTargeting) GetMr() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetMr() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Mr
+	return l.Mr
 }
 
-func (o *LinkGeoTargeting) GetMu() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetMu() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Mu
+	return l.Mu
 }
 
-func (o *LinkGeoTargeting) GetYt() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetYt() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Yt
+	return l.Yt
 }
 
-func (o *LinkGeoTargeting) GetMx() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetMx() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Mx
+	return l.Mx
 }
 
-func (o *LinkGeoTargeting) GetFm() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetFm() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Fm
+	return l.Fm
 }
 
-func (o *LinkGeoTargeting) GetMd() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetMd() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Md
+	return l.Md
 }
 
-func (o *LinkGeoTargeting) GetMc() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetMc() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Mc
+	return l.Mc
 }
 
-func (o *LinkGeoTargeting) GetMn() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetMn() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Mn
+	return l.Mn
 }
 
-func (o *LinkGeoTargeting) GetMs() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetMs() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ms
+	return l.Ms
 }
 
-func (o *LinkGeoTargeting) GetMa() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetMa() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ma
+	return l.Ma
 }
 
-func (o *LinkGeoTargeting) GetMz() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetMz() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Mz
+	return l.Mz
 }
 
-func (o *LinkGeoTargeting) GetMm() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetMm() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Mm
+	return l.Mm
 }
 
-func (o *LinkGeoTargeting) GetNa() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetNa() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Na
+	return l.Na
 }
 
-func (o *LinkGeoTargeting) GetNr() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetNr() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Nr
+	return l.Nr
 }
 
-func (o *LinkGeoTargeting) GetNp() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetNp() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Np
+	return l.Np
 }
 
-func (o *LinkGeoTargeting) GetNl() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetNl() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Nl
+	return l.Nl
 }
 
-func (o *LinkGeoTargeting) GetNc() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetNc() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Nc
+	return l.Nc
 }
 
-func (o *LinkGeoTargeting) GetNz() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetNz() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Nz
+	return l.Nz
 }
 
-func (o *LinkGeoTargeting) GetNi() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetNi() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ni
+	return l.Ni
 }
 
-func (o *LinkGeoTargeting) GetNe() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetNe() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ne
+	return l.Ne
 }
 
-func (o *LinkGeoTargeting) GetNg() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetNg() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ng
+	return l.Ng
 }
 
-func (o *LinkGeoTargeting) GetNu() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetNu() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Nu
+	return l.Nu
 }
 
-func (o *LinkGeoTargeting) GetNf() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetNf() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Nf
+	return l.Nf
 }
 
-func (o *LinkGeoTargeting) GetMk() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetMk() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Mk
+	return l.Mk
 }
 
-func (o *LinkGeoTargeting) GetMp() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetMp() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Mp
+	return l.Mp
 }
 
-func (o *LinkGeoTargeting) GetNo() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetNo() *string {
+	if l == nil {
 		return nil
 	}
-	return o.No
+	return l.No
 }
 
-func (o *LinkGeoTargeting) GetOm() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetOm() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Om
+	return l.Om
 }
 
-func (o *LinkGeoTargeting) GetPk() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetPk() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Pk
+	return l.Pk
 }
 
-func (o *LinkGeoTargeting) GetPw() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetPw() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Pw
+	return l.Pw
 }
 
-func (o *LinkGeoTargeting) GetPs() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetPs() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ps
+	return l.Ps
 }
 
-func (o *LinkGeoTargeting) GetPa() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetPa() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Pa
+	return l.Pa
 }
 
-func (o *LinkGeoTargeting) GetPg() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetPg() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Pg
+	return l.Pg
 }
 
-func (o *LinkGeoTargeting) GetPy() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetPy() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Py
+	return l.Py
 }
 
-func (o *LinkGeoTargeting) GetPe() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetPe() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Pe
+	return l.Pe
 }
 
-func (o *LinkGeoTargeting) GetPh() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetPh() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ph
+	return l.Ph
 }
 
-func (o *LinkGeoTargeting) GetPn() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetPn() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Pn
+	return l.Pn
 }
 
-func (o *LinkGeoTargeting) GetPl() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetPl() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Pl
+	return l.Pl
 }
 
-func (o *LinkGeoTargeting) GetPt() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetPt() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Pt
+	return l.Pt
 }
 
-func (o *LinkGeoTargeting) GetPr() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetPr() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Pr
+	return l.Pr
 }
 
-func (o *LinkGeoTargeting) GetQa() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetQa() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Qa
+	return l.Qa
 }
 
-func (o *LinkGeoTargeting) GetRe() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetRe() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Re
+	return l.Re
 }
 
-func (o *LinkGeoTargeting) GetRo() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetRo() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ro
+	return l.Ro
 }
 
-func (o *LinkGeoTargeting) GetRu() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetRu() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ru
+	return l.Ru
 }
 
-func (o *LinkGeoTargeting) GetRw() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetRw() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Rw
+	return l.Rw
 }
 
-func (o *LinkGeoTargeting) GetSh() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetSh() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Sh
+	return l.Sh
 }
 
-func (o *LinkGeoTargeting) GetKn() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetKn() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Kn
+	return l.Kn
 }
 
-func (o *LinkGeoTargeting) GetLc() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetLc() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Lc
+	return l.Lc
 }
 
-func (o *LinkGeoTargeting) GetPm() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetPm() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Pm
+	return l.Pm
 }
 
-func (o *LinkGeoTargeting) GetVc() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetVc() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Vc
+	return l.Vc
 }
 
-func (o *LinkGeoTargeting) GetWs() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetWs() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ws
+	return l.Ws
 }
 
-func (o *LinkGeoTargeting) GetSm() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetSm() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Sm
+	return l.Sm
 }
 
-func (o *LinkGeoTargeting) GetSt() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetSt() *string {
+	if l == nil {
 		return nil
 	}
-	return o.St
+	return l.St
 }
 
-func (o *LinkGeoTargeting) GetSa() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetSa() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Sa
+	return l.Sa
 }
 
-func (o *LinkGeoTargeting) GetSn() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetSn() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Sn
+	return l.Sn
 }
 
-func (o *LinkGeoTargeting) GetSc() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetSc() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Sc
+	return l.Sc
 }
 
-func (o *LinkGeoTargeting) GetSl() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetSl() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Sl
+	return l.Sl
 }
 
-func (o *LinkGeoTargeting) GetSg() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetSg() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Sg
+	return l.Sg
 }
 
-func (o *LinkGeoTargeting) GetSk() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetSk() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Sk
+	return l.Sk
 }
 
-func (o *LinkGeoTargeting) GetSi() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetSi() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Si
+	return l.Si
 }
 
-func (o *LinkGeoTargeting) GetSb() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetSb() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Sb
+	return l.Sb
 }
 
-func (o *LinkGeoTargeting) GetSo() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetSo() *string {
+	if l == nil {
 		return nil
 	}
-	return o.So
+	return l.So
 }
 
-func (o *LinkGeoTargeting) GetZa() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetZa() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Za
+	return l.Za
 }
 
-func (o *LinkGeoTargeting) GetGs() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetGs() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Gs
+	return l.Gs
 }
 
-func (o *LinkGeoTargeting) GetEs() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetEs() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Es
+	return l.Es
 }
 
-func (o *LinkGeoTargeting) GetLk() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetLk() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Lk
+	return l.Lk
 }
 
-func (o *LinkGeoTargeting) GetSd() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetSd() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Sd
+	return l.Sd
 }
 
-func (o *LinkGeoTargeting) GetSr() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetSr() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Sr
+	return l.Sr
 }
 
-func (o *LinkGeoTargeting) GetSj() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetSj() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Sj
+	return l.Sj
 }
 
-func (o *LinkGeoTargeting) GetSz() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetSz() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Sz
+	return l.Sz
 }
 
-func (o *LinkGeoTargeting) GetSe() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetSe() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Se
+	return l.Se
 }
 
-func (o *LinkGeoTargeting) GetCh() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetCh() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ch
+	return l.Ch
 }
 
-func (o *LinkGeoTargeting) GetSy() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetSy() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Sy
+	return l.Sy
 }
 
-func (o *LinkGeoTargeting) GetTw() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetTw() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Tw
+	return l.Tw
 }
 
-func (o *LinkGeoTargeting) GetTj() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetTj() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Tj
+	return l.Tj
 }
 
-func (o *LinkGeoTargeting) GetTz() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetTz() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Tz
+	return l.Tz
 }
 
-func (o *LinkGeoTargeting) GetTh() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetTh() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Th
+	return l.Th
 }
 
-func (o *LinkGeoTargeting) GetTl() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetTl() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Tl
+	return l.Tl
 }
 
-func (o *LinkGeoTargeting) GetTg() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetTg() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Tg
+	return l.Tg
 }
 
-func (o *LinkGeoTargeting) GetTk() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetTk() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Tk
+	return l.Tk
 }
 
-func (o *LinkGeoTargeting) GetTo() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetTo() *string {
+	if l == nil {
 		return nil
 	}
-	return o.To
+	return l.To
 }
 
-func (o *LinkGeoTargeting) GetTt() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetTt() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Tt
+	return l.Tt
 }
 
-func (o *LinkGeoTargeting) GetTn() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetTn() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Tn
+	return l.Tn
 }
 
-func (o *LinkGeoTargeting) GetTr() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetTr() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Tr
+	return l.Tr
 }
 
-func (o *LinkGeoTargeting) GetTm() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetTm() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Tm
+	return l.Tm
 }
 
-func (o *LinkGeoTargeting) GetTc() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetTc() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Tc
+	return l.Tc
 }
 
-func (o *LinkGeoTargeting) GetTv() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetTv() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Tv
+	return l.Tv
 }
 
-func (o *LinkGeoTargeting) GetUg() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetUg() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ug
+	return l.Ug
 }
 
-func (o *LinkGeoTargeting) GetUa() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetUa() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ua
+	return l.Ua
 }
 
-func (o *LinkGeoTargeting) GetAe() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetAe() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ae
+	return l.Ae
 }
 
-func (o *LinkGeoTargeting) GetGb() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetGb() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Gb
+	return l.Gb
 }
 
-func (o *LinkGeoTargeting) GetUs() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetUs() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Us
+	return l.Us
 }
 
-func (o *LinkGeoTargeting) GetUm() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetUm() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Um
+	return l.Um
 }
 
-func (o *LinkGeoTargeting) GetUy() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetUy() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Uy
+	return l.Uy
 }
 
-func (o *LinkGeoTargeting) GetUz() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetUz() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Uz
+	return l.Uz
 }
 
-func (o *LinkGeoTargeting) GetVu() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetVu() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Vu
+	return l.Vu
 }
 
-func (o *LinkGeoTargeting) GetVe() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetVe() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ve
+	return l.Ve
 }
 
-func (o *LinkGeoTargeting) GetVn() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetVn() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Vn
+	return l.Vn
 }
 
-func (o *LinkGeoTargeting) GetVg() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetVg() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Vg
+	return l.Vg
 }
 
-func (o *LinkGeoTargeting) GetVi() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetVi() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Vi
+	return l.Vi
 }
 
-func (o *LinkGeoTargeting) GetWf() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetWf() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Wf
+	return l.Wf
 }
 
-func (o *LinkGeoTargeting) GetEh() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetEh() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Eh
+	return l.Eh
 }
 
-func (o *LinkGeoTargeting) GetYe() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetYe() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ye
+	return l.Ye
 }
 
-func (o *LinkGeoTargeting) GetZm() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetZm() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Zm
+	return l.Zm
 }
 
-func (o *LinkGeoTargeting) GetZw() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetZw() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Zw
+	return l.Zw
 }
 
-func (o *LinkGeoTargeting) GetAx() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetAx() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ax
+	return l.Ax
 }
 
-func (o *LinkGeoTargeting) GetBq() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetBq() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Bq
+	return l.Bq
 }
 
-func (o *LinkGeoTargeting) GetCw() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetCw() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Cw
+	return l.Cw
 }
 
-func (o *LinkGeoTargeting) GetGg() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetGg() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Gg
+	return l.Gg
 }
 
-func (o *LinkGeoTargeting) GetIm() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetIm() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Im
+	return l.Im
 }
 
-func (o *LinkGeoTargeting) GetJe() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetJe() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Je
+	return l.Je
 }
 
-func (o *LinkGeoTargeting) GetMe() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetMe() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Me
+	return l.Me
 }
 
-func (o *LinkGeoTargeting) GetBl() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetBl() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Bl
+	return l.Bl
 }
 
-func (o *LinkGeoTargeting) GetMf() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetMf() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Mf
+	return l.Mf
 }
 
-func (o *LinkGeoTargeting) GetRs() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetRs() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Rs
+	return l.Rs
 }
 
-func (o *LinkGeoTargeting) GetSx() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetSx() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Sx
+	return l.Sx
 }
 
-func (o *LinkGeoTargeting) GetSs() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetSs() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Ss
+	return l.Ss
 }
 
-func (o *LinkGeoTargeting) GetXk() *string {
-	if o == nil {
+func (l *LinkGeoTargeting) GetXk() *string {
+	if l == nil {
 		return nil
 	}
-	return o.Xk
+	return l.Xk
 }
