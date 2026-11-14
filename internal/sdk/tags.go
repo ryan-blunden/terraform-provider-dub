@@ -61,7 +61,7 @@ func (s *Tags) CreateTag(ctx context.Context, request *operations.CreateTagReque
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "createTag",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "Request", "json", `request:"mediaType=application/json"`)
@@ -387,7 +387,7 @@ func (s *Tags) GetTags(ctx context.Context, request operations.GetTagsRequest, o
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "getTags",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 
@@ -409,7 +409,7 @@ func (s *Tags) GetTags(ctx context.Context, request operations.GetTagsRequest, o
 	req.Header.Set("Accept", "application/json")
 	req.Header.Set("User-Agent", s.sdkConfiguration.UserAgent)
 
-	if err := utils.PopulateQueryParams(ctx, req, request, nil); err != nil {
+	if err := utils.PopulateQueryParams(ctx, req, request, nil, nil); err != nil {
 		return nil, fmt.Errorf("error populating query params: %w", err)
 	}
 
@@ -710,7 +710,7 @@ func (s *Tags) UpdateTag(ctx context.Context, request operations.UpdateTagReques
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "updateTag",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 	bodyReader, reqContentType, err := utils.SerializeRequestBody(ctx, request, false, true, "RequestBody", "json", `request:"mediaType=application/json"`)
@@ -1036,7 +1036,7 @@ func (s *Tags) DeleteTag(ctx context.Context, request operations.DeleteTagReques
 		BaseURL:          baseURL,
 		Context:          ctx,
 		OperationID:      "deleteTag",
-		OAuth2Scopes:     []string{},
+		OAuth2Scopes:     nil,
 		SecuritySource:   s.sdkConfiguration.Security,
 	}
 

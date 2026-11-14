@@ -40,25 +40,25 @@ type FourHundredError struct {
 	DocURL *string `json:"doc_url,omitempty"`
 }
 
-func (o *FourHundredError) GetCode() FourHundredCode {
-	if o == nil {
+func (f *FourHundredError) GetCode() FourHundredCode {
+	if f == nil {
 		return FourHundredCode("")
 	}
-	return o.Code
+	return f.Code
 }
 
-func (o *FourHundredError) GetMessage() string {
-	if o == nil {
+func (f *FourHundredError) GetMessage() string {
+	if f == nil {
 		return ""
 	}
-	return o.Message
+	return f.Message
 }
 
-func (o *FourHundredError) GetDocURL() *string {
-	if o == nil {
+func (f *FourHundredError) GetDocURL() *string {
+	if f == nil {
 		return nil
 	}
-	return o.DocURL
+	return f.DocURL
 }
 
 // FourHundred - The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).
@@ -66,9 +66,9 @@ type FourHundred struct {
 	Error FourHundredError `json:"error"`
 }
 
-func (o *FourHundred) GetError() FourHundredError {
-	if o == nil {
+func (f *FourHundred) GetError() FourHundredError {
+	if f == nil {
 		return FourHundredError{}
 	}
-	return o.Error
+	return f.Error
 }
