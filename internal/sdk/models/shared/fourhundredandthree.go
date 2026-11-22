@@ -40,25 +40,25 @@ type FourHundredAndThreeError struct {
 	DocURL *string `json:"doc_url,omitempty"`
 }
 
-func (o *FourHundredAndThreeError) GetCode() FourHundredAndThreeCode {
-	if o == nil {
+func (f *FourHundredAndThreeError) GetCode() FourHundredAndThreeCode {
+	if f == nil {
 		return FourHundredAndThreeCode("")
 	}
-	return o.Code
+	return f.Code
 }
 
-func (o *FourHundredAndThreeError) GetMessage() string {
-	if o == nil {
+func (f *FourHundredAndThreeError) GetMessage() string {
+	if f == nil {
 		return ""
 	}
-	return o.Message
+	return f.Message
 }
 
-func (o *FourHundredAndThreeError) GetDocURL() *string {
-	if o == nil {
+func (f *FourHundredAndThreeError) GetDocURL() *string {
+	if f == nil {
 		return nil
 	}
-	return o.DocURL
+	return f.DocURL
 }
 
 // FourHundredAndThree - The client does not have access rights to the content; that is, it is unauthorized, so the server is refusing to give the requested resource. Unlike 401 Unauthorized, the client's identity is known to the server.
@@ -66,9 +66,9 @@ type FourHundredAndThree struct {
 	Error FourHundredAndThreeError `json:"error"`
 }
 
-func (o *FourHundredAndThree) GetError() FourHundredAndThreeError {
-	if o == nil {
+func (f *FourHundredAndThree) GetError() FourHundredAndThreeError {
+	if f == nil {
 		return FourHundredAndThreeError{}
 	}
-	return o.Error
+	return f.Error
 }
