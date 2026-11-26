@@ -35,14 +35,20 @@ func debugResponse(response *http.Response) string {
 			return err.Error()
 		}
 	}
-	dumpRes, err := httputil.DumpResponse(response, true)
+	// The body is read directly rather than from a full dump, which would
+	// re-encode a chunked body and so prevent it from being parsed.
+	dumpRes, err := httputil.DumpResponse(response, false)
 	if err != nil {
-		dumpRes, err = httputil.DumpResponse(response, false)
-		if err != nil {
-			return err.Error()
+		return err.Error()
+	}
+	if response.Body != nil {
+		if body, err := io.ReadAll(response.Body); err == nil {
+			response.Body = io.NopCloser(bytes.NewReader(body))
+			dumpRes = append(dumpRes, body...)
 		}
 	}
-	return fmt.Sprintf("**Request**:\n%s\n**Response**:\n%s", string(dumpReq), string(dumpRes))
+	dump := fmt.Sprintf("**Request**:\n%s\n**Response**:\n%s", string(dumpReq), string(dumpRes))
+	return redactSensitiveValues(response.Request.Context(), dump)
 }
 
 func merge(ctx context.Context, req resource.UpdateRequest, resp *resource.UpdateResponse, target interface{}) {
@@ -89,7 +95,6 @@ func refreshPlan(ctx context.Context, plan types.Object, target any) diag.Diagno
 	diags.Append(tfReflect.Into(ctx, obj, val, target, tfReflect.Options{
 		UnhandledNullAsEmpty:    true,
 		UnhandledUnknownAsEmpty: true,
-		SourceType:              tfReflect.SourceTypePlan,
 	}, path.Empty())...)
 
 	return diags
@@ -213,6 +218,7 @@ func decomposeRequestForLogging(req *http.Request) (map[string]interface{}, erro
 
 	// Read the rest of the body content
 	fields[FieldHttpRequestBody] = bodyFromRestOfRequestReader(reqReader)
+	redactSensitiveFields(req, fields)
 	return fields, nil
 }
 
@@ -287,8 +293,8 @@ func decomposeResponseForLogging(res *http.Response) (map[string]interface{}, er
 	// to respect the interface of http.Response, as expected by users of the
 	// http.Client
 	res.Body = io.NopCloser(bytes.NewBuffer(resBody))
-
 	fields[FieldHttpResponseBody] = string(resBody)
+	redactSensitiveFields(res.Request, fields)
 
 	return fields, nil
 }

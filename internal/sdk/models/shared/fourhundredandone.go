@@ -40,25 +40,25 @@ type FourHundredAndOneError struct {
 	DocURL *string `json:"doc_url,omitempty"`
 }
 
-func (o *FourHundredAndOneError) GetCode() FourHundredAndOneCode {
-	if o == nil {
+func (f *FourHundredAndOneError) GetCode() FourHundredAndOneCode {
+	if f == nil {
 		return FourHundredAndOneCode("")
 	}
-	return o.Code
+	return f.Code
 }
 
-func (o *FourHundredAndOneError) GetMessage() string {
-	if o == nil {
+func (f *FourHundredAndOneError) GetMessage() string {
+	if f == nil {
 		return ""
 	}
-	return o.Message
+	return f.Message
 }
 
-func (o *FourHundredAndOneError) GetDocURL() *string {
-	if o == nil {
+func (f *FourHundredAndOneError) GetDocURL() *string {
+	if f == nil {
 		return nil
 	}
-	return o.DocURL
+	return f.DocURL
 }
 
 // FourHundredAndOne - Although the HTTP standard specifies "unauthorized", semantically this response means "unauthenticated". That is, the client must authenticate itself to get the requested response.
@@ -66,9 +66,9 @@ type FourHundredAndOne struct {
 	Error FourHundredAndOneError `json:"error"`
 }
 
-func (o *FourHundredAndOne) GetError() FourHundredAndOneError {
-	if o == nil {
+func (f *FourHundredAndOne) GetError() FourHundredAndOneError {
+	if f == nil {
 		return FourHundredAndOneError{}
 	}
-	return o.Error
+	return f.Error
 }
