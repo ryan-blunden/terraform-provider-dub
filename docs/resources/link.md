@@ -290,7 +290,7 @@ resource "dub_link" "my_link" {
   rewrite      = false
   tag_id       = "...my_tag_id..."
   tag_ids = {
-    str = ["clux0rgak00011..."]
+    str = "...my_str..."
   }
   tag_names = {
     str = "...my_str..."
@@ -372,7 +372,7 @@ resource "dub_link" "my_link" {
 
 - `clicks` (Number) The number of clicks on the short link. Default: 0
 - `created_at` (String) The date and time when the short link was created.
-- `id` (String) The unique ID of the short link.
+- `id` (String) The id of the link to update. You may use either `linkId` (obtained via `/links/info` endpoint) or `externalId` prefixed with `ext_`.
 - `last_clicked` (String) The date and time when the short link was last clicked.
 - `leads` (Number) The number of leads the short links has generated. Default: 0
 - `project_id` (String, Deprecated) The project ID of the short link. This field is deprecated – use `workspaceId` instead.
@@ -674,13 +674,24 @@ Optional:
 
 Read-Only:
 
-- `color` (String) The color of the tag. must be one of ["red", "yellow", "green", "blue", "purple", "pink", "brown"]
+- `color` (String) The color of the tag.
 - `id` (String) The unique ID of the tag.
 - `name` (String) The name of the tag.
 
 ## Import
 
 Import is supported using the following syntax:
+
+In Terraform v1.5.0 and later, the [`import` block](https://developer.hashicorp.com/terraform/language/import) can be used with the `id` attribute, for example:
+
+```terraform
+import {
+  to = dub_link.my_dub_link
+  id = "clux0rgak00011..."
+}
+```
+
+The [`terraform import` command](https://developer.hashicorp.com/terraform/cli/commands/import) can be used, for example:
 
 ```shell
 terraform import dub_link.my_dub_link "clux0rgak00011..."

@@ -17,6 +17,13 @@ const (
 func (e FiveHundredCode) ToPointer() *FiveHundredCode {
 	return &e
 }
+
+// FiveHundredCodeValues returns every known FiveHundredCode value in schema order.
+func FiveHundredCodeValues() []FiveHundredCode {
+	return []FiveHundredCode{
+		FiveHundredCodeInternalServerError,
+	}
+}
 func (e *FiveHundredCode) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
@@ -40,25 +47,25 @@ type FiveHundredError struct {
 	DocURL *string `json:"doc_url,omitempty"`
 }
 
-func (o *FiveHundredError) GetCode() FiveHundredCode {
-	if o == nil {
+func (f *FiveHundredError) GetCode() FiveHundredCode {
+	if f == nil {
 		return FiveHundredCode("")
 	}
-	return o.Code
+	return f.Code
 }
 
-func (o *FiveHundredError) GetMessage() string {
-	if o == nil {
+func (f *FiveHundredError) GetMessage() string {
+	if f == nil {
 		return ""
 	}
-	return o.Message
+	return f.Message
 }
 
-func (o *FiveHundredError) GetDocURL() *string {
-	if o == nil {
+func (f *FiveHundredError) GetDocURL() *string {
+	if f == nil {
 		return nil
 	}
-	return o.DocURL
+	return f.DocURL
 }
 
 // FiveHundred - The server has encountered a situation it does not know how to handle.
@@ -66,9 +73,9 @@ type FiveHundred struct {
 	Error FiveHundredError `json:"error"`
 }
 
-func (o *FiveHundred) GetError() FiveHundredError {
-	if o == nil {
+func (f *FiveHundred) GetError() FiveHundredError {
+	if f == nil {
 		return FiveHundredError{}
 	}
-	return o.Error
+	return f.Error
 }
