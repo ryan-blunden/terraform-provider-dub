@@ -17,6 +17,13 @@ const (
 func (e FourHundredAndTwentyTwoCode) ToPointer() *FourHundredAndTwentyTwoCode {
 	return &e
 }
+
+// FourHundredAndTwentyTwoCodeValues returns every known FourHundredAndTwentyTwoCode value in schema order.
+func FourHundredAndTwentyTwoCodeValues() []FourHundredAndTwentyTwoCode {
+	return []FourHundredAndTwentyTwoCode{
+		FourHundredAndTwentyTwoCodeUnprocessableEntity,
+	}
+}
 func (e *FourHundredAndTwentyTwoCode) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
@@ -40,25 +47,25 @@ type FourHundredAndTwentyTwoError struct {
 	DocURL *string `json:"doc_url,omitempty"`
 }
 
-func (o *FourHundredAndTwentyTwoError) GetCode() FourHundredAndTwentyTwoCode {
-	if o == nil {
+func (f *FourHundredAndTwentyTwoError) GetCode() FourHundredAndTwentyTwoCode {
+	if f == nil {
 		return FourHundredAndTwentyTwoCode("")
 	}
-	return o.Code
+	return f.Code
 }
 
-func (o *FourHundredAndTwentyTwoError) GetMessage() string {
-	if o == nil {
+func (f *FourHundredAndTwentyTwoError) GetMessage() string {
+	if f == nil {
 		return ""
 	}
-	return o.Message
+	return f.Message
 }
 
-func (o *FourHundredAndTwentyTwoError) GetDocURL() *string {
-	if o == nil {
+func (f *FourHundredAndTwentyTwoError) GetDocURL() *string {
+	if f == nil {
 		return nil
 	}
-	return o.DocURL
+	return f.DocURL
 }
 
 // FourHundredAndTwentyTwo - The request was well-formed but was unable to be followed due to semantic errors.
@@ -66,9 +73,9 @@ type FourHundredAndTwentyTwo struct {
 	Error FourHundredAndTwentyTwoError `json:"error"`
 }
 
-func (o *FourHundredAndTwentyTwo) GetError() FourHundredAndTwentyTwoError {
-	if o == nil {
+func (f *FourHundredAndTwentyTwo) GetError() FourHundredAndTwentyTwoError {
+	if f == nil {
 		return FourHundredAndTwentyTwoError{}
 	}
-	return o.Error
+	return f.Error
 }

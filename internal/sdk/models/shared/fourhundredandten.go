@@ -17,6 +17,13 @@ const (
 func (e FourHundredAndTenCode) ToPointer() *FourHundredAndTenCode {
 	return &e
 }
+
+// FourHundredAndTenCodeValues returns every known FourHundredAndTenCode value in schema order.
+func FourHundredAndTenCodeValues() []FourHundredAndTenCode {
+	return []FourHundredAndTenCode{
+		FourHundredAndTenCodeInviteExpired,
+	}
+}
 func (e *FourHundredAndTenCode) UnmarshalJSON(data []byte) error {
 	var v string
 	if err := json.Unmarshal(data, &v); err != nil {
@@ -40,25 +47,25 @@ type FourHundredAndTenError struct {
 	DocURL *string `json:"doc_url,omitempty"`
 }
 
-func (o *FourHundredAndTenError) GetCode() FourHundredAndTenCode {
-	if o == nil {
+func (f *FourHundredAndTenError) GetCode() FourHundredAndTenCode {
+	if f == nil {
 		return FourHundredAndTenCode("")
 	}
-	return o.Code
+	return f.Code
 }
 
-func (o *FourHundredAndTenError) GetMessage() string {
-	if o == nil {
+func (f *FourHundredAndTenError) GetMessage() string {
+	if f == nil {
 		return ""
 	}
-	return o.Message
+	return f.Message
 }
 
-func (o *FourHundredAndTenError) GetDocURL() *string {
-	if o == nil {
+func (f *FourHundredAndTenError) GetDocURL() *string {
+	if f == nil {
 		return nil
 	}
-	return o.DocURL
+	return f.DocURL
 }
 
 // FourHundredAndTen - This response is sent when the requested content has been permanently deleted from server, with no forwarding address.
@@ -66,9 +73,9 @@ type FourHundredAndTen struct {
 	Error FourHundredAndTenError `json:"error"`
 }
 
-func (o *FourHundredAndTen) GetError() FourHundredAndTenError {
-	if o == nil {
+func (f *FourHundredAndTen) GetError() FourHundredAndTenError {
+	if f == nil {
 		return FourHundredAndTenError{}
 	}
-	return o.Error
+	return f.Error
 }
